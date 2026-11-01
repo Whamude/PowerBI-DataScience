@@ -54,7 +54,8 @@ export type Data = {
   plan: string;
   shopping: string[];
 };
-const KEY = "nutria:state:v2";
+const LEGACY_KEY = "nutria:state:v2";
+const LEGACY_OWNER = "nutria:legacy-owner:v1";
 type Store = {
   data: Data;
   ready: boolean;
@@ -64,9 +65,23 @@ type Store = {
   mutate: (fn: (d: Data) => Data) => Promise<boolean>;
   updateDay: (fn: (d: Day) => Day) => Promise<boolean>;
   today: string;
+  legacyAvailable: boolean;
+  importLegacy: () => Promise<boolean>;
+  skipLegacy: () => Promise<boolean>;
 };
 const Context = createContext<Store | null>(null);
-export function StoreProvider({ children }: { children: ReactNode }) {
+export function StoreProvider({
+  children,
+  accountId,
+}: {
+  children: ReactNode;
+  accountId: string;
+}) {
+  if (!/^[a-f0-9]{64}$/.test(accountId))
+    throw new Error("Conta de ativação inválida.");
+  const KEY = `nutria:account:${accountId}:v2`;
+  const CHOICE = `nutria:account:${accountId}:legacy-choice`;
+  const [legacyAvailable, setLegacyAvailable] = useState(false);
   const [data, setData] = useState<Data>(initialData() as Data),
     [ready, setReady] = useState(false),
     [error, setError] = useState(""),
@@ -82,11 +97,15 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         const raw = await AsyncStorage.getItem(KEY);
         let next: Data;
         if (raw) next = validateData(JSON.parse(raw));
-        else {
-          const keys = (await AsyncStorage.getAllKeys()).filter((k) =>
+        else next = initialData() as Data;
+        const owner = await AsyncStorage.getItem(LEGACY_OWNER),
+          choice = await AsyncStorage.getItem(CHOICE);
+        if ((!owner || owner === accountId) && !choice && !raw) {
+          const previous = await AsyncStorage.getItem(LEGACY_KEY);
+          const oldKeys = (await AsyncStorage.getAllKeys()).filter((k) =>
             k.startsWith("nutria:day:"),
           );
-          next = migrateLegacy(await AsyncStorage.multiGet(keys)) as Data;
+          if (active) setLegacyAvailable(!!previous || oldKeys.length > 0);
         }
         if (active) {
           current.current = next;
@@ -104,7 +123,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     return () => {
       active = false;
     };
-  }, []);
+  }, [KEY, CHOICE, accountId]);
   useEffect(() => {
     const refresh = () => {
       const now = dateKey();
@@ -144,6 +163,48 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     await queue.current;
     return ok;
   }
+  async function importLegacy() {
+    if (!ready || !legacyAvailable) return false;
+    let ok = false;
+    queue.current = queue.current.then(async () => {
+      try {
+        const owner = await AsyncStorage.getItem(LEGACY_OWNER);
+        if (owner && owner !== accountId)
+          throw new Error("Registros já associados a outra conta.");
+        const raw = await AsyncStorage.getItem(LEGACY_KEY);
+        const keys = (await AsyncStorage.getAllKeys()).filter((k) =>
+          k.startsWith("nutria:day:"),
+        );
+        const next: Data = raw
+          ? validateData(JSON.parse(raw))
+          : (migrateLegacy(await AsyncStorage.multiGet(keys)) as Data);
+        await AsyncStorage.setItem(LEGACY_OWNER, accountId);
+        await AsyncStorage.setItem(KEY, JSON.stringify(next));
+        await AsyncStorage.setItem(CHOICE, "import");
+        current.current = next;
+        setData(next);
+        setLegacyAvailable(false);
+        setError("");
+        ok = true;
+      } catch {
+        setError(
+          "Não foi possível importar os registros anteriores. O backup original foi preservado.",
+        );
+      }
+    });
+    await queue.current;
+    return ok;
+  }
+  async function skipLegacy() {
+    try {
+      await AsyncStorage.setItem(CHOICE, "skip");
+      setLegacyAvailable(false);
+      return true;
+    } catch {
+      setError("Não foi possível salvar sua escolha. Tente novamente.");
+      return false;
+    }
+  }
   function updateDay(fn: (day: Day) => Day) {
     const date = selected;
     return mutate((d) => ({
@@ -162,6 +223,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         mutate,
         updateDay,
         today,
+        legacyAvailable,
+        importLegacy,
+        skipLegacy,
       }}
     >
       {children}

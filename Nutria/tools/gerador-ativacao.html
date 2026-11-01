@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src data:; base-uri 'none'; form-action 'none'"
+    />
+    <title>Nutria · Gerador de ativação</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f6f7ef;
+        color: #193f32;
+        font:
+          15px/1.6 system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 960px;
+        margin: auto;
+        padding: 32px 20px 70px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 28px;
+      }
+      .brand {
+        font:
+          36px Georgia,
+          serif;
+      }
+      .tag {
+        background: #e5edda;
+        border-radius: 30px;
+        padding: 8px 14px;
+        font-size: 11px;
+      }
+      h1 {
+        font:
+          38px/1.15 Georgia,
+          serif;
+        margin: 14px 0;
+      }
+      h2 {
+        font:
+          26px Georgia,
+          serif;
+        margin: 0 0 14px;
+      }
+      h3 {
+        font-size: 16px;
+      }
+      p {
+        color: #657363;
+      }
+      .card {
+        background: white;
+        border: 1px solid #e3e8dc;
+        border-radius: 22px;
+        padding: 26px;
+        margin: 20px 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      label {
+        display: block;
+        font-weight: 600;
+        margin: 14px 0 7px;
+      }
+      input,
+      select,
+      textarea {
+        font: inherit;
+        padding: 13px;
+        border: 1px solid #d6dfcc;
+        border-radius: 12px;
+        width: 100%;
+        background: #f9faf5;
+        color: #173e32;
+      }
+      textarea {
+        font-family: monospace;
+        font-size: 13px;
+        overflow-wrap: anywhere;
+        resize: vertical;
+      }
+      button,
+      .download {
+        border: 0;
+        border-radius: 12px;
+        padding: 14px 18px;
+        font: 600 14px system-ui;
+        background: #235a43;
+        color: white;
+        cursor: pointer;
+        margin: 12px 8px 0 0;
+        display: inline-block;
+        text-decoration: none;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+      .light {
+        background: #e8efdb;
+        color: #173e32;
+      }
+      .hint {
+        font-size: 12px;
+        color: #74806f;
+      }
+      .status {
+        padding: 14px;
+        border-radius: 12px;
+        background: #e8efdb;
+        white-space: pre-line;
+        margin: 12px 0;
+      }
+      .error {
+        background: #f7e2dc;
+        color: #9e3f38;
+      }
+      .hidden {
+        display: none;
+      }
+      .check {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-weight: 400;
+      }
+      .check input {
+        width: auto;
+        margin-top: 6px;
+      }
+      .key {
+        font-family: monospace;
+        overflow-wrap: anywhere;
+        background: #f3f6ec;
+        padding: 12px;
+        border-radius: 10px;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: 600;
+      }
+      hr {
+        border: 0;
+        border-top: 1px solid #e8ecdf;
+        margin: 24px 0;
+      }
+      @media (max-width: 650px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        h1 {
+          font-size: 32px;
+        }
+        .card {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="brand">nutria.</span
+        ><span class="tag">FERRAMENTA DO ADMINISTRADOR · OFFLINE</span>
+      </header>
+      <h1>Um código para cada e-mail.</h1>
+      <p>
+        Gere ativações individuais do Nutria sem servidor. Esta página não faz
+        requisições de rede. A chave privada é criada e usada somente neste
+        navegador.
+      </p>
+      <div id="message" role="status" class="status hidden"></div>
+      <section class="card">
+        <h2>1. Sua chave de emissão</h2>
+        <p>
+          Na primeira vez, crie a chave. Nas próximas vezes, carregue o arquivo
+          protegido que você salvou. Sem a chave privada e a senha, ninguém
+          consegue gerar novos códigos válidos para o seu APK.
+        </p>
+        <div class="grid">
+          <div>
+            <h3>Primeiro uso: criar chave</h3>
+            <label for="new-password">Senha para proteger a chave privada</label
+            ><input
+              id="new-password"
+              type="password"
+              autocomplete="new-password"
+              minlength="12"
+              placeholder="Use pelo menos 12 caracteres"
+            /><label for="confirm-password">Confirme essa senha</label
+            ><input
+              id="confirm-password"
+              type="password"
+              autocomplete="new-password"
+            /><button id="create" type="button">Criar minhas chaves</button>
+          </div>
+          <div>
+            <h3>Já tenho minha chave</h3>
+            <label for="key-file">Arquivo da chave privada protegida</label
+            ><input
+              id="key-file"
+              type="file"
+              accept=".json,application/json"
+            /><label for="unlock-password">Senha da chave privada</label
+            ><input
+              id="unlock-password"
+              type="password"
+              autocomplete="current-password"
+            /><button id="unlock" type="button">Desbloquear gerador</button>
+          </div>
+        </div>
+        <div id="key-panel" class="hidden">
+          <hr />
+          <p id="key-state"></p>
+          <div class="key" id="fingerprint"></div>
+          <button id="download-private" class="light" type="button">
+            Baixar chave privada protegida</button
+          ><button id="download-public" class="light" type="button">
+            Baixar chave pública para o APK</button
+          ><button id="lock" class="light" type="button">
+            Bloquear gerador</button
+          ><label class="check"
+            ><input id="backup-confirmed" type="checkbox" />Guardei a chave
+            privada e sua senha em local seguro. Entendo que somente o arquivo
+            da chave pública pode ser enviado para configurar o
+            aplicativo.</label
+          >
+          <details>
+            <summary>Ver chave pública — pode compartilhar</summary>
+            <textarea
+              id="public-config"
+              rows="5"
+              readonly
+              aria-label="Configuração da chave pública"
+            ></textarea>
+          </details>
+        </div>
+      </section>
+      <section class="card">
+        <h2>2. Emitir código individual</h2>
+        <label for="email">E-mail do usuário</label
+        ><input
+          id="email"
+          type="email"
+          autocomplete="off"
+          placeholder="usuario@exemplo.com"
+        /><label for="validity">Validade do código</label
+        ><select id="validity">
+          <option value="30">30 dias</option>
+          <option value="90">90 dias</option>
+          <option value="365" selected>365 dias</option>
+          <option value="none">Sem vencimento</option></select
+        ><button id="generate" type="button" disabled>
+          Gerar código de ativação
+        </button>
+        <div id="result" class="hidden">
+          <p id="recipient"></p>
+          <label for="code"
+            >Código individual — envie ao usuário com o e-mail
+            correspondente</label
+          ><textarea id="code" rows="6" readonly></textarea
+          ><button id="copy-code" type="button">Copiar código</button
+          ><button id="download-code" class="light" type="button">
+            Baixar instruções para o usuário
+          </button>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Como configurar o Nutria</h2>
+        <ol>
+          <li>Crie a chave neste computador e baixe os dois arquivos.</li>
+          <li>
+            Guarde a <strong>chave privada protegida</strong> e sua senha. Nunca
+            publique nem envie essa chave ao chat ou GitHub.
+          </li>
+          <li>
+            Envie somente o arquivo <strong>chave pública</strong> ao
+            responsável pelo APK. O aplicativo precisa ser compilado com essa
+            chave antes de aceitar seus códigos.
+          </li>
+          <li>Gere um código por e-mail e envie-o ao respectivo usuário.</li>
+          <li>
+            Ao abrir o Nutria, o usuário informa o mesmo e-mail e cola o código
+            completo.
+          </li>
+        </ol>
+        <p class="hint">
+          Não crie uma nova chave a cada usuário. Reutilize sua chave privada
+          protegida para emitir todos os códigos do mesmo APK.
+        </p>
+        <details>
+          <summary>Limites da ativação offline</summary>
+          <p>
+            O código está vinculado ao texto do e-mail; não há envio de mensagem
+            de confirmação nem comprovação de posse da caixa de e-mail. A mesma
+            combinação de e-mail e código pode funcionar em mais de um aparelho.
+            O vencimento usa a data/hora do aparelho. Bloqueio remoto, limite de
+            aparelhos e revogação imediata exigem um serviço online. O login não
+            transforma os arquivos já distribuídos em conteúdo criptografado nem
+            bloqueia APKs antigos.
+          </p>
+        </details>
+        <p class="hint">
+          Requer navegador atualizado com Web Crypto e Ed25519 (por exemplo,
+          Chrome ou Edge). Abra este arquivo diretamente no computador. Feche a
+          página ou clique em Bloquear gerador ao terminar.
+        </p>
+      </section>
+    </main>
+    <script type="module">
+      const $ = (id) => document.getElementById(id);
+      const encoder = new TextEncoder();
+      let issuer = null,
+        bundle = null,
+        last = null;
+      const message = (text, error = false) => {
+        $("message").textContent = text;
+        $("message").className = "status" + (error ? " error" : "");
+      };
+      const b64 = (bytes) => {
+        let binary = "";
+        for (const byte of new Uint8Array(bytes))
+          binary += String.fromCharCode(byte);
+        return btoa(binary)
+          .replace(/\+/g, "-")
+          .replace(/\//g, "_")
+          .replace(/=+$/, "");
+      };
+      const unb64 = (text) => {
+        if (
+          typeof text !== "string" ||
+          !/^[A-Za-z0-9_-]+$/.test(text) ||
+          text.length % 4 === 1
+        )
+          throw Error("Arquivo de chave inválido.");
+        return Uint8Array.from(
+          atob(
+            text.replace(/-/g, "+").replace(/_/g, "/") +
+              "=".repeat((4 - (text.length % 4)) % 4),
+          ),
+          (c) => c.charCodeAt(0),
+        );
+      };
+      async function keyId(pub) {
+        return Array.from(
+          new Uint8Array(
+            await crypto.subtle.digest("SHA-256", unb64(pub)),
+          ).slice(0, 8),
+          (b) => b.toString(16).padStart(2, "0"),
+        ).join("");
+      }
+      function email(value) {
+        const v = value.trim().toLowerCase(),
+          p = v.split("@");
+        if (
+          v.length > 254 ||
+          p.length !== 2 ||
+          !p[0] ||
+          p[0].length > 64 ||
+          p[0].startsWith(".") ||
+          p[0].endsWith(".") ||
+          p[0].includes("..") ||
+          !/^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$/.test(
+            v,
+          )
+        )
+          throw Error("Informe um e-mail válido.");
+        return v;
+      }
+      async function derive(password, salt, iterations) {
+        const raw = await crypto.subtle.importKey(
+          "raw",
+          encoder.encode(password),
+          "PBKDF2",
+          false,
+          ["deriveKey"],
+        );
+        return crypto.subtle.deriveKey(
+          { name: "PBKDF2", salt, iterations, hash: "SHA-256" },
+          raw,
+          { name: "AES-GCM", length: 256 },
+          false,
+          ["encrypt", "decrypt"],
+        );
+      }
+      function download(filename, text) {
+        const a = document.createElement("a"),
+          url = URL.createObjectURL(
+            new Blob([text], { type: "application/json;charset=utf-8" }),
+          );
+        a.href = url;
+        a.download = filename;
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      }
+      function refresh() {
+        const unlocked = !!issuer;
+        $("key-panel").classList.toggle("hidden", !unlocked);
+        $("generate").disabled = !unlocked || !$("backup-confirmed").checked;
+        $("create").disabled = unlocked;
+        if (unlocked) {
+          $("key-state").textContent =
+            "Gerador desbloqueado neste navegador. Use esta mesma chave para todos os usuários.";
+          $("fingerprint").textContent =
+            "Identificador da chave: " + bundle.keyId;
+          $("public-config").value = JSON.stringify(
+            {
+              publicKey: bundle.publicKey,
+              keyId: bundle.keyId,
+              issuer: "Nutria",
+            },
+            null,
+            2,
+          );
+        }
+      }
+      $("create").onclick = async () => {
+        try {
+          if (issuer)
+            throw Error("Bloqueie o gerador antes de criar outra chave.");
+          const password = $("new-password").value;
+          if (password.length < 12)
+            throw Error("Use uma senha de pelo menos 12 caracteres.");
+          if (password !== $("confirm-password").value)
+            throw Error("As senhas não conferem.");
+          $("create").disabled = true;
+          message("Criando e protegendo sua chave…");
+          const keys = await crypto.subtle.generateKey(
+            { name: "Ed25519" },
+            true,
+            ["sign", "verify"],
+          );
+          const pkcs8 = new Uint8Array(
+            await crypto.subtle.exportKey("pkcs8", keys.privateKey),
+          );
+          const publicKey = b64(
+            await crypto.subtle.exportKey("raw", keys.publicKey),
+          );
+          const salt = crypto.getRandomValues(new Uint8Array(16)),
+            iv = crypto.getRandomValues(new Uint8Array(12)),
+            iterations = 600000;
+          const encrypted = await crypto.subtle.encrypt(
+            { name: "AES-GCM", iv },
+            await derive(password, salt, iterations),
+            pkcs8,
+          );
+          bundle = {
+            format: "nutria-issuer-v1",
+            algorithm: "Ed25519",
+            publicKey,
+            keyId: await keyId(publicKey),
+            kdf: "PBKDF2-SHA256",
+            iterations,
+            salt: b64(salt),
+            iv: b64(iv),
+            encryptedPrivateKey: b64(encrypted),
+          };
+          issuer = await crypto.subtle.importKey(
+            "pkcs8",
+            pkcs8,
+            { name: "Ed25519" },
+            false,
+            ["sign"],
+          );
+          pkcs8.fill(0);
+          $("new-password").value = "";
+          $("confirm-password").value = "";
+          $("backup-confirmed").checked = false;
+          refresh();
+          message(
+            "Chaves criadas. Baixe a chave privada protegida e a chave pública. Não compartilhe a privada nem sua senha.",
+          );
+        } catch (e) {
+          message(e.message || "Navegador sem suporte a Ed25519.", true);
+          $("create").disabled = !!issuer;
+        }
+      };
+      $("unlock").onclick = async () => {
+        try {
+          const file = $("key-file").files[0];
+          if (!file || file.size > 20000)
+            throw Error("Selecione o arquivo da chave privada protegida.");
+          const data = JSON.parse(await file.text());
+          if (
+            data.format !== "nutria-issuer-v1" ||
+            data.algorithm !== "Ed25519" ||
+            data.kdf !== "PBKDF2-SHA256" ||
+            !Number.isInteger(data.iterations) ||
+            data.iterations < 100000 ||
+            data.iterations > 1000000 ||
+            unb64(data.salt).length !== 16 ||
+            unb64(data.iv).length !== 12 ||
+            unb64(data.publicKey).length !== 32 ||
+            data.keyId !== (await keyId(data.publicKey))
+          )
+            throw Error("Arquivo de chave inválido.");
+          const password = $("unlock-password").value;
+          const plain = new Uint8Array(
+            await crypto.subtle.decrypt(
+              { name: "AES-GCM", iv: unb64(data.iv) },
+              await derive(password, unb64(data.salt), data.iterations),
+              unb64(data.encryptedPrivateKey),
+            ),
+          );
+          const candidate = await crypto.subtle.importKey(
+            "pkcs8",
+            plain,
+            { name: "Ed25519" },
+            false,
+            ["sign"],
+          );
+          plain.fill(0);
+          const pub = await crypto.subtle.importKey(
+            "raw",
+            unb64(data.publicKey),
+            { name: "Ed25519" },
+            false,
+            ["verify"],
+          );
+          const proof = encoder.encode("Nutria issuer check");
+          if (
+            !(await crypto.subtle.verify(
+              { name: "Ed25519" },
+              pub,
+              await crypto.subtle.sign({ name: "Ed25519" }, candidate, proof),
+              proof,
+            ))
+          )
+            throw Error("Chaves incompatíveis.");
+          issuer = candidate;
+          bundle = data;
+          $("unlock-password").value = "";
+          $("backup-confirmed").checked = true;
+          refresh();
+          message("Gerador desbloqueado. Você já pode emitir os códigos.");
+        } catch {
+          message(
+            "Não foi possível abrir a chave. Confira o arquivo, a senha e o suporte do navegador.",
+            true,
+          );
+        }
+      };
+      $("download-private").onclick = () => {
+        if (bundle)
+          download(
+            `nutria-chave-privada-${bundle.keyId}.issuer.json`,
+            JSON.stringify(bundle, null, 2),
+          );
+      };
+      $("download-public").onclick = () => {
+        if (bundle)
+          download(
+            `nutria-chave-publica-${bundle.keyId}.json`,
+            $("public-config").value,
+          );
+      };
+      $("backup-confirmed").onchange = refresh;
+      $("lock").onclick = () => {
+        issuer = null;
+        bundle = null;
+        last = null;
+        $("key-file").value = "";
+        $("unlock-password").value = "";
+        $("result").classList.add("hidden");
+        $("code").value = "";
+        $("public-config").value = "";
+        refresh();
+        message(
+          "Gerador bloqueado. Carregue novamente sua chave protegida para continuar.",
+        );
+      };
+      $("email").oninput = () => {
+        $("result").classList.add("hidden");
+        $("code").value = "";
+        last = null;
+      };
+      $("generate").onclick = async () => {
+        try {
+          if (!issuer || !$("backup-confirmed").checked)
+            throw Error(
+              "Desbloqueie sua chave e confirme que guardou o backup.",
+            );
+          const recipient = email($("email").value),
+            now = Date.now(),
+            days = $("validity").value;
+          const exp = days === "none" ? null : now + Number(days) * 86400000;
+          const id = Array.from(
+            crypto.getRandomValues(new Uint8Array(16)),
+            (b) => b.toString(16).padStart(2, "0"),
+          ).join("");
+          const payload = {
+            v: 1,
+            app: "app.nutria.mobile",
+            kid: bundle.keyId,
+            email: recipient,
+            iat: now,
+            exp,
+            id,
+          };
+          const serialized = JSON.stringify(payload),
+            signature = await crypto.subtle.sign(
+              { name: "Ed25519" },
+              issuer,
+              encoder.encode("Nutria activation v1\n" + serialized),
+            );
+          const code =
+            "NTR1." + b64(encoder.encode(serialized)) + "." + b64(signature);
+          last = { email: recipient, code, exp };
+          $("code").value = code;
+          $("recipient").textContent =
+            "Usuário: " +
+            recipient +
+            " · " +
+            (exp
+              ? "Válido até " + new Date(exp).toLocaleString("pt-BR")
+              : "Sem vencimento");
+          $("result").classList.remove("hidden");
+          message(
+            "Código individual emitido. Envie somente o e-mail e o código ao usuário.",
+          );
+        } catch (e) {
+          message(e.message, true);
+        }
+      };
+      $("copy-code").onclick = async () => {
+        try {
+          await navigator.clipboard.writeText($("code").value);
+          message("Código copiado.");
+        } catch {
+          $("code").select();
+          message("Selecione o código e use Ctrl+C para copiar.");
+        }
+      };
+      $("download-code").onclick = () => {
+        if (last)
+          download(
+            "nutria-ativacao-usuario.txt",
+            "Ativação do Nutria\nE-mail: " +
+              last.email +
+              "\nValidade: " +
+              (last.exp
+                ? new Date(last.exp).toLocaleString("pt-BR")
+                : "Sem vencimento") +
+              "\n\nCódigo:\n" +
+              last.code +
+              "\n\nAbra o Nutria, informe este e-mail e cole o código completo. Não compartilhe com outras pessoas.",
+          );
+      };
+      if (!globalThis.crypto?.subtle) {
+        message(
+          "Este navegador não disponibiliza Web Crypto. Abra em Chrome ou Edge atualizado.",
+          true,
+        );
+        $("create").disabled = true;
+        $("unlock").disabled = true;
+      }
+    </script>
+  </body>
+</html>

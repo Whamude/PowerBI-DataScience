@@ -1,0 +1,22 @@
+NUTRIA — GERADOR DE CÓDIGOS INDIVIDUAIS POR E-MAIL
+
+1. Extraia o ZIP e abra gerador-ativacao.html no Chrome ou Edge atualizado.
+2. Em Primeiro uso, escolha uma senha sua, com pelo menos 12 caracteres, e confirme.
+3. Clique em Criar minhas chaves.
+4. Baixe a CHAVE PRIVADA PROTEGIDA. Guarde-a junto de sua senha em local seguro e privado. Nunca envie esse arquivo ao chat, GitHub ou usuários do app.
+5. Baixe a CHAVE PÚBLICA PARA O APK. Somente esse arquivo deve ser enviado ao responsável pela configuração do Nutria.
+6. Depois que o APK for configurado com a chave pública, marque que guardou seu backup, informe o e-mail do usuário e gere o código.
+7. Envie ao usuário seu e-mail e o código gerado. Ele cola os dois na tela de ativação.
+
+Não há recuperação da senha da chave privada. Se perder o arquivo ou a senha, será necessário criar outra chave e atualizar a chave pública no APK.
+
+Nas próximas vezes, carregue a mesma chave privada protegida e digite sua senha em Desbloquear gerador. Não crie uma chave nova para cada pessoa. Uma nova chave exige atualizar a chave pública do APK.
+
+O gerador não faz chamadas de rede. A chave privada só é criada e utilizada no seu navegador. Ela é protegida por PBKDF2-SHA256 e AES-256-GCM. O código é assinado com Ed25519.
+
+Se o navegador da empresa bloquear arquivos locais, o HTML pode ser servido em localhost por um profissional. Não é necessário hospedá-lo publicamente nem enviar a chave privada a um servidor.
+
+Limites: o e-mail é um identificador, sem confirmação de posse da caixa postal. O código pode funcionar em mais de um aparelho com o mesmo e-mail. Vencimento depende do relógio do aparelho. Revogação imediata e limite de aparelhos exigem serviço online. APKs antigos já distribuídos continuam sem essa exigência.
+
+ESTADO DO PROJETO
+A funcionalidade foi preparada e testada com chaves descartáveis. A chave pública de produção ainda precisa ser fornecida pelo proprietário. Não existe APK 0.4 configurado para uso real até concluir esse passo.

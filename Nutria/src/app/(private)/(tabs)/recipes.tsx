@@ -9,12 +9,12 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
-import { useStore } from "../../state/store";
-import { recipes, Recipe } from "../../data/catalog";
-import { recipeMatches, recipeMeta } from "../../domain/recipes.mjs";
-import { C, s } from "../../ui/theme";
-import { Header, Icon, Chip, Section } from "../../ui/components";
-import { RecipePhoto } from "../../ui/RecipePhoto";
+import { useStore } from "../../../state/store";
+import { recipes, Recipe } from "../../../data/catalog";
+import { recipeMatches, recipeMeta } from "../../../domain/recipes.mjs";
+import { C, s } from "../../../ui/theme";
+import { Header, Icon, Chip, Section } from "../../../ui/components";
+import { RecipePhoto } from "../../../ui/RecipePhoto";
 export default function Recipes() {
   const { data, error } = useStore();
   const [category, setCategory] = useState("Todas"),

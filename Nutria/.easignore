@@ -10,3 +10,8 @@ tests/
 *.jks
 *.keystore
 .env*
+
+# Chaves privadas de emissão e dados administrativos
+*.issuer.json
+.activation-private/
+server/data/

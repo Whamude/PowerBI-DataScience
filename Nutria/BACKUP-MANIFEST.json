@@ -1,25 +1,26 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0-preparacao",
+  "productionApk": "0.3.0",
   "files": [
     {
       "path": ".easignore",
-      "bytes": 87,
-      "sha256": "46596741305058447385bd02ba23cfd8ceacfdb43aae13c5913c6c454e6f9bea"
+      "bytes": 190,
+      "sha256": "393358e7fc31568959707cc0f9f1b26da523784163a48565b9442e38f4ba6109"
     },
     {
       "path": ".gitignore",
-      "bytes": 440,
-      "sha256": "5936b94a73a28b6735de672b54c2c058a33c9ae1edb62d87d6a4418e14447805"
+      "bytes": 543,
+      "sha256": "0f274842880a94bf64321bb329410026310afb15fd20b0a4077b76de0e310e1b"
     },
     {
       "path": "AGENTS.md",
-      "bytes": 2598,
-      "sha256": "b7d381dd55800d242252e8bf89a40b026586d254e34908210931bc35582396a3"
+      "bytes": 2988,
+      "sha256": "ddd0e98daa6a8e4612b56ed820cfdaefd6e3de403ba4e049cc18d3684a07e685"
     },
     {
       "path": "COMECAR-AQUI.md",
-      "bytes": 4010,
-      "sha256": "2ebc48495fc3a48db23ee3d56f42cfee0b9b7013438ca48e2518df34ab2531d1"
+      "bytes": 5210,
+      "sha256": "3c1908fe47b0ab1050d7a9650fbec775087ed9630523b58eddfdcfcb8883259d"
     },
     {
       "path": "CONTEUDO-DE-TERCEIROS.md",
@@ -33,13 +34,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 3853,
-      "sha256": "029f95d1332d1e31f523e368610ce4c8eec340e4f7fef03091d7352f471b16ed"
+      "bytes": 4431,
+      "sha256": "091e61dac8d3e91bb05daa5fcaf160923cc9aca5944f8dc85834b3c13c39c172"
     },
     {
       "path": "app.json",
-      "bytes": 1042,
-      "sha256": "e354ec40407c796e09ba10479e6a390991e4b19d7037a137cc7bf91ca2729739"
+      "bytes": 1069,
+      "sha256": "4900f637e52f466c91f36b37663b070e6132a4084ab99bd1624f691844076a46"
     },
     {
       "path": "assets/android-icon-background.png",
@@ -572,6 +573,11 @@
       "sha256": "c2bb035a2df1f3b6d3a27cfe8f31fdce021cdc22ffc89554666c3613838e69bd"
     },
     {
+      "path": "backup/Nutria-0.4-preparacao.zip",
+      "bytes": 20991246,
+      "sha256": "525772045f1a179bd791f917f8b322b7efe834d95919bc411f1ddab2926549fb"
+    },
+    {
       "path": "docs/01-analise.md",
       "bytes": 3412,
       "sha256": "20fc19179f16fef55fa71129d64f21235dc39da5ef29e124eb32c9ba03969aae"
@@ -600,6 +606,11 @@
       "path": "docs/06-build-03.md",
       "bytes": 1031,
       "sha256": "d11601a46d2b4330bdb50c727a355bda2dee813ffdf905ab4f1e69f53bb297e3"
+    },
+    {
+      "path": "docs/07-ativacao-email.md",
+      "bytes": 4174,
+      "sha256": "73583f8566e87b2fa0d37d1d29b770039004b40fd214374c818c36f4bdab7d63"
     },
     {
       "path": "docs/activity-evidence.txt",
@@ -653,8 +664,8 @@
     },
     {
       "path": "docs/validacao.md",
-      "bytes": 764,
-      "sha256": "0ff2cd3e84a12df65722d5b1ee0c194cce7e89bfbaad42f405d9f3f684c8916a"
+      "bytes": 1007,
+      "sha256": "d95d4c75eac2c6475687b70ccb4d37251fc841990ae3cb0d61521a50516c67ae"
     },
     {
       "path": "eas.json",
@@ -668,63 +679,93 @@
     },
     {
       "path": "package-lock.json",
-      "bytes": 420509,
-      "sha256": "4db5bd4e0b5b1febd0916607af531ee37c3db2eea0901291336532911041fc4a"
+      "bytes": 421902,
+      "sha256": "ac04341d11c7a42263fcb3d9605b8891d86a01f9ea40cd686e017ab004b2cbb0"
     },
     {
       "path": "package.json",
-      "bytes": 1118,
-      "sha256": "cfb95ea64035aceb8ed39ca316b043cc7bea3dde88306145fd3a1ee9830ef17b"
+      "bytes": 1318,
+      "sha256": "232b07d4265e490280c6024c5635e340f69fd0a3f8648d52b0639395e1babff4"
     },
     {
-      "path": "src/app/(tabs)/_layout.tsx",
-      "bytes": 2131,
-      "sha256": "e4dedafa1b21b73551d1bd8690cb98418f422b9efa1faa40eb256becc3938492"
+      "path": "src/app/(private)/(tabs)/_layout.tsx",
+      "bytes": 2217,
+      "sha256": "4482ae004eadba05da3b53172f6e41f1c3cbab3d4669cf4c966fc9a1a7ab9b40"
     },
     {
-      "path": "src/app/(tabs)/index.tsx",
-      "bytes": 15758,
-      "sha256": "9bc88e92bcd7d416c161fe48c832f66d54e5a3c66b874f1f834c54d0b55ec768"
+      "path": "src/app/(private)/(tabs)/index.tsx",
+      "bytes": 15773,
+      "sha256": "e47bcda753e5c6bc89485b6afc950cbb324d4a488a79f3a68788981e594fb605"
     },
     {
-      "path": "src/app/(tabs)/plans.tsx",
-      "bytes": 6475,
-      "sha256": "5497c10e2c3e21dd00ab3091056bf74ae8ea3eba850f6800ae6398611458a9c3"
+      "path": "src/app/(private)/(tabs)/plans.tsx",
+      "bytes": 6490,
+      "sha256": "189f2bb6048fc3e8b140d5e219054f8290f30f5de81c7c9e4ae42dff81c62803"
     },
     {
-      "path": "src/app/(tabs)/profile.tsx",
-      "bytes": 9739,
-      "sha256": "26ab3d24937a055753282ba75b9a83aaef04840bf7322b20620534925b3896d0"
+      "path": "src/app/(private)/(tabs)/profile.tsx",
+      "bytes": 10781,
+      "sha256": "f9936c8465bcb7c6d85c4a4e8a0e4d63180d763bd4459e87688d53aea9ea208c"
     },
     {
-      "path": "src/app/(tabs)/progress.tsx",
-      "bytes": 7399,
-      "sha256": "7bb307384afa9dfb4e9cc00549e09d8db94954c0721ed6042d6a3e225bd5b4a2"
+      "path": "src/app/(private)/(tabs)/progress.tsx",
+      "bytes": 7452,
+      "sha256": "a5392eec3c6fdac432d9e4b4d9d451ab7c7e67e31e64f00d25027fda4b1a80e2"
     },
     {
-      "path": "src/app/(tabs)/recipes.tsx",
-      "bytes": 6745,
-      "sha256": "fdd71120fb83e408471845ca4c7053825ff1fcad774a255cd32779302d66344c"
+      "path": "src/app/(private)/(tabs)/recipes.tsx",
+      "bytes": 6763,
+      "sha256": "d28ee2a4e2a56d6c063be2316ba8778e9f1adbc7b9bdc0dfbe5e2166f24ec2a1"
+    },
+    {
+      "path": "src/app/(private)/_layout.tsx",
+      "bytes": 1339,
+      "sha256": "7f761245b397fa39eb4c650f3b62b6b1a3994a826cef779322df837699675cfe"
+    },
+    {
+      "path": "src/app/(private)/food.tsx",
+      "bytes": 12217,
+      "sha256": "61e13d6d3d78d16acb473e25a616cc6dac286b87c14484ee1f3e611d0a89ea58"
+    },
+    {
+      "path": "src/app/(private)/onboarding.tsx",
+      "bytes": 8807,
+      "sha256": "0135862f8f1e4df58f9c785d316229cd3c028869b3b141d4afb99b125f04f6ad"
+    },
+    {
+      "path": "src/app/(private)/recipe.tsx",
+      "bytes": 10518,
+      "sha256": "03127f79df51a7b25b48dbb79258b620144553785905c1b9fcabeafeb36603bc"
+    },
+    {
+      "path": "src/app/(private)/restore.tsx",
+      "bytes": 1909,
+      "sha256": "b8edf9ae00f08a1a84606dd8a9662db4372570259e539759afdfeb6200e5928c"
     },
     {
       "path": "src/app/_layout.tsx",
-      "bytes": 651,
-      "sha256": "8540dcbb5433000c4547f644840d7cb166b08ec9c3ee5b4fa43bc71e8e54dbec"
+      "bytes": 1258,
+      "sha256": "7ebc4a6658da6984970562690d8d67549e4bf7ff600e10adc9c9b07925f7cd90"
     },
     {
-      "path": "src/app/food.tsx",
-      "bytes": 12199,
-      "sha256": "e2769371c02819c26a4fb615ee7e8a06c7808d424becb8528de2c15a1bfa7de1"
+      "path": "src/app/activate.tsx",
+      "bytes": 5028,
+      "sha256": "6aa4b4759e35bdd3666dcaeba0e56b9aa0960d3d427752e8c2c195c04f8393ef"
     },
     {
-      "path": "src/app/onboarding.tsx",
-      "bytes": 8795,
-      "sha256": "8c0e927e44f2ab516ee645a3483058428bfe1fd4ca85033b573a37d4d423103f"
+      "path": "src/auth/ActivationProvider.tsx",
+      "bytes": 3655,
+      "sha256": "6ac348e43f8f76be5bfb9451a2e3487c662ea31b569f36aacd366af76c86ada4"
     },
     {
-      "path": "src/app/recipe.tsx",
-      "bytes": 10488,
-      "sha256": "61d06728d9fabee1d455f54cab1bc9efca0edb2e07be469c057358de49292d33"
+      "path": "src/auth/activation-config.json",
+      "bytes": 59,
+      "sha256": "c7f3d2451684013ba59b225b7ea27601477fcefb0ba2b19cf19b43fbf9c5c73f"
+    },
+    {
+      "path": "src/auth/license.mjs",
+      "bytes": 4599,
+      "sha256": "9d9602cd2ee028723ce48462690be9fee07eb95d1e7e92e6087ca7adfdf58012"
     },
     {
       "path": "src/data/catalog.ts",
@@ -758,8 +799,8 @@
     },
     {
       "path": "src/state/store.tsx",
-      "bytes": 4340,
-      "sha256": "4e928a59c012569beefcdac69ef393c5615d9be4aa72dbbb56528573f7d2b48a"
+      "bytes": 6630,
+      "sha256": "23a122bf675793433ef8f0955f4aef7f27312eb696d225fb725fc33af3d30d8e"
     },
     {
       "path": "src/ui/RecipePhoto.tsx",
@@ -777,14 +818,29 @@
       "sha256": "11e75362ec1ea8dbb9e28f51de835af68305d661c03dc70eb325763943fcb668"
     },
     {
+      "path": "tests/browser-activation.cjs",
+      "bytes": 6365,
+      "sha256": "5337568d7d5ad8956ba2d273df200036b93ecc172c6a0f4ec44d6520eac549d9"
+    },
+    {
       "path": "tests/browser-flows.cjs",
-      "bytes": 6535,
-      "sha256": "3c807948eaf6728c3afe7611ad3ddf2536cbf5d9bc1e365fa6ea34d5d28993cb"
+      "bytes": 6735,
+      "sha256": "8ba4f8c54e4b0829899b07ddb59346f08a704fe2745f805c54cd8beb9fcc2638"
+    },
+    {
+      "path": "tests/browser-generator.cjs",
+      "bytes": 3953,
+      "sha256": "a5973fc271ef8efeb5e21e8d62986ec52454179ab4fbeeccc9cbb766490dbc45"
     },
     {
       "path": "tests/browser-imported-recipes.cjs",
       "bytes": 5620,
       "sha256": "465598f0d85bae0bc03b8063a0cbd7e4fd4e3620ec54a3340f50d3af93095532"
+    },
+    {
+      "path": "tests/browser-license.cjs",
+      "bytes": 1293,
+      "sha256": "f89921873e1824e2e385cbe722b82de1c19cd27fac093d2ea8d1b038b25b41b3"
     },
     {
       "path": "tests/browser-migration.cjs",
@@ -795,6 +851,11 @@
       "path": "tests/browser-storage.cjs",
       "bytes": 2394,
       "sha256": "e800b92fc7f44267494232110f970b16808c4a4238561d726ff647126c9e7af0"
+    },
+    {
+      "path": "tests/license.test.mjs",
+      "bytes": 5035,
+      "sha256": "23811ee1a10539fd4ec5d96f1ed9c187e0c247934a9ba83b5c37b654ee58c832"
     },
     {
       "path": "tests/model.test.mjs",
@@ -810,6 +871,31 @@
       "path": "tests/recipes.test.mjs",
       "bytes": 3181,
       "sha256": "f1d84e1537b7622cf3d035f3eea151084910766a820fb100ee675599f9b2936c"
+    },
+    {
+      "path": "tests/test-public-key.mjs",
+      "bytes": 277,
+      "sha256": "ed458357f07b2cbd77197d89c9de2436a3f1f6a1985b99f2ef301702223dc40b"
+    },
+    {
+      "path": "tools/LEIA-ME-ATIVACAO.txt",
+      "bytes": 2058,
+      "sha256": "d9ba8e9103ebf6651568e7fe9fae0ae52c7bfe1ffd7ec7d1a7c2a6d7e18931f9"
+    },
+    {
+      "path": "tools/Nutria-Gerador-Ativacao.zip",
+      "bytes": 7673,
+      "sha256": "c1a1aae5486377aa46c3dc70dca5e6e933da3b54a22e60c65a77b484ee8963a3"
+    },
+    {
+      "path": "tools/configurar-chave-publica.mjs",
+      "bytes": 1247,
+      "sha256": "a339d568f626b93b372b10130e9b7ebdf6f707320ec0486b8a25e81818cec618"
+    },
+    {
+      "path": "tools/gerador-ativacao.html",
+      "bytes": 22017,
+      "sha256": "7adf2f9cfb1bfc0f1715312764bda8ca51d4e6c52d5b1c03a6c74eb6c293a66b"
     },
     {
       "path": "tsconfig.json",

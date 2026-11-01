@@ -2,11 +2,11 @@ import React from "react";
 import { Tabs, Redirect } from "expo-router";
 import { ActivityIndicator, View, Text } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useStore } from "../../state/store";
-import { C, s } from "../../ui/theme";
-import { Icon } from "../../ui/components";
+import { useStore } from "../../../state/store";
+import { C, s } from "../../../ui/theme";
+import { Icon } from "../../../ui/components";
 export default function TabLayout() {
-  const { ready, data, error } = useStore();
+  const { ready, data, error, legacyAvailable } = useStore();
   const insets = useSafeAreaInsets();
   if (!ready)
     return (
@@ -27,6 +27,7 @@ export default function TabLayout() {
         </Text>
       </View>
     );
+  if (legacyAvailable) return <Redirect href="/restore" />;
   if (!data.onboarded) return <Redirect href="/onboarding" />;
   return (
     <Tabs

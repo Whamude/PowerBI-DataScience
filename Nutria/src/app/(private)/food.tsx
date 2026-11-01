@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Text, View, Pressable, ScrollView, TextInput } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
-import { useStore, Meal } from "../state/store";
-import { foods, Food } from "../data/catalog";
-import { emptyDay, GROUPS, scaleFood, uniqueId } from "../domain/model.mjs";
-import { parseMeal } from "../domain/nutrition.mjs";
-import { C, s } from "../ui/theme";
+import { useStore, Meal } from "../../state/store";
+import { foods, Food } from "../../data/catalog";
+import { emptyDay, GROUPS, scaleFood, uniqueId } from "../../domain/model.mjs";
+import { parseMeal } from "../../domain/nutrition.mjs";
+import { C, s } from "../../ui/theme";
 import {
   Page,
   Icon,
@@ -14,7 +14,7 @@ import {
   Chip,
   FoodArt,
   Section,
-} from "../ui/components";
+} from "../../ui/components";
 const normalize = (v: string) =>
   v
     .normalize("NFD")

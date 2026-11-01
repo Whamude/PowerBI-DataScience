@@ -1,0 +1,46 @@
+import React from "react";
+import { Stack } from "expo-router";
+import { View, Text, ActivityIndicator } from "react-native";
+import { StoreProvider, useStore } from "../../state/store";
+import { useActivation } from "../../auth/ActivationProvider";
+import { s, C } from "../../ui/theme";
+function PrivateRoutes() {
+  const { ready, error } = useStore();
+  if (!ready)
+    return (
+      <View
+        style={[
+          s.page,
+          {
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 24,
+            gap: 18,
+          },
+        ]}
+      >
+        <ActivityIndicator color={C.green} />
+        <Text style={error ? s.error : s.body}>
+          {error || "Preparando seus registros…"}
+        </Text>
+      </View>
+    );
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="food" options={{ presentation: "modal" }} />
+      <Stack.Screen name="onboarding" />
+      <Stack.Screen name="recipe" />
+      <Stack.Screen name="restore" />
+    </Stack>
+  );
+}
+export default function PrivateLayout() {
+  const { activation } = useActivation();
+  if (!activation) return null;
+  return (
+    <StoreProvider key={activation.accountId} accountId={activation.accountId}>
+      <PrivateRoutes />
+    </StoreProvider>
+  );
+}

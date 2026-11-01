@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { router } from "expo-router";
-import { recipeMeta } from "../../domain/recipes.mjs";
-import { plans, recipes } from "../../data/catalog";
-import { useStore } from "../../state/store";
-import { C, s } from "../../ui/theme";
+import { recipeMeta } from "../../../domain/recipes.mjs";
+import { plans, recipes } from "../../../data/catalog";
+import { useStore } from "../../../state/store";
+import { C, s } from "../../../ui/theme";
 import {
   Page,
   Section,
@@ -12,7 +12,7 @@ import {
   FoodArt,
   Sheet,
   Button,
-} from "../../ui/components";
+} from "../../../ui/components";
 export default function Plans() {
   const { data, mutate } = useStore();
   const [detail, setDetail] = useState<string | null>(null),

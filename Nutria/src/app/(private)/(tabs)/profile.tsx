@@ -1,8 +1,9 @@
+import { useActivation } from "../../../auth/ActivationProvider";
 import React, { useState } from "react";
 import { View, Text, Pressable, Share } from "react-native";
-import { useStore, Profile } from "../../state/store";
-import { numberValue } from "../../domain/model.mjs";
-import { C, s, serif } from "../../ui/theme";
+import { useStore, Profile } from "../../../state/store";
+import { numberValue } from "../../../domain/model.mjs";
+import { C, s, serif } from "../../../ui/theme";
 import {
   Page,
   Section,
@@ -11,9 +12,10 @@ import {
   Field,
   Chip,
   Button,
-} from "../../ui/components";
+} from "../../../ui/components";
 export default function ProfileScreen() {
   const { data, mutate } = useStore();
+  const { activation, signOut, error: activationError } = useActivation();
   const [edit, setEdit] = useState(false),
     [info, setInfo] = useState(false),
     [form, setForm] = useState<Record<string, string>>({}),
@@ -159,6 +161,33 @@ export default function ProfileScreen() {
           forma independente conforme sua orientação profissional.
         </Text>
       </View>
+      <Section title="Seu acesso" />
+      {activationError ? (
+        <Text accessibilityRole="alert" style={s.error}>
+          {activationError}
+        </Text>
+      ) : null}
+      <View style={s.card}>
+        <Text style={s.h3}>Ativação individual</Text>
+        <Text style={s.body}>{activation?.email}</Text>
+        <Text style={s.small}>
+          {activation?.expiresAt
+            ? `Válida até ${new Date(activation.expiresAt).toLocaleDateString("pt-BR")}`
+            : "Sem vencimento"}
+        </Text>
+        <Button
+          light
+          onPress={() => {
+            void signOut();
+          }}
+        >
+          Sair desta ativação
+        </Button>
+        <Text style={s.footer}>
+          Seus registros deste e-mail serão preservados neste aparelho. Será
+          necessário informar o código para entrar novamente.
+        </Text>
+      </View>
       <Section title="Seu aplicativo" />
       {item(
         "Editar preferências",
@@ -187,7 +216,7 @@ export default function ProfileScreen() {
         </Text>
       </View>
       <Text style={[s.footer, { textAlign: "center" }]}>
-        nutria · versão 0.3.0 · feito para o seu cotidiano
+        nutria · versão 0.4.0 · feito para o seu cotidiano
       </Text>
       <Sheet
         visible={edit}

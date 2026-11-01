@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
-import { useStore } from "../../state/store";
+import { useStore } from "../../../state/store";
 import {
   emptyDay,
   GROUPS,
   shiftDate,
   numberValue,
   uniqueId,
-} from "../../domain/model.mjs";
-import { totals } from "../../domain/nutrition.mjs";
-import { C, s } from "../../ui/theme";
+} from "../../../domain/model.mjs";
+import { totals } from "../../../domain/nutrition.mjs";
+import { C, s } from "../../../ui/theme";
 import {
   Page,
   Icon,
@@ -21,7 +21,7 @@ import {
   Button,
   Field,
   Sheet,
-} from "../../ui/components";
+} from "../../../ui/components";
 export default function Diary() {
   const { data, selected, setSelected, today, updateDay } = useStore();
   const day = data.days[selected] || emptyDay();

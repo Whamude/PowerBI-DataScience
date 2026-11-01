@@ -1,6 +1,16 @@
-> **Backup para continuar em outra conta GPT:** leia [COMECAR-AQUI.md](COMECAR-AQUI.md) e baixe [Nutria-0.3-projeto.zip](backup/Nutria-0.3-projeto.zip). O ZIP contém código, imagens, documentação e testes; não contém credenciais. Para o histórico integral da conversa, faça a exportação separadamente na conta de origem.
+> **Ativação por e-mail em preparação:** baixe [o gerador offline](tools/Nutria-Gerador-Ativacao.zip) e siga [as instruções](tools/LEIA-ME-ATIVACAO.txt). O proprietário precisa fornecer somente a chave pública para concluir o próximo APK. O último APK publicado ainda é 0.3.
+>
+> Para continuar em outra conta GPT: [COMECAR-AQUI.md](COMECAR-AQUI.md) e [backup da preparação 0.4](backup/Nutria-0.4-preparacao.zip). A [versão 0.3 anterior](backup/Nutria-0.3-projeto.zip) foi preservada.
 
-# Nutria 0.3 — receitas com fotos dos PDFs
+# Nutria 0.4 — preparação de ativação por e-mail
+
+**APK de produção atual: 0.3. A versão 0.4 ainda aguarda a chave pública do proprietário para compilar um APK utilizável.**
+
+O gerador offline está em tools/gerador-ativacao.html. Leia tools/LEIA-ME-ATIVACAO.txt e docs/07-ativacao-email.md. Gere a chave no seu computador e forneça somente a pública. Nunca enviar a chave privada protegida nem sua senha ao chat, Git ou APK.
+
+A ativação usa código Ed25519 individual para cada e-mail. Não há senha mestra ou servidor obrigatório. Rotas privadas são protegidas, a sessão nativa usa SecureStore e registros são separados por e-mail. Os testes e limites estão em docs/07-ativacao-email.md.
+
+## Funcionalidades preservadas da versão 0.3
 
 Aplicativo Android/iOS em Expo SDK 58. Esta é uma entrega integrada em evolução, não um produto final com todos os serviços da referência.
 
@@ -33,19 +43,9 @@ npm test
 EXPO_OFFLINE=1 npx expo export --platform all
 ```
 
-## Testes de interface
+## Testes de interface da ativação
 
-Testes em Chromium móvel (390 × 844). Requer servidor web local e Playwright; não instalar Playwright como dependência de produção.
-
-```sh
-npm install --prefix /tmp/nutria-browser playwright
-EXPO_OFFLINE=1 npx expo start --web --port 8081
-# Em outro terminal; ajuste executablePath nos scripts se Chromium estiver em outro local.
-NODE_PATH=/tmp/nutria-browser/node_modules node tests/browser-flows.cjs
-NODE_PATH=/tmp/nutria-browser/node_modules node tests/browser-migration.cjs
-NODE_PATH=/tmp/nutria-browser/node_modules node tests/browser-storage.cjs
-NODE_PATH=/tmp/nutria-browser/node_modules node tests/browser-imported-recipes.cjs
-```
+Use os comandos de docs/07-ativacao-email.md com uma chave pública descartável de testes e o servidor web na porta 8082. Os testes atuais são browser-activation.cjs, browser-generator.cjs e browser-flows.cjs. Os demais scripts de navegador são registros históricos da versão 0.3 e não incluem a nova etapa de ativação.
 
 ## Android
 

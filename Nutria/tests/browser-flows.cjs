@@ -1,3 +1,4 @@
+const { login, accountKey } = require("./browser-license.cjs");
 const { chromium } = require("playwright");
 const assert = require("node:assert/strict");
 (async () => {
@@ -16,9 +17,13 @@ const assert = require("node:assert/strict");
     if (msg.type() === "error" && !msg.text().includes("favicon"))
       errors.push(msg.text());
   });
+  const account = await accountKey();
   const state = () =>
-    page.evaluate(() => JSON.parse(localStorage.getItem("nutria:state:v2")));
-  await page.goto("http://localhost:8081", { waitUntil: "networkidle" });
+    page.evaluate((key) => JSON.parse(localStorage.getItem(key)), account);
+  await page.goto(process.env.NUTRIA_TEST_URL || "http://localhost:8082", {
+    waitUntil: "networkidle",
+  });
+  await login(page);
   await page.getByLabel("Como podemos chamar você?").fill("Teste");
   await page.getByRole("button", { name: "Continuar", exact: true }).click();
   await page.getByText("Organizar a alimentação", { exact: true }).click();
@@ -83,6 +88,7 @@ const assert = require("node:assert/strict");
     .waitFor();
   console.log("PASS day isolation and queued water");
   await page.reload({ waitUntil: "networkidle" });
+  await login(page);
   await page
     .getByRole("button", { name: "Editar Arroz integral cozido" })
     .waitFor();
@@ -102,8 +108,12 @@ const assert = require("node:assert/strict");
   await page.screenshot({ path: "/tmp/nutria-progress.png" });
   console.log("PASS weight upsert");
   await page.getByRole("tab", { name: /Receitas/ }).click();
-  await page.getByRole("textbox", { name: "Buscar receita" }).fill("Bowl da horta");
-  await page.getByRole("button", { name: "Ver receita: Bowl da horta" }).click();
+  await page
+    .getByRole("textbox", { name: "Buscar receita" })
+    .fill("Bowl da horta");
+  await page
+    .getByRole("button", { name: "Ver receita: Bowl da horta" })
+    .click();
   await page.getByRole("button", { name: "Favoritar receita" }).click();
   await page.getByRole("button", { name: "Aumentar porções" }).click();
   await page

@@ -8,10 +8,10 @@ import {
 } from "react-native";
 import { Redirect, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useStore } from "../state/store";
-import { C, s } from "../ui/theme";
-import { Button, Chip, Field, FoodArt, Icon } from "../ui/components";
-import { numberValue, dateKey } from "../domain/model.mjs";
+import { useStore } from "../../state/store";
+import { C, s } from "../../ui/theme";
+import { Button, Chip, Field, FoodArt, Icon } from "../../ui/components";
+import { numberValue, dateKey } from "../../domain/model.mjs";
 export default function Onboarding() {
   const { data, ready, error, mutate } = useStore();
   const [step, setStep] = useState(0),

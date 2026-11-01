@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { View, Text, Pressable, ScrollView } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
-import { recipes } from "../data/catalog";
-import { useStore } from "../state/store";
-import { emptyDay, GROUPS, uniqueId, numberValue } from "../domain/model.mjs";
-import { hasRecipeNutrition } from "../domain/recipes.mjs";
-import { C, s } from "../ui/theme";
-import { Page, Icon, Button, Chip, Section, Field } from "../ui/components";
-import { RecipePhoto } from "../ui/RecipePhoto";
+import { recipes } from "../../data/catalog";
+import { useStore } from "../../state/store";
+import {
+  emptyDay,
+  GROUPS,
+  uniqueId,
+  numberValue,
+} from "../../domain/model.mjs";
+import { hasRecipeNutrition } from "../../domain/recipes.mjs";
+import { C, s } from "../../ui/theme";
+import { Page, Icon, Button, Chip, Section, Field } from "../../ui/components";
+import { RecipePhoto } from "../../ui/RecipePhoto";
 export default function RecipeDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const r = recipes.find((r) => r.id === id);

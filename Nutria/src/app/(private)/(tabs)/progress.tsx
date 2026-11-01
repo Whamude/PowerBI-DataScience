@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text } from "react-native";
-import { useStore } from "../../state/store";
-import { weeklyStats, streaks, numberValue } from "../../domain/model.mjs";
+import { useStore } from "../../../state/store";
+import { weeklyStats, streaks, numberValue } from "../../../domain/model.mjs";
 import {
   Page,
   Section,
@@ -10,8 +10,8 @@ import {
   Sheet,
   Field,
   Button,
-} from "../../ui/components";
-import { C, s } from "../../ui/theme";
+} from "../../../ui/components";
+import { C, s } from "../../../ui/theme";
 export default function Progress() {
   const { data, today, selected, mutate } = useStore();
   const stats = weeklyStats(data.days, selected),
@@ -58,7 +58,10 @@ export default function Progress() {
         </View>
         <Text style={{ fontSize: 52, color: "white" }}>
           {streak.current}
-          <Text style={{ fontSize: 17 }}> {streak.current === 1 ? "dia" : "dias"}</Text>
+          <Text style={{ fontSize: 17 }}>
+            {" "}
+            {streak.current === 1 ? "dia" : "dias"}
+          </Text>
         </Text>
         <Text style={{ color: "#DCE9CE", lineHeight: 22 }}>
           Sua sequência de dias com refeições registradas.
