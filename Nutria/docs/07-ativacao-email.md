@@ -6,7 +6,7 @@ O usuário escolheu código de ativação individual baseado no e-mail. Foi prep
 
 O arquivo tools/gerador-ativacao.html é autossuficiente e bloqueia conexões de rede por CSP. O proprietário gera sua chave privada no próprio navegador e a protege com uma senha sua: PBKDF2-SHA256, 600.000 iterações, sal aleatório e AES-256-GCM com IV aleatório. Nas próximas emissões, importa o arquivo *.issuer.json protegido. A senha não é salva, não é enviada ao app e não é uma senha mestra do APK.
 
-Somente a chave pública deve ser enviada para configuração. tools/configurar-chave-publica.mjs rejeita arquivos de chave privada. O padrão de distribuição em src/auth/activation-config.json permanece sem chave pública até o proprietário fornecê-la; o aplicativo não libera acesso nessa condição. Chaves de teste não são chaves de produção.
+Somente a chave pública deve ser enviada para configuração. tools/configurar-chave-publica.mjs rejeita arquivos de chave privada. A chave pública do proprietário foi configurada em src/auth/activation-config.json com o identificador `cfae2c592dc713e9`. A configuração contém somente publicKey, keyId e issuer. O APK 0.4 foi compilado no EAS com essa chave; veja [o build e o download](08-build-04.md). APKs 0.3 existentes não recebem a mudança automaticamente: é necessário instalar a atualização. Sem chave configurada, o aplicativo não libera acesso. Chaves de teste não são chaves de produção.
 
 ## Código e validação
 
