@@ -1,0 +1,3993 @@
+[
+  {
+    "id": "cafe-01",
+    "name": "Torta de Couve-flor",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche",
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "500g de couve-flor",
+      "500g de brócolis",
+      "400g de iogurte natural",
+      "1 colher de chá de sal",
+      "2 ovos",
+      "150g de muçarela ralada",
+      "2 dentes de alho",
+      "1/4 de c/ de chá de pimenta-do-reino",
+      "ervas frescas"
+    ],
+    "steps": [
+      "Numa vasilha grande, misture o iogurte com os ovos, o queijo ralado, os dentes de alho amassados, temperos, ervas e sal. Corte o couve-flor e o brócolis em floretes, lave bem e corte-os em pequenos pedaços. Misture com o molho pronto e transfira a mistura para uma assadeira. Asse por 40 a 50 minutos, a 180°C, até dourar."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 2,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-01.jpeg",
+    "imageSha256": "cd97f363fec74c0409a8d1c010235b899b09b525e87bd97064c18e00d4f6fb8c"
+  },
+  {
+    "id": "cafe-02",
+    "name": "Pão (low carb, sem glúten)",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "4 colheres de sopa de psyllium",
+      "100g de queijo ralado fino",
+      "4 ovos grandes",
+      "pitada de cominho",
+      "1/2 colher de chá de sal",
+      "sementes de linhaça (opcional)",
+      "alecrim (opcional)"
+    ],
+    "steps": [
+      "Misture bem todos os ingredientes numa vasilha com um fouet. Deixe a massa descansar por 15 minutos. Você obterá uma massa espessa e escorregadia, que pode transferir com a ajuda de uma espátula para uma assadeira forrada com papel manteiga, e modelar um pão. Asse o pão por 40 a 45 minutos, a 170°C, até dourar."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 3,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-02.jpeg",
+    "imageSha256": "f61d05d650d7956a5f6c28ca9f4f945d9dc735f6afa8e5900ec2382a073bd2c4"
+  },
+  {
+    "id": "cafe-03",
+    "name": "Biscoitos com Queijo",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "450g de abobrinha",
+      "120g de queijo feta",
+      "50g de aveia em flocos finos",
+      "50g de ervilhas",
+      "1 ovo",
+      "2 colheres de sopa de sementes de gergelim",
+      "1/2 colher de chá de sal",
+      "2 dentes de alho",
+      "pitada de pimenta-do-reino"
+    ],
+    "steps": [
+      "Rale a abobrinha grosseiramente e esprema o máximo de água possível (com uma gaze ou tecido). Numa vasilha, misture a abobrinha espremida com o queijo feta em migalhas, ovo, aveia, ervilhas, sementes de gergelim, sal e pimenta-do-reino. Com uma colher, faça uma massa mais grossa, e então coloque pequenas porções sobre uma assadeira forrada com papel vegetal, modelando fritadas menores. Asse as fritadas por 25 a 30 minutos a 200°C."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 4,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-03.jpeg",
+    "imageSha256": "9c3ad0890958212a9c62655dce4b744b3b025f5876c61595af85ccf5c126d9c7"
+  },
+  {
+    "id": "cafe-04",
+    "name": "Mingau de Milho",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "1/4 de xícara de polenta",
+      "1 xícara de leite a sua escolha",
+      "1 colher de sopa de mel",
+      "1 pêssego",
+      "1/2 colher de chá de canela"
+    ],
+    "steps": [
+      "Misture a polenta numa panela com a canela, o mel e o leite. Sem parar de mexer, deixe o mingau ferver e continue mexendo até obter a consistência desejada. Se necessário, adicione mais leite. Despeje o mingau numa vasilha, adicione o pêssego picado e sirva. Você também pode polvilhar com passas e nozes."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 5,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-04.jpeg",
+    "imageSha256": "d63bde459689497f3bed297ee89aefed88792f2698f357557abcfb7fec935566"
+  },
+  {
+    "id": "cafe-05",
+    "name": "Cereal Matinal Rápido",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "2 bananas",
+      "8 colheres de sopa de coco ralado",
+      "150g de queijo quark (ou iogurte grego desnatado)",
+      "30g de nozes",
+      "2 tâmaras grandes",
+      "1 colher de sopa de sementes de chia (ou de papoula)",
+      "Framboesas, mirtilos ou outras frutas",
+      "1 pitada de canela"
+    ],
+    "steps": [
+      "Em um processador de alimentos, bata o queijo quark com as bananas, tâmaras e canela, até obter um creme. Adicione o coco ralado, as sementes de chia (ou de papoula) ao cereal pronto, e polvilhe com frutas e nozes."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 6,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-05.jpeg",
+    "imageSha256": "766ecb1dd5a182744cfb5eff6ca919cd4980fb98447d1821c6d710a2ffc899c7"
+  },
+  {
+    "id": "cafe-06",
+    "name": "Mocha de Proteína",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "1/2 xícara de leite de amêndoas (de coco/aveia ou de vaca)",
+      "1/2 xícara de gelo",
+      "1/2 xícara de café pronto",
+      "1 colherada de proteína em pó sabor chocolate",
+      "1 colher de sopa de cacau em pó"
+    ],
+    "steps": [
+      "Primeiro, prepare o café a gosto e deixe esfriar. Coloque todos os ingredientes, incluindo o café, no liquidificador (eu recomendo este) , e bata bem. Sirva o shake de proteína imediatamente."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 7,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-06.jpeg",
+    "imageSha256": "fca582ea1139cd8aae48275a7fc59ceba694dba04529b16d7d7da8097577d9b1"
+  },
+  {
+    "id": "cafe-07",
+    "name": "Rosquinhas Simples de Aveia",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "1 1/2 xícara de aveia em flocos finos (quase na textura de farinha)",
+      "12 tâmaras (ou 3 colheres de sopa de mel)",
+      "1/2 xícara de leite a sua escolha (125 ml)",
+      "1 colher de sopa de amido de milho",
+      "1 colher de chá de fermento em pó",
+      "1 colher de chá de extrato de baunilha",
+      "1 colher de chá de canela"
+    ],
+    "steps": [
+      ".Primeiro, misture os ingredientes secos e então junte os demais ingredientes. Divida a massa resultante numa forma de silicone para donuts. Se você usar uma forma que não seja de silicone, unte com um pouco de óleo de coco com antecedência. Asse os donuts por 15 a 18 minutos, a 180 °C. Para dar o efeito de açúcar, polvilhe os donuts prontos com farinha de coco, ou use outra cobertura que você gostar. Os donuts também podem ser servidor com geleia caseira de alta qualidade."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 8,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-07.jpeg",
+    "imageSha256": "71a89152d15645271c7ae0a2c94f905a4f5a70d3bf2b6b9b54ca55bdaef87ecb"
+  },
+  {
+    "id": "cafe-08",
+    "name": "Bolo de Cranberry e Amêndoas",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "1 ovo",
+      "1 clara",
+      "2 colher (sopa) de óleo ou manteiga de coco",
+      "⅓ xícara (chá) de purê de maçã",
+      "40g de cranberries",
+      "½ xícara (chá) de aveia",
+      "½ xícara (chá) de amêndoa",
+      "uma pitada de sal",
+      "4 a 5 colheres (sopa) de mel",
+      "2 colheres (chá) de fermento"
+    ],
+    "steps": [
+      "Em um liquidificador, bata a amêndoa com a aveia, até obter uma farinha. Despeje em um recipiente. Em seguida, incorpore os outros ingredientes secos. Depois disso, adicione o ovo, a clara, o purê de maçã, o mel, o óleo ou manteiga de coco e misture bem. Despeje esta massa em uma assadeira de silicone pequena ou em uma assadeira forrada com papel manteiga (aproximadamente 20x20cm) e asse a 175°C de 18 a 20 minutos."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 9,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-08.jpeg",
+    "imageSha256": "7d3571bb4cab410f0913a643bf975586440aada5e2bc4d18dcfc52960cf76e7d"
+  },
+  {
+    "id": "cafe-09",
+    "name": "Cookie de Banana e Aveia",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "2 bananas maduras grandes",
+      "¼ xícara (chá) de raspas de chocolate amargo",
+      "1 ½ xícara (chá) de aveia",
+      "(se desejar, adicione coco ralado, castanhas ou uvas-passas também)"
+    ],
+    "steps": [
+      "Preaqueça seu forno a 190 °C. Forre sua assadeira com papel manteiga. Amasse as bananas e as adicione aos outros ingredientes. Misture. Em uma assadeira, molde a massa em pequenos cookies. Asse os biscoitos por 15 minutos a 190°C."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 10,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-09.jpeg",
+    "imageSha256": "678516ae0be4cf2c29dac0692bce7e3e03a5c1f8fd799c59ac4832daf646679a"
+  },
+  {
+    "id": "cafe-10",
+    "name": "Bolo de Caneca e Proteico (sem glúten esem açúcar)",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "21 scoop de proteína (de sua escolha)",
+      "1 ovo",
+      "3 colher (sopa) de leite",
+      "⅓ colher (chá) de fermento",
+      "adoçante (caso esteja usando proteína não adoçada)"
+    ],
+    "steps": [
+      "Coloque todos os ingredientes em uma caneca grande ou tigela pequena e mexa. leve ao micro-ondas por 1 minuto e por mais 30 segundos em potência alta."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 11,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [
+      "Quantidade ambígua na fonte: o PDF apresenta “21 scoop de proteína”. Confirme a quantidade correta antes de preparar."
+    ],
+    "imageFile": "cafe-10.jpeg",
+    "imageSha256": "4a5388e1b97ad23d306d16539fe2c8c712574866a89ba334a9e31d1967bf2dde"
+  },
+  {
+    "id": "cafe-11",
+    "name": "Suflê de Banana e Canela",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "1 banana madura",
+      "2 claras",
+      "1/2 colher de chá de canela"
+    ],
+    "steps": [
+      "Bata as claras até formar picos firmes. Adicione a banana amassada e a canela, mexendo delicadamente. Divida a mistura em dois ramequins ou outras formas pequenas e asse por cerca de 10 minutos, a 200 °C."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 12,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-11.jpeg",
+    "imageSha256": "dbffd436a3cc6bbd544d0e8bd458f8fe945634d48ae109d93212d95701726892"
+  },
+  {
+    "id": "cafe-12",
+    "name": "Torrada com Bacate, ovos Mexidos e Rabanete",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche",
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "4 torradas de pão integral",
+      "1 abacate maduro",
+      "4 ovos",
+      "200 g de rabanete",
+      "1/2 colher de chá de sal",
+      "1 colher de chá de alho em pó",
+      "1/2 colher de chá de pimenta-do-reino"
+    ],
+    "steps": [
+      "Prepare torradas de pão integral, assando-as em uma frigideira ou na torradeira. Descasque o abacate, retire a semente e amasse em uma tigela com um garfo. Tempere com pimenta- do-reino. Aqueça uma panela antiaderente. Em seguida, adicione os ovos batidos e temperados com sal e alho em pó. Mexa os ovos até ficarem bem cozidos. Lave os rabanetes, limpe-os e corte-os em pedaços menores. Cubra as torradas quentes com o abacate amassado e depois com os ovos mexidos e o rabanete."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 13,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-12.jpeg",
+    "imageSha256": "6dfa74d268aed608135fb618d6dabebdb56d866d567b0d6ba11b813bd6f76487"
+  },
+  {
+    "id": "cafe-13",
+    "name": "Bolo de Nozes (sem glúten)",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "1 xícara (chá) de nozes",
+      "3 colheres (sopa) de mel",
+      "3 ovos"
+    ],
+    "steps": [
+      "Em um processador, bata as nozes até que virem uma farinha. Em seguida, adicione as gemas e o mel. Em uma tigela diferente, bata as claras em neve. Adicione as claras em neve cuidadosamente à mistura de nozes. Despeje a massa em uma forma de silicone ou uma assadeira forrada com papel manteiga (forma de pão também pode ser usada). Asse a 180 °C por 20 minutos. Você pode servir o bolo com geleia, manteiga de nozes ou sem acompanhamento."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 14,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-13.jpeg",
+    "imageSha256": "16e45e6354fbcacbdb194184e96cc7271ad2d1b94658717ebfae6bff13748115"
+  },
+  {
+    "id": "cafe-14",
+    "name": "Muffins de Banana Fitness (sem glúten, sem açúcar)",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "1 banana",
+      "2 ovos",
+      "1 scoop (30g) de proteína"
+    ],
+    "steps": [
+      "*A proteína em pó pode ser substituída por mix de pudim, leite em pó ou farinha de amêndoas e adoçado a gosto. Bata todos os ingredientes no liquidificador. Preencha forminhas de muffin até a metade e asse a 190°C de 15 a 20 minutes até dourar. A consistência final depende da proteína escolhida. Os muffins podem ficar mais firmes ou macios, mas sempre ficarão saborosos. Para melhores resultados, use proteína de baunilha concentrada."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 15,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-14.jpeg",
+    "imageSha256": "6d3cbaa2f47e4283963ed6a7a81b46fcd9880f1e8376a3691bffc6c57092dd89"
+  },
+  {
+    "id": "cafe-15",
+    "name": "Panquecas de Banana",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "1 banana madura",
+      "2 ovos"
+    ],
+    "steps": [
+      "Em um liquidificador, bata a banana com os ovos até ficar homogêneo. Usando uma colher, coloque a massa em uma frigideira e cozinhe até que pequenas bolhas comecem a se formar. Vire a panqueca e continue cozinhando até que estejam douradas dos dois lados. Sirva com o acompanhamento de sua preferência."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 16,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-15.jpeg",
+    "imageSha256": "d005064787822d93f0dcd8c3f91c095ff6d45c0677119cae6765dee1582a0c63"
+  },
+  {
+    "id": "cafe-16",
+    "name": "Sanduíche de Atum",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche",
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": false,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "120g de atum ao natural",
+      "1 ovo",
+      "3 colheres (sopa) de farinha de grão-de-bico ou integral",
+      "alho em pó",
+      "pimenta-do-reino moída páprica vermelha moída",
+      "sal marinho"
+    ],
+    "steps": [
+      "Drene o atum e misture-o com o ovo e com 3 colheres (sopa) de farinha. Adicione os temperos e o sal a gosto. Despeje a massa em uma assadeira pequena forrada com papel manteiga. Asse a 180 °C de 10 a 15 minutos. Em seguida, divida a massa em duas partes iguais e recheie com os ingredientes de sua escolha. Depois disso, corte na diagonal. Sirva o sanduíche quente ou gelado."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 17,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-16.jpeg",
+    "imageSha256": "80676be3c1ea28e64b9dca3f021295f4eb8a5988a1b58219aaa7a9f1c06acbdf"
+  },
+  {
+    "id": "cafe-17",
+    "name": "Panquecas de Grão-de-bico",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche",
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "1 xícara (chá) de farinha de grão-de-bico",
+      "1 a 1½ xícara (chá) de água",
+      "2 colheres (sopa) de linhaça moída",
+      "50g de queijo ralado",
+      "uma pitada de sal",
+      "uma pitada de manjericão seco",
+      "azeitona, tomate seco (opcional)"
+    ],
+    "steps": [
+      "Em uma tigela, misture a farinha de grão-de- bico com a água, a linhaça, o queijo ralado, o manjericão e o sal. Você também pode adicionar ingredientes de sua escolha, como azeitonas picadas ou tomates secos, por exemplo. Despeje a massa em uma assadeira antiaderente usando aproximadamente 1/2 xícara para cada panqueca, e asse a panqueca dos dois lados até dourar. A receita é geralmente suficiente para 4 panquecas, mas você pode escolher fazê-las maiores ou menores. Recheie as panquecas com os ingredientes de sua escolha. Sirva quente."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 18,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-17.jpeg",
+    "imageSha256": "bf13e121fb480a9a2f105f5452e073af4c4f496cdd4df3521a57ccfe2199419c"
+  },
+  {
+    "id": "cafe-18",
+    "name": "Patê Saudável de Atum",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche",
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": false,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "½ cebola",
+      "100g de grão-de-bico cozido",
+      "1 abacate maduro ou 100g de manteiga",
+      "½ colher (chá) de sal marinho",
+      "120g de atum ao natural (ou no azeite de oliva)"
+    ],
+    "steps": [
+      "Coloque o atum com água ou azeite no liquidificador. Adicione os outros ingredientes e bata até que fique homogêneo. Em seguida, passe-o no pão integral (ou outro pão de sua escolha). Para finalizar, você pode adicionar cebolinha picada ou cebola verde."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 19,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-18.jpeg",
+    "imageSha256": "380eb1db43cd25f81c09cad9f9b9cc9d28383aaa7b7e5addd35c25c2718b9c61"
+  },
+  {
+    "id": "cafe-19",
+    "name": "Creme de Aveia e Morango",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "150g de morangos (frescos ou congelados)",
+      "2 a 3 xícaras (chá) de leite",
+      "⅓ xícara (chá) de coco ralado",
+      "4 colheres (sopa) de semente de chia",
+      "3 colher (sopa) de mel",
+      "½ colher (sopa) de extrato de baunilha",
+      "2 xícaras (chá) de aveia"
+    ],
+    "steps": [
+      "Em um liquidificador, bata os morangos até formarem uma massa homogênea. Despeje a massa em uma tigela e misture bem com o restante dos ingredientes. Separe a massa em tigelas ou garrafas, feche com uma tampa e refrigere por 5 horas."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 20,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-19.jpeg",
+    "imageSha256": "68ebdae0c78a1f47fca539ef26afb5e4c732804c334915ee40e9a4eb80aff0c3"
+  },
+  {
+    "id": "cafe-20",
+    "name": "Mingau Doce de Grão-de-bico",
+    "subtitle": "Receita do e-book Café da manhã.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "breakfast",
+    "ingredients": [
+      "¼ xícara (chá) de purê de maçã",
+      "¼ xícara (chá) de leite",
+      "3 colheres (sopa) de aveia",
+      "2 colheres (sopa) de mel",
+      "uma pitada de sal",
+      "1 scoop de proteína em pó (opcional)",
+      "frutas, chocolate amargo (70%+), nibs de cacau, uvas-passas, castanhas, coco ralado",
+      "1 ½ xícara (chá) de grão-de-bico cozido"
+    ],
+    "steps": [
+      "Em um liquidificador, bata o grão-de-bico, o purê de maçã, o leite, a aveia, o adoçante e uma pitada de sal, até obter uma mistura homogênea e lisa. Se preferir, adicione a proteína em pó - caso seja aromatizada, use menos adoçante (a gosto). Quando o mingau estiver homogêneo, sem nenhum pedaço de grão-de-bico, adicione as frutas, o chocolate amargo, os nibs de cacau ou as uvas-passas e sirva."
+    ],
+    "source": {
+      "document": "CAFÉ DA MANHÃ.pdf",
+      "page": 21,
+      "credit": "@fernandasantospro"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "cafe-20.jpeg",
+    "imageSha256": "16841fee2814d7bb658612398d8c5b69697aca5e1483bc0bc840ccb02c511914"
+  },
+  {
+    "id": "iridium-01",
+    "name": "Frittata de abobrinha",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 abobrinhas",
+      "2 ovos",
+      "1 dente de alho picado",
+      "2 colheres (sopa) de cebolinha verde picada",
+      "2 colheres (sopa) de salsinha picada",
+      "1/2 xícara (chá) de farinha de farinha de aveia ou farinha de trigo integral fino",
+      "2 colheres (café) de fermento",
+      "Sal e pimenta do reino à gosto",
+      "1 tomate picado"
+    ],
+    "steps": [
+      "Rale a abobrinha e retire o excesso de água, secando bem, pode utilizar um papel toalha para ajudar. Misture a abobrinha ralada com os demais ingredientes em um recipiente e reserve.",
+      "Pré aqueça a frigideira antiaderente em fogo médio, pode untar com um pinguinho de azeite. Despeje a massa sobre a frigideira, formando um disco e deixe dourar por 3 minutos de cada lado."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 5,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-01.jpeg",
+    "imageSha256": "31ddb3efde9e2494095459250ad88a50c250400c270b290682380ad6a6bfdeca"
+  },
+  {
+    "id": "iridium-02",
+    "name": "risoto",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "150g de frango em cubos",
+      "3 colheres (sopa) de arroz integral cozido",
+      "2/3 xic de chá de abobrinha picada",
+      "2/3 xic de chá de brócolis picado",
+      "1/2 cebola pequena cortada em cubos",
+      "1 colher (sobremesa) de cream cheese light ou requeijão light",
+      "Sal e pimenta do reino à gosto",
+      "Salsinha à gosto",
+      "Castanhas à gosto"
+    ],
+    "steps": [
+      "Refogue o frango, a cebola e os legumes picados, no azeite. Quando estiver tudo cozido, adicione o arroz integral cozido e finalize com o cream cheese. Sirva com a salsinha e castanhas por cima.",
+      "Este prato combina uma boa quantidade de proteína, moderada de carboidrato e ainda contém vegetais e castanhas. É um prato completo e saudável."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 6,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-02.jpeg",
+    "imageSha256": "cae84ac1580f80b4a67affa2f8b2b9a53071418b281812b04ce1717d04fef5a0"
+  },
+  {
+    "id": "iridium-03",
+    "name": "Hambúrguer",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 colheres (sopa) de farinha de mandioca",
+      "½ xícara (chá) de cebolinha",
+      "½ xícara (chá) de manjericão seco",
+      "100g de quinoa em grão",
+      "3 colheres (sopa) de azeite",
+      "Sal e pimenta-do-reino à gosto"
+    ],
+    "steps": [
+      "Lave e cozinhe a quinoa em água. Em outra panela, acrescente o azeite as ervas, a quinoa cozida e a farinha e misture bem. Depois, molde os hambúrguer e coloque em uma frigideira até dourar."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 7,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-03.jpeg",
+    "imageSha256": "0a9833d5da54beee7b7cda03423aaee5a5e7e111d25fd71a91b39704ddd5a8f3"
+  },
+  {
+    "id": "iridium-04",
+    "name": "Sorvete de banana proteico",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche",
+      "Sobremesa"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 bananas",
+      "1 scoop de whey"
+    ],
+    "steps": [
+      "Corte as bananas em rodelas e congele. Bata as bananas congeladas em um processador até formar uma massa cremosa. Adicione o whey, misture mais um pouco e está pronto."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 8,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-04.jpeg",
+    "imageSha256": "769fc6f193bc855640d1836d33ec9e0a176420b57d71601928b0655739abad7a"
+  },
+  {
+    "id": "iridium-05",
+    "name": "Cookies",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 xícara (chá) castanha de caju ou amêndoas",
+      "1 ½ xícara (chá) farinha de coco",
+      "3 colheres (sopa) adoçante culinário",
+      "½ colher (chá) bicarbonato de sódio",
+      "1/3 xícara (chá) leite de coco",
+      "1/3 xícara (chá) chocolate amargo gotas"
+    ],
+    "steps": [
+      "Coloque a castanha no liquidificador ou processador até virar uma farofa e depois misture os ingredientes, exceto o chocolate.",
+      "Molde os cookies, coloque em uma assadeira e coloque as gotas de chocolate por cima. Leve a assadeira para o forno médio por cerca de 15 minutos."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 9,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-05.jpeg",
+    "imageSha256": "cfd8f9648df5fedbe113b8b140e1149188c3d7989779d16e536898f834302639"
+  },
+  {
+    "id": "iridium-06",
+    "name": "Sorvete de banana com morango",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche",
+      "Sobremesa"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": true,
+    "kind": "green",
+    "ingredients": [
+      "2 unidades de banana nanica",
+      "1 xícara (chá) de morangos"
+    ],
+    "steps": [
+      "Corte as bananas em rodelas, pique os morangos e leve as frutas ao freezer por 2 horas. Retire as frutas do freezer e deixe descongelar por 5 minutos.",
+      "Coloque-as em um liquidificador ou processador de alimentos e bata até virar um creme. Sirva em seguida.",
+      "Rendimento: 2 porções"
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 11,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 75 calorias\nCarboidrato: 21g\nProteína: 2g\nGordura: 1g",
+    "yieldLabel": "Rendimento: 2 porções",
+    "notes": [],
+    "imageFile": "iridium-06.jpeg",
+    "imageSha256": "996c2c9d31b8eae6f00e3a66e004284833df7801fb539d93b31460d9bc35c12e"
+  },
+  {
+    "id": "iridium-07",
+    "name": "PUDIM DE CHIA COM MORANGO",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche",
+      "Sobremesa"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": true,
+    "kind": "green",
+    "ingredients": [
+      "1 colher (sopa) de chia",
+      "1/2 xícara (chá) de leite de coco",
+      "6 unidades de morango picado",
+      "Adoçante stévia a gosto"
+    ],
+    "steps": [
+      "Misture a chia no leite de coco e stevia à gosto, e deixe descansar na geladeira de um dia para outro (até a chia hidratar). Cubra com morangos picados antes de servir."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 12,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 116 calorias\nCarboidrato: 10g\nProteína: 2g\nGordura: 7g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-07.jpeg",
+    "imageSha256": "c3443d65bb4d932e9b1d7971699476ca60070e1f8466186a832fbe1ed89c6f1c"
+  },
+  {
+    "id": "iridium-08",
+    "name": "Beijinho",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche",
+      "Sobremesa"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "8 colheres (sopa) de leite em pó desnatado",
+      "1 colheres (chá) de óleo de coco",
+      "4 colheres (chá) de adoçante",
+      "1 copo (200 ml) de água fervente"
+    ],
+    "steps": [
+      "Em uma tigela, bata todos os ingredientes por uns 5 minutos. Modele em formato de bolinhas, adicione o coco ralado, coloque em uma travessa e leve ao forno até que fique douradinho por cima.",
+      "Rendimento: até 2 porções"
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 13,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 318 calorias\nCarboidratos: 40g\nProteína: 27g\nGordura: 4g",
+    "yieldLabel": "Rendimento: até 2 porções",
+    "notes": [],
+    "imageFile": "iridium-08.jpeg",
+    "imageSha256": "8dc308048a01ac3c411c95a4c90240281766b38b6d0e5e3ae39de2fecb32072a"
+  },
+  {
+    "id": "iridium-09",
+    "name": "Brigadeiro de colher",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche",
+      "Sobremesa"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 xícara (chá) de biomassa de banana verde",
+      "2 colheres (sobremesa) de adoçante xylitol",
+      "1 colher (sobremesa) de óleo de coco",
+      "1 xícara (chá) de chocolate 70% cacau picado ou em gotas",
+      "1 xícara (chá) de leite de coco",
+      "1 pitada de sal marinho"
+    ],
+    "steps": [
+      "Coloque numa panela média a biomassa, o adoçante, a ghee e mexa sem parar, em fogo médio, até obter a consistência do leite condensado.",
+      "Acrescente o chocolate e continue mexendo até derretê-lo todo. Acrescente o leite de coco e a pitada de sal e mexa até começar a desgrudar da panela.",
+      "Deixe esfriar e está pronto.",
+      "Rendimento: 4 porções"
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 14,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 178 calorias\nCarboidratos: 14,3g\nProteína: 3g\nGordura: 12g",
+    "yieldLabel": "Rendimento: 4 porções",
+    "notes": [],
+    "imageFile": "iridium-09.jpeg",
+    "imageSha256": "e7bb50d6516919cb8577b620bd689b8d146090bb20ceede6566bff5f9a493e72"
+  },
+  {
+    "id": "iridium-10",
+    "name": "TRUFA",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche",
+      "Sobremesa"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 colher (sopa) de farelo de aveia",
+      "1 colher (sopa) de açúcar mascavo",
+      "1 colher (chá) de cacau em pó",
+      "1 colher (sopa) de pasta de amendoim sem açúcar"
+    ],
+    "steps": [
+      "Misture todos os ingrediente e mexa bem, até formar uma mistura homogênea. Modele em bolinhas e passe no cacau.",
+      "Rendimento: 2 porções"
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 15,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 149 calorias\nCarboidratos: 16g\nProteína: 6g\nGordura: 7g",
+    "yieldLabel": "Rendimento: 2 porções",
+    "notes": [],
+    "imageFile": "iridium-10.jpeg",
+    "imageSha256": "b6842830d2c8023acb41a31edf832d5852784b3d6f8e2d7f46099b653dcaade9"
+  },
+  {
+    "id": "iridium-11",
+    "name": "Crepioca de chocolate",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche",
+      "Sobremesa"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 ovo",
+      "1 clara de ovo",
+      "1 colher (sopa) de goma de tapioca pronta",
+      "Adoçante a gosto",
+      "1 colher (sopa) de cacau em pó"
+    ],
+    "steps": [
+      "Misture bem todos os ingredientes e coloque em um frigideira anti aderente. Espalhe bem na frigideira e leva ao fogo de baixo à médio. Asse até dourar e vire.",
+      "Tire do fogo, enrole na forma de charuto. Se desejar faça uma cobertura com Whey Protein, assim sua receita fica hiperproteica."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 16,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 164 calorias\nCarboidratos: 13g\nProteína: 12g\nGordura: 7g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-11.jpeg",
+    "imageSha256": "a8d290833d8f87333d424d9802a2cde0c3e2c7fa1de6b9675af825532d75ebae"
+  },
+  {
+    "id": "iridium-12",
+    "name": "Shake hipercalórico",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 scoops de Whey Protein Concentrado",
+      "2 copos de leite integral",
+      "1 banana",
+      "½ xícara de aveia",
+      "Gelo opcional"
+    ],
+    "steps": [
+      "Bater todos os ingredientes no liquidificador."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 18,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 648 calorias\nProteína: 72,5 g\nCarboidrato: 48 g\nGordura: 18,5 g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-12.jpeg",
+    "imageSha256": "ed1fd1ead06e8e352355ca5d7b8952187d70831ab81155ce95c51d98d12e35bd"
+  },
+  {
+    "id": "iridium-13",
+    "name": "Sanduíche de frango com abacate",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 fatias de pão de forma",
+      "1 limão",
+      "1 peito de frango",
+      "1 abacate maduro",
+      "½ dente de alho",
+      "Salsinha ou coentro picadinho",
+      "1 colher (sopa) de maionese",
+      "Folhas de alface ou rúcula à vontade"
+    ],
+    "steps": [
+      "Tempere o frango com sal e pimenta do reino, coloque-o em uma panela ou grill. Deixe-o grelhar e vai virando até ficar bem dourado. Esprema o suco de meio limão na panela e tampe). Deixe o frango cozinhando até ficar bem cozido e dourado dos dois lados. Quando estiver no ponto, retire o frango do fogo e deixe descansando.",
+      "Abra o abacate e retire toda a polpa, colocando-a em uma tigela. Tempere com uma pitada de sal, a pimenta do reino, a salsinha, o alho e o suco da outra metade do limão. Misture tudo com um garfo, esmagando um pouco do abacate e por fim adicione a maionese.",
+      "Você pode tostar o pão na torradeira ou sanduicheira, depois espalhe quase toda a maionese de abacate sobre uma fatia do pão e o restante na outra. Coloque o frango em pedaços pequenos sobre a maionese e por uma o alface e cubra com a outra fatia do pão."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 19,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 716 calorias\nCarboidrato: 37,5 g\nProteína: 71 g\nGordura: 31,4 g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-13.jpeg",
+    "imageSha256": "0fae507f46c32d0d977d1bf9b16f486ebd2ebf47eaeefc0c5a8580744985a6b8"
+  },
+  {
+    "id": "iridium-14",
+    "name": "X-Salada Bacon Egg",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "220g de patinho moído",
+      "1 ovo",
+      "3 fatias de queijo mussarela",
+      "1 pão de hambúrguer",
+      "2 fatias de tomate",
+      "2 fatias de bacon",
+      "Alface",
+      "1 colher (sopa) de maionese"
+    ],
+    "steps": [
+      "Tempere a carne com sal, misture e deixe em formato de hambúrguer. Coloque em uma frigideira e deixe por alguns minutos. Vire o hambúrguer e quando estiver quase pronto, coloque as fatias de queijo. Quando o hambúrguer estiver bem cozido e a mussarela derretida, retire do fogo.",
+      "Enquanto isso, em outra panela, frite um ovo e as fatias de bacon em uma panela antiaderente. Coloque o hambúrguer sobre uma fatia do pão já com maionese, coloque o ovo, o bacon, alface, tomate e está pronto."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 20,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 850 calorias\nCarboidratos: 31 g\nProteínas: 89 g\nGorduras: 44 g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-14.jpeg",
+    "imageSha256": "a790a1b19e838fab21e092f626f61225458393fe501a41af75a935e96ebc4b0b"
+  },
+  {
+    "id": "iridium-15",
+    "name": "Mingau proteico de aveia",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "12 claras de ovo",
+      "1 gema",
+      "½ xícara de farinha de aveia",
+      "Canela em pó à gosto"
+    ],
+    "steps": [
+      "Bata todos os ingredientes no liquidificador e coloque a misture em uma uma panela com fogo alto. Aqueça e mexa com uma colher até que a misture ganhe consistência, tire do fogo e aproveite a sua refeição."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 21,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 440 calorias\nCarboidratos: 31 g\nProteínas: 58 g\nGorduras: 9 g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-15.jpeg",
+    "imageSha256": "0eba091947634179772db7fd9bb678601ab425110a3902ff2f640f1a7d2cfdcb"
+  },
+  {
+    "id": "iridium-16",
+    "name": "Barra de proteína",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 xícaras (de chá) de aveia",
+      "1/2 xícara (de chá) de pasta de amendoim",
+      "4 scoops de whey protein (qualquer sabor)",
+      "1 colher (sopa) de linhaça moída",
+      "1/2 xícara (de chá) de água"
+    ],
+    "steps": [
+      "Misture todos os ingredientes em uma tigela até ficar uma mistura uniforme.",
+      "Coloque a mistura numa assadeira forrada com papel manteiga. Com o auxílio de uma espátula pressione e espalhe até a superfície ficar lisa. Coloque a forma no congelador por aproximadamente 30 minutos. Retire, corte as barrinhas e mantenha na geladeira."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 22,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 1.823 calorias\nProteínas: 120 g\nCarboidratos: 140 g\nGorduras: 87 g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-16.jpeg",
+    "imageSha256": "587ab0388eb35195fca0343b1ce800b0ac7ededd8f53fdf1e1882f93a8ccfd07"
+  },
+  {
+    "id": "iridium-17",
+    "name": "Hiperproteica: salgado maromba",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "100 g de ricota fresca cortada em cubos",
+      "50 g de couve flor cozida em pequenos buquês*",
+      "1 colher (sopa) de farinha de linhaça",
+      "1 clara",
+      "Sal à gosto",
+      "Orégano a gosto",
+      "Tabasco a gosto",
+      "Cebolinha a gosto",
+      "1 gema",
+      "1 colher (chá) de parmesão ralado *Pode substituir por cenoura, brócolis, batata doce, aipim, abóbora."
+    ],
+    "steps": [
+      "Pré-aqueça o forno a 250ºC. Bata em um processador ou liquidificador todos os ingredientes, até ficar com uma textura pastosa. Divida a massa em dois pedaços e molde no formato desejado.",
+      "Em cima do primeiro pedaço, recheie com palmito e azeitonas, ricota ou o que preferir, e sobre o recheio coloque a outra metade da massa, fechando as bordas do salgado direitinho.",
+      "Pincele o salgado com gema, e unte uma forma para não grudar. Coloque-o na forma, salpique um pouco de parmesão por cima e leve ao forno.",
+      "Gratine por uns 20 minutos, até dourar e ficar com a casquinha crocante. Verifique se ele não está cru por dentro e retire do forno."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 24,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 456 calorias\nCarboidrato: 16g\nProteína: 34g\nGordura: 27g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-17.jpeg",
+    "imageSha256": "b1dbd1cee375e9a2d1d00ffd981964c4802939e806b9540e353b19e340131f98"
+  },
+  {
+    "id": "iridium-18",
+    "name": "Hiperproteica: hambúrguer de Grão de Bico",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 1/2 xícara (chá) de grão de bico cozido e amassado",
+      "1 dente de alho picado",
+      "1/2 xícara (chá) de cebola picada",
+      "1/2 xícara (chá) de salsinha picada",
+      "1 colher (sopa) de orégano desidratado",
+      "1 colher (sopa) de suco de limão",
+      "Farinha de trigo integral ou aveia em flocos finos ou farinha de arroz para dar liga (aproximadamente 1/2 xícara)"
+    ],
+    "steps": [
+      "Em uma panela em fogo médio, coloque um fio de azeite e refogue o alho e a cebola até ficarem levemente dourados.",
+      "Acrescente o grão de bico, tempere, misture bem, refogue por cerca de 3 minutos e deixe esfriar.",
+      "Quando estiver mais frio, adicione farinha de trigo integral, a aveia em flocos finos ou farinha de arroz aos poucos. Misture até obter uma massa modelável.",
+      "Modele hambúrgueres, coloque sobre papel manteiga e leve ao freezer por uma hora, para ficarem mais firminhos na hora de grelhar.",
+      "Espalhe um fio de azeite em uma frigideira antiaderente e grelhe os hambúrgueres em fogo médio até ficarem levemente dourados dos dois lados.",
+      "Para virar, espere ficarem bem douradinhos, para não desmancharem."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 25,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 567 calorias\nCarboidrato: 75g\nProteína: 28g\nGordura: 12g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-18.jpeg",
+    "imageSha256": "0a1e7c5953690475815a544c9005f7e5b2ecd9e202489c21ccd58b028758a5ac"
+  },
+  {
+    "id": "iridium-19",
+    "name": "Hipercalórica: Kibe",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 xícara e meia (chá) de trigo para quibe",
+      "1 xícara (chá) de proteína de soja texturizada",
+      "1/2 xícara (chá) de aveia em flocos",
+      "1 xícara (chá) de lentilha",
+      "3 dentes de alho",
+      "1 cebola média",
+      "5 colheres (sopa) de azeite",
+      "1 colher (sopa) de hortelã picada",
+      "1 colher (sopa) de orégano",
+      "1 xícara (chá) de cheiro verde picado",
+      "Sal a gosto"
+    ],
+    "steps": [
+      "Hidrate o trigo para quibe em 3 xícaras de chá de água fervente por cerca de uma hora ou até ele ficar macio.",
+      "Hidrate também a proteína de soja texturizada e coloque em uma vasilha a aveia em flocos, adicionando ½ xícara (de chá) de água. Misture e deixe descansar.",
+      "Coloque a lentilha em uma panela com água e tempere com uma pitada de sal, deixe ferver até ela ficar macia.",
+      "Enquanto isso, pique o alho e a cebola em pedaços pequenos, escorra e lave a proteína de soja, escorrendo também a água que sobrou da lentilha. Em uma panela, coloque o azeite e refogue o alho até dourar. Em seguida acrescente a cebola, a lentilha e refogue.",
+      "Adicione a proteína de soja, e tempere com sal, hortelã, orégano e com o cheiro verde picado. Misture bem e adicione a mistura de aveia com água e o trigo. Tempere com sal a gosto.",
+      "Coloque a mistura em uma forma e leve para assar em forno médio pré aquecido por 30 minutos ou até dourar."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 26,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 2080 calorias\nCarboidratos: 263g\nProteína: 104g\nGordura: 68g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-19.jpeg",
+    "imageSha256": "993f2b43ede290a1900ff4a058a25b111dbdd35328b52a90de554278da24f223"
+  },
+  {
+    "id": "iridium-20",
+    "name": "Hipercalórica: hamburgão de forno",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "Massa:",
+      "250 ml de água morna",
+      "1 copo de farinha de trigo integral",
+      "2 copos de farinha de trigo branca",
+      "1 sachê de fermento biológico seco (10g)",
+      "3 colheres (sopa) de óleo vegetal",
+      "1 colher (sopa) de linhaça triturada",
+      "1/2 colher (sopa) de sal",
+      "1/2 colher (sopa) de açúcar Recheio:",
+      "1 copo de proteína texturizada de soja",
+      "1 copo de água quente",
+      "4 colheres de sopa de farinha de trigo branca",
+      "1 colher de sopa de azeite extra virgem",
+      "Temperos à gosto: sal, curry, salsinha e cebolinha",
+      "1 tomate sem sementes"
+    ],
+    "steps": [
+      "Massa: Coloque a água morna em uma vasilha com o azeite, o sal, o açúcar, a linhaça e misture bem. Misture à parte o fermento com as farinhas e depois misture com o líquido até que a massa fique elástica e desgrude da mão (quanto mais grudenta a massa ficar, mais os pãezinhos crescerão, porém a massa deve desgrudar o suficiente da mão para embrulhar o recheio).",
+      "Deixe a massa descansando coberta com um pano.",
+      "Hambúrguer: Aqueça a água até quase ferver e hidrate a proteína texturizada de soja, por aproximadamente 15 minutos, até ela absorver bem a água. Escorra e retire o máximo do excesso de água apertando com as mãos. Acrescente o azeite, o sal, o curry, a salsinha e a cebolinha bem picadinhas e aos poucos a farinha de trigo até que seja possível moldar os hambúrgueres (acerte a medida da farinha, se necessário). Faça bolinhas de mesmo tamanho com a mistura e molde os hambúrgueres. Disponha em um tabuleiro e distribua sobre o hambúrguer fatias de tomate sem semente.",
+      "Para montar: Faça bolinhas com a massa que estava descansando e abra na palma da mão, coloque um hambúrguer com tomate, embrulhe puxando as laterais da massa e disponha sobre uma forma untada. Deixe a massa recheada descansar novamente em local quente (se o tempo estiver frio, pré aqueça o forno e deixe o pão descansar lá, mas sem assar). E por fim, asse em forno médio pré-aquecido, cerca de 30 minutos, até dourar.",
+      "O hambúrguer também pode ser preparo e consumido a parte. Vegetarianos, podem utilizar o pão comum para montar seu hambúrguer."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 27,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 1600 calorias\nCarboidratos: 205g\nProteína: 64g\nGordura: 57g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-20.jpeg",
+    "imageSha256": "f86eafda63c692795a22a20761da2c2b2a809d8d60db974622e93b036b74e78d"
+  },
+  {
+    "id": "iridium-21",
+    "name": "Low Carb: Guacamole",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "½ unidade abacate maduro",
+      "½ unidade limão",
+      "3 colheres (sopa) de azeite",
+      "Sal à gosto",
+      "Temperos secos: alho granulado, cebola desidratada, pimenta calabresa, orégano"
+    ],
+    "steps": [
+      "Amasse o abacate com um garfo e tempere com o suco do limão, azeite e sal."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 28,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 490 calorias\nCarboidrato: 1g\nGordura: 27g\nProteína: 0g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-21.jpeg",
+    "imageSha256": "97b0f624133b22679be6c6eb1e59e97e37162f5546f082223727c4c3eef78b7a"
+  },
+  {
+    "id": "iridium-22",
+    "name": "Low Carb Vegana: salada de folhas e castanhas",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": true,
+    "kind": "green",
+    "ingredients": [
+      "4 colheres (sopa) vinagre de maçã",
+      "Sal e pimenta-do-reino a gosto",
+      "6 colheres (sopa) de azeite",
+      "1/2 maço de alface americana",
+      "1/2 maço de agrião",
+      "1/2 xícara de nozes picadas",
+      "1/2 xícara de castanha de caju picadas",
+      "1/2 xícara de castanha do pará picadas"
+    ],
+    "steps": [
+      "Em uma tigela pequena misture o sal, a pimenta e o vinagre. Adicione aos poucos o azeite enquanto bate tudo com um garfo até misturar bem. Reserve.",
+      "Distribua as folhas em uma saladeira e polvilhe com as nozes e as castanhas e depois regue com o molho."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 29,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 217\nCarboidratos: 50g\nProteína: 47g\nGordura: 198g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-22.png",
+    "imageSha256": "e61f5273748d3d1856998fcf2289679d6ffbffc8e541dc9663641a2fca46f6d2"
+  },
+  {
+    "id": "iridium-23",
+    "name": "Panqueca",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar",
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 ovo",
+      "1 colher (sopa) de farinha de castanha de caju, quinoa ou chia",
+      "1 colher (sopa) de creme de leite",
+      "1 colher (sopa) de queijo parmesão ralado (opcional)"
+    ],
+    "steps": [
+      "Bata todos os ingredientes em um liquidificador até ficar um creme homogêneo. Coloque a massa em uma frigideira em fogo baixo até ficar uma consistência firme. Vire, asse do outro lado e coloque o recheio de sua preferência."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 31,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 231 calorias\nCarboidratos: 5g\nGordura: 19g\nProteína: 11g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-23.jpeg",
+    "imageSha256": "6416152b98b5dd8d483d9066b45ff282284fe793e7f25414c81726a365477b3d"
+  },
+  {
+    "id": "iridium-24",
+    "name": "Pão Cetogênico",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 ovo",
+      "1 colher (sopa) de farinha de coco"
+    ],
+    "steps": [
+      "Bata um ovo com ajuda de um garfo até ficar homogêneo, acrescente a farinha de coco e misture bem. Leve ao microondas por aproximadamente um minuto e meio – até formar uma casca resistente, porém ainda crua.",
+      "Retire do microondas e coloque essa massa na frigideira e deixe lá até ficar crocante e encerrar o cozimento."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 32,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 134 calorias\nCarboidratos: 2g\nGordura: 11g\nProteína: 6g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-24.jpeg",
+    "imageSha256": "e0f61b0a986f29ff3fa438dcb865457b060cc9e3fe5d97e4ff2976b57985cc95"
+  },
+  {
+    "id": "iridium-25",
+    "name": "Tartar de Salmão com Guacamole",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "Ingredientes do Tartar de Salmão:",
+      "300g de salmão fresco",
+      "2 colheres (sopa) de azeite extra virgem",
+      "1 colher (chá) de mostarda Dijon",
+      "Suco de 1 limão",
+      "Pimenta-dedo-de-moça à gosto",
+      "Sal e pimenta-do-reino à gosto Ingredientes do Guacamole:",
+      "50g de polpa de abacate maduro e firme",
+      "20g de cebola roxa picada",
+      "10g de tomate sem pele e sem sementes",
+      "Pimenta-dedo-de-moça à gosto",
+      "Suco de 1 limão",
+      "Folhas de coentro fresco à gosto",
+      "Sal e pimenta-do-reino à gosto"
+    ],
+    "steps": [
+      "Modo de preparo do Tartar de Salmão: Corte o salmão em cubinhos pequenos e a pimenta dedo-de-moça em pedacinhos bem pequenos. Misture com os outros ingredientes e reserve.",
+      "Modo de preparo do Guacamole: Pique o abacate, a cebola roxa e o tomate em cubos. Coloque a pimenta cortada em pedaços bem pequenos, o coentro e misture delicadamente todos os ingredientes, para não desmanchar todo o abacate.",
+      "Montagem do Tartar de Salmão: Coloque o tartar em um recipiente (taça) e coloque um pouco da guacamole por cima.",
+      "Sirva frio"
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 33,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 981 calorias\nCarboidratos: 5g\nGordura: 71g\nProteína: 73g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-25.jpeg",
+    "imageSha256": "61ef9a63346c6de3a3cd0d1d605f10afa022a50a0d010936d505bdb8ffac5f9d"
+  },
+  {
+    "id": "iridium-26",
+    "name": "Arroz de couve flor",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 maço médio de couve flor",
+      "1 colher (sopa) de manteiga clarificada ou ghee",
+      "Sal marinho à gosto",
+      "Pimenta-do-reino à gosto"
+    ],
+    "steps": [
+      "Cozinhe bem a couve flor no vapor, separe somente as flores e pique-as bem.",
+      "Aqueça a manteiga em uma panela e refogue a couve flor bem picadinha. Corrija o sal e pimenta e já estará pronto."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 34,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 234 calorias\nCarboidratos: 30g\nGordura: 11g\nProteína: 11g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-26.jpeg",
+    "imageSha256": "702ac6766f2ceffbf00b6f4b7b2dd03a49776fa33968fcea919e0cbaf0538269"
+  },
+  {
+    "id": "iridium-27",
+    "name": "Bauru",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 ovo",
+      "2 colheres (sopa) de requeijão tradicional",
+      "1 colher (chá) de fermento em pó",
+      "1 fatia de queijo mussarela",
+      "1 fatia de peito de peru",
+      "2 fatias médias de tomate",
+      "1 pitada de orégano"
+    ],
+    "steps": [
+      "Para fazer o “pão”, misture bem o ovo e duas colheres de requeijão, depois acrescente o fermento em pó à mistura.",
+      "Unte com azeite um recipiente quadrado, coloque a mistura e leve ao microondas por cerca de 2 minutos e meio. Retire do microondas, desenforme, corte pela metade e recheie com a mussarela, o peito de peru, o tomate e o orégano ou o recheio que preferir. Depois, coloque na sanduicheira para finalizar seu lanche."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 35,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 430 calorias\nCarboidratos: 7g\nGordura: 31g\nProteína: 28g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-27.jpeg",
+    "imageSha256": "2d55c4d208ffe4b94f02170c2bad7041d9b03c4f007b2d18e48642c16e2133cf"
+  },
+  {
+    "id": "iridium-28",
+    "name": "Massa de pizza de frigideira",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "3 ovos",
+      "300g de peito de frango desfiado cozido",
+      "1 colher (sopa) azeite de oliva",
+      "Sal à gosto",
+      "Pimenta-do-reino à gosto"
+    ],
+    "steps": [
+      "Misture todos os ingredientes e bata no liquidificador. Espalhe a massa em uma forma de pizza e asse por cerca de 10 minutos em forno alto. Vire a massa e asse do outro lado. Depois, recheie como preferir."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 36,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 663 calorias\nCarboidrato: 3g\nGordura: 34\nProteína: 87g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-28.jpeg",
+    "imageSha256": "65e8400d94f3315229cf94e6845d63eef92cdc43051f3a79fc5be97525e577bc"
+  },
+  {
+    "id": "iridium-29",
+    "name": "Torta de maçã de frigideira",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 ovo",
+      "Meia maçã",
+      "1 colher (sopa) farinha de amêndoa",
+      "2 colheres (sopa) creme de leite",
+      "1 colher (chá) fermento em pó",
+      "Adoçante à gosto",
+      "Canela à gosto",
+      "Manteiga ghee ou óleo de coco para untar"
+    ],
+    "steps": [
+      "Descasque a maçã, corte em fatias finas e reserve. Bata o ovo, a farinha, o creme de leite e o fermento com o mixer ou garfo.",
+      "Unte uma frigideira antiaderente com manteiga, retirando o excesso com papel toalha, e pré-aqueça. Coloque o adoçante e a canela na frigideira, espalhe as maçãs e a massa por cima de tudo.",
+      "Tampe a frigideira e cozinhe em fogo baixo por aproximadamente 7 minutos ou até assar. Desenforme e polvilhe canela por cima."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 37,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": "VALOR NUTRICIONAL:\nCalorias: 317 calorias\nCarboidrato: 12g\nGordura: 23g\nProteína: 11g",
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-29.jpeg",
+    "imageSha256": "02e47eb25cabb5264e7c68170e0d3b9f4ad0107a91e61db7c496c2bc9f21c88e"
+  },
+  {
+    "id": "iridium-30",
+    "name": "Torta de atum",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "Ingredientes da Massa:",
+      "1 xícara de farinha de trigo integral (ou outra de sua preferencia);",
+      "1 xícara de whey protein sem sabor;",
+      "2 ovos inteiros + 2 claras;",
+      "1 1/2 xícara de “leite” de soja (ou outro de sua preferência);",
+      "1/3 xícara (aprox. 100ml) de óleo de coco ou girassol;",
+      "1 colher (sopa) de fermento em pó Ingredientes do Recheio:",
+      "1 lata de atum light",
+      "1 ovo cozido",
+      "1 xícara de ervilhas cozidas",
+      "1 tomate picado",
+      "2 colher (sopa) de cottage ou ricota",
+      "1/2 cebola picada + temperos a gosto"
+    ],
+    "steps": [
+      "Bata todos os ingredientes da massa no liquidificador; despeje metade da massa numa assadeira untada ou de silicone. Junte os ingredientes do recheio, misture bem e espalhe sobre a massa.",
+      "Despeje a outra metade da massa e leve ao forno pre aquecido 230º por aproximadamente 25 minutos."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 39,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-30.jpeg",
+    "imageSha256": "59e68fc0372457d9f02bb593bf3693a95dfb0804a9e9c5b12804d2fc98a4123c"
+  },
+  {
+    "id": "iridium-31",
+    "name": "Brigadeiro proteico",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche",
+      "Sobremesa"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "60 gramas de whey protein",
+      "3 colheres (sopa) de leite de coco light",
+      "1 colher (sopa) de pasta de amendoim"
+    ],
+    "steps": [
+      "Misture todos os ingredientes até ficar uma massa homogênea e enrole.",
+      "Rale um pouco de chocolate amargo e jogue por cima, como se fosse o granulado ou passar na canela."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 40,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-31.jpeg",
+    "imageSha256": "fc9ad81a0c2b07c0186faa313b1d50bfdbab7bfdacfcc30a571abe53c3812351"
+  },
+  {
+    "id": "iridium-32",
+    "name": "Hambúrguer de atum",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 lata de atum",
+      "30g de salsinha e cebolinha",
+      "30g de cebola à gosto",
+      "1 dente de alho pequeno",
+      "40g de cenoura",
+      "6g de amaranto",
+      "1 colher (sobremesa) de mostarda dijon",
+      "25g de pasta de tofu defumado"
+    ],
+    "steps": [
+      "Passar a cebola, o alho, a cenoura, a salsinha e a cebolinha no processador até formar uma pasta.",
+      "Colocar esta mistura numa tigela e acrescentar todos os demais ingredientes. Fazer os hambúrgueres."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 41,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-32.jpeg",
+    "imageSha256": "bafeca546e86af4096f0b630611b584c825468c2004fc1445173483aa18f02be"
+  },
+  {
+    "id": "iridium-33",
+    "name": "Vitamina de banana proteica",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 banana média congelada",
+      "½ pote de iogurte natural desnatado sem sabor e sem açúcar",
+      "30g de whey protein concentrado do sabor da sua escolha",
+      "1 colher pequena de canela",
+      "1 colher pequena de café solúvel",
+      "400ml de leite desnatado"
+    ],
+    "steps": [
+      "Coloque todos os ingredientes no liquidificador. Você pode colocar um pouco se leite se achar que a vitamina ficou muito grossa."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 42,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-33.jpeg",
+    "imageSha256": "622c26fd3e84a27d2e81f5fd92c8b1ef5e8c768da7ebc9341e60d3334f295961"
+  },
+  {
+    "id": "iridium-34",
+    "name": "Hambúrguer",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "500 gramas de carne vermelha moída (de preferência patinho)",
+      "1 ovo inteiro",
+      "½ cebola picada",
+      "2 dentes de alho picados",
+      "Sal, pimenta e outros temperos à gosto"
+    ],
+    "steps": [
+      "O preparo do hambúrguer não poderia ser mais simples. Misture todos os ingredientes em um pote até que a mistura fique homogênea, e coloque-os em um frigideira anti-aderente."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 43,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-34.png",
+    "imageSha256": "e61f5273748d3d1856998fcf2289679d6ffbffc8e541dc9663641a2fca46f6d2"
+  },
+  {
+    "id": "iridium-35",
+    "name": "Hambúrguer de frango com aveia",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "500g de peito de frango desfiado",
+      "1 ovo inteiro",
+      "1 cebola ralada",
+      "3 colheres (sopa) de aveia em flocos",
+      "Sal e pimenta à gosto",
+      "Salsa picada à gosto"
+    ],
+    "steps": [
+      "Misture todos os ingredientes até que a forme uma massa homogênea. Molde bolinhos com as mãos e em seguida coloque-os em um frigideira anti-aderente."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 44,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-35.jpeg",
+    "imageSha256": "3fe1eae5edd869b517271a882c0d2511a9e2f9b4da436b42d247bc54d8f28d6a"
+  },
+  {
+    "id": "iridium-36",
+    "name": "Escondidinho de batata doce",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "Ingredientes do Purê:",
+      "3 batatas-doces",
+      "1 colher (sopa) de azeite",
+      "2 colheres (sopa) de cebola picada",
+      "1 dente de alho picado",
+      "Sal à gosto Ingredientes do Recheio:",
+      "1 colher (sopa) de azeite",
+      "1 cebola picada",
+      "2 dentes de alho picados",
+      "250g de frango desfiado",
+      "3 colheres (sopa) de molho de tomate caseiro",
+      "1 colher (sopa) cheia de queijo cottage"
+    ],
+    "steps": [
+      "Em uma frigideira refogue a cebola no azeite, depois acrescente o alho, o frango e refogue um pouco mais. Adicione o molho de tomate, cozinhe por 5 minutos e acrescente o cottage e os temperos.",
+      "À parte, cozinhe a batata em uma panela com água, o suficiente para cobri-la. Em seguida, refogue a cebola e o alho no azeite e acrescente a batata cozida amassada. Mexa tudo e tempere com sal.",
+      "Para montar, coloque uma parte do purê em um refratário e acrescente o recheio. Cubra com a outra metade do purê, e leve ao forno pré-aquecido a 180º C por cerca de 10 a 15 minutos, até dourar."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 45,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-36.jpeg",
+    "imageSha256": "c11d9d732db14d332bc9bdf301ec15477135f85df91847df58a652265a8a9f85"
+  },
+  {
+    "id": "iridium-37",
+    "name": "Panqueca",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar",
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "Ingredientes da Massa:",
+      "1 copo (250ml) de leite",
+      "2 ovos",
+      "1/2 xícara (chá) de aveia em flocos",
+      "4 colheres (sopa) de farinha de trigo integral",
+      "1 colher (sopa) de azeite ou óleo de sua preferência Ingredientes do Recheio:",
+      "Peito de peru defumado em fatias",
+      "Queijo cottage"
+    ],
+    "steps": [
+      "Bata todos os ingredientes da massa no liquidificador e leve ao fogo uma quantidade suficiente para cobrir uma frigideira.",
+      "O recheio é feito com uma fatia de peito de peru defumado e 1 colher de sopa de queijo cottage."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 46,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-37.jpeg",
+    "imageSha256": "c24e5b0d1d3ca6ea6cf7750dad02746c1fcf418a07e543937aaf7a1bb7f7d662"
+  },
+  {
+    "id": "iridium-38",
+    "name": "Ovos com lentilha",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "Para as lentilhas:",
+      "1 1/2 xícaras de lentilhas secas",
+      "1 colher (chá) de azeite virgem extra",
+      "1/4 xícara de salsa seca",
+      "1/2 colher (chá) de pimenta caiena",
+      "Sal e pimenta à gosto Para as ovos:",
+      "4 ovos",
+      "1 pimentão vermelho",
+      "Sal e pimenta à gosto"
+    ],
+    "steps": [
+      "Em uma frigideira, coloque o azeite e refogue as lentilhas, mexa por aproximadamente 5 minutos, depois adicione sal, pimenta caiena à frigideira e mexa por mais 5-7 minutos. Quando as lentilhas aparecem castanhas ao redor das bordas, adicione a salsa e remova da panela.",
+      "À parte, corte o pimentão em 4 anéis, depois remova as sementes, conforme necessário. Aqueça uma frigideira em fogo médio e coloque um pouco de óleo. Cozinhe pimentões por 3-4 minutos de cada lado até suavizar. Quebre um ovo no meio de cada pimenta e adicione sal e pimenta a cada ovo. Cozinhe até o topo for cozido.",
+      "Coloque em um prato a lentilha e o ovo por cima."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 47,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-38.jpeg",
+    "imageSha256": "0e49099c0694971e54a459e1a3da23cfb974ac8fa55ace3d6b538eb9d64ee585"
+  },
+  {
+    "id": "iridium-39",
+    "name": "Barra proteica de pasta de amendoim",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 colher de sopa de mel;",
+      "1 colher de sopa de açúcar mascavo;",
+      "2 colheres e meia de sopa de manteiga de amendoim cremosa;",
+      "1 colher de café de canela;",
+      "1 colher de linhaça;",
+      "1 colher de aveia."
+    ],
+    "steps": [
+      "Coloque o mel em uma panela e leve para aquecer no fogo. Adicione o açúcar e mexa bem até que o conteúdo comece a fazer bolhas.",
+      "Adicione a canela e mexa novamente. Coloque a pasta de amendoim e mexa bem até que tudo fique bem macio.",
+      "Desligue o fogo e adicione a aveia e a linhaça, misture e coloque em um tabuleiro limpo e frio. Depois de espalhar todo o conteúdo, leve para o congelador e deixe o frio agir de um dia para o outro.",
+      "No dia seguinte corte o conteúdo em pedaços quadrados e é só levar para seu lanche da tarde ou da noite!"
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 49,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-39.jpeg",
+    "imageSha256": "f7cddbb9a95243ccf720f75b1ba8b586aac5ad7b13788bec6ac7817a9f2089b2"
+  },
+  {
+    "id": "iridium-40",
+    "name": "Panqueca de pasta de amendoim",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "¾ de xícara de chá de farinha de trigo;",
+      "¼ de xícara de chá de farelo de trigo;",
+      "2 colheres de café de açúcar mascavo;",
+      "1 ovo;",
+      "2 colheres de sobremesa de pasta de amendoim (derretida com ajuda do micro-ondas);",
+      "¾ de xícara de chá de leite desnatado."
+    ],
+    "steps": [
+      "Em um recipiente a parte misture todos os ingredientes até fazer um conteúdo homogêneo. Aqueça uma frigideira no fogo e coloque, no centro dela, uma colher de sopa da mistura obtida.",
+      "Deixe o fogo agir. Quando bolhas começarem a aparecer na superfície da mistura, é sinal de que você deve pegar a espátula e virar a panqueca para preparar o outro lado.",
+      "Deixe aquecer um pouco e depois é só servir para comer com uma geleia bem maromba."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 50,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-40.jpeg",
+    "imageSha256": "8b482d5491b7ac1b82bc60cbbd651d6640b1edfaacae83eea4ad80fc88dccae0"
+  },
+  {
+    "id": "iridium-41",
+    "name": "Smoothie de pasta de amendoim",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 scoop de whey de chocolate ou baunilha;",
+      "1 banana congelada cortada em pedaços;",
+      "1 colher de sopa de pasta de amendoim;",
+      "1 copo de 200 ml de leite desnatado;",
+      "3 cubos de gelo grandes."
+    ],
+    "steps": [
+      "Pegue um liquidificador, misture todos os ingredientes e bata até conseguir a consistência de um smoothie. Depois de pronto, é só consumir. Isso é que é bebida de monstro: prática, rápida e saborosa!"
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 51,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-41.jpeg",
+    "imageSha256": "3685d1b047f5d6a151af919b28fe9454545a5c8ff69c6a24a4bf61cd0a857729"
+  },
+  {
+    "id": "iridium-42",
+    "name": "Brigadeiro de pasta de amendoim",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche",
+      "Sobremesa"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 colher de sopa de pasta de amendoim;",
+      "2 colheres de sopa de whey protein de chocolate;",
+      "1 colher de sopa de alfarroba em pó;",
+      "1 colher de cacau em pó;",
+      "2 colheres de água;",
+      "Castanhas trituradas para finalizar."
+    ],
+    "steps": [
+      "Coloque a pasta de amendoim em um copo com água e leve para o micro-ondas por um minuto.",
+      "Deixe esfriar um pouco e adicione a alfarroba, o cacau e o whey. Misture bem até conseguir a consistência de brigadeiro.",
+      "Faça os bolinhos e decore com as castanhas trituradas. Viu que é possível ser delicado na cozinha sendo também maromba?"
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 52,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-42.jpeg",
+    "imageSha256": "311fbdc47b092ce89dae50924ca7822ca69bd2af2adcda819a3020b989869240"
+  },
+  {
+    "id": "iridium-43",
+    "name": "Tradicional sanduíche de amendoim e geleia",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 colher de sopa de pasta de amendoim;",
+      "1 colher de sopa de geleia sem açúcar de sua fruta favorita;",
+      "2 fatias de pão de forma integral."
+    ],
+    "steps": [
+      "Pegue uma fatia do pão e espalhe a pasta de amendoim. Na outra fatia espalhe a geleia. Junte as duas fatias e seja feliz!"
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 53,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-43.jpeg",
+    "imageSha256": "f06d86ef25be09820c23a2cd680ca1547ed7105e8a85c63ac74d5962634f74d6"
+  },
+  {
+    "id": "iridium-44",
+    "name": "Granola de pasta de amendoim",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 colheres de sopa de pasta de amendoim;",
+      "2 colheres de sopa de mel;",
+      "1 colher de café de canela;",
+      "1 colher de café de extrato de baunilha;",
+      "1 xícara de chá de aveia."
+    ],
+    "steps": [
+      "Pré-aqueça o forno a 180ºC. Enquanto isso, vá espalhando a aveia em um tabuleiro limpo e deixe descansar.",
+      "Pegue a pasta de amendoim e o mel, coloque em uma tigela e leve para o micro-ondas em intensidade alta, por cerca de 20 segundos, até que a mistura derreta bem.",
+      "Adicione a canela e o extrato de baunilha no recipiente e misture bem. Adicione a aveia que você deixou descansar no tabuleiro, misturando tudo até que todos os grãos estejam bem cobertos da mistura de pasta e mel.",
+      "Coloque essa mistura de volta no tabuleiro inicial, espalhando bem, e leve para o forno, para assar por cerca de sete a oito minutos.",
+      "Vá observando se a granola está ganhando consistência crocante e uma cor mais escura. Quando estiver pronta é só servir e comer no seu lanche de maromba, com frutas, iogurte ou qualquer outro prato que você costuma adicionar granola."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 54,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-44.jpeg",
+    "imageSha256": "63ae7289b58f9b96bd18cf51b44afbf5f8726afa34b88f705e6a66ba03b72660"
+  },
+  {
+    "id": "iridium-45",
+    "name": "Salada Libanesa de Feijão Roxo e Limão",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "3 xícaras de feijão roxo cozido",
+      "½ xícara de grão de bico cozido",
+      "1 cebola roxa cortada em cubos",
+      "2 talos de aipo picados",
+      "1 tomate vermelho maduro picado",
+      "1 pepino descascado sem sementes e cortado em cubos",
+      "¾ xícara de salsa fresca picada",
+      "2 colheres de sopa de menta cortada",
+      "¼ xícara de azeite de oliva",
+      "¼ xícara de suco de limão",
+      "3 dentes de alho picados",
+      "¾ colher de chá de sal",
+      "Flocos de pimenta vermelha"
+    ],
+    "steps": [
+      "Lave bem todas as folhas, verduras e legumes, corte os vegetais da forma de sua preferência e junte todos os ingredientes em um pote ou bowl.",
+      "O feijão roxo contém uma boa quantidade de proteína, 1 xícara de feijão roxo cozido contém aproximadamente 15g de proteína. Em conjunto com o grão de bico, esta salada fornece uma boa quantidade de aminoácidos essenciais e colabora para o aumento do consumo de proteína.",
+      "Também contém uma boa quantidade de fibras alimentares e vitaminas e minerais, como Ferro, Cobre, Potássio e vitamina K. Além disso, o feijão roxo contém compostos ativos com ação antioxidante, como a isoflavona.",
+      "Um estudo feito com 30 homens e mulheres obesos em dieta para perda de peso, mostrou que o grupo que consumiu feijão 4 vezes por semana durante 2 meses teve maior perda de peso em relação ao grupo de pessoas que não consumiram feijão."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 56,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-45.jpeg",
+    "imageSha256": "5056e4bcbf3accf12e0a15d71be7ba6f4d1c5157e1ee321993fe0715fb1ea3b3"
+  },
+  {
+    "id": "iridium-46",
+    "name": "Salada Tailandesa",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "Um maço de alface picado",
+      "1 pimentão vermelho cortado em fatias finas",
+      "3 mangas maduras cortadas em cubos",
+      "1 xícara de cebolinha",
+      "½ xícara de amendoim torrado",
+      "¼ xícara de coentro",
+      "1 jalapeño sem semente e pele picado finamente"
+    ],
+    "steps": [
+      "Lave bem todas as folhas, verduras e legumes, corte os vegetais da forma de sua preferência e junte todos os ingredientes em um pote ou bowl.",
+      "Esta salada bem diferente, porém muito saudável! É uma salada com uma boa quantidade de gordura boa, pois contém amendoim e óleo de gergelim.",
+      "Para quem precisa aumentar o consumo de calorias e carboidratos, é uma boa opção de salada, pois além de conter uma boa quantidade de calorias, devido às gorduras boas, e contém uma boa quantidade de carboidrato, devido à presença de manga."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 57,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-46.jpeg",
+    "imageSha256": "0da1924f5b4c315f04ef0db32efabb397c3d90e7cb7c0fd75428ff6cd0c7200f"
+  },
+  {
+    "id": "iridium-47",
+    "name": "Salada de Grão-de-bico, Cenoura e Dill",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "3 xícaras de grão de bico cozido",
+      "2 xícara de cenoura ralada",
+      "Aipo/salsão picado",
+      "½ xícara de cebolinha",
+      "½ xícara de dill picado",
+      "½ xícara de semente de abóbora descascada e torrada",
+      "¼ xícara de azeite de oliva extra virgem",
+      "2 a 3 colheres (sobremesa) de vinagre de vinho tinto",
+      "1 dente de alho triturado",
+      "¼ colher de chá de sal",
+      "Pimenta preta moída na hora à gosto"
+    ],
+    "steps": [
+      "Lave bem todas as folhas, verduras e legumes, corte os vegetais da forma de sua preferência e junte todos os ingredientes em um pote ou bowl.",
+      "Esta salada é uma boa opção para quem quer aumentar o consumo de proteínas e/ou reduzir a fome, pois aumenta a sensação de saciedade.",
+      "A semente de abóbora que é rica em gorduras mono e poli insaturadas, as gorduras boas, fibras, vitaminas do complexo B e minerais como Zinco e Magnésio – muito importante para quem treina.",
+      "Além disso, o aipo, a cebolinha e o dill apresentam vitaminas e minerais, além de serem excelentes antioxidantes."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 58,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-47.jpeg",
+    "imageSha256": "e891aa23c8c1004377818811fc319e8d4b2a66279eb8bf827a357920c5f420ae"
+  },
+  {
+    "id": "iridium-48",
+    "name": "Salada de Tomate Seco, Espinafre e Quinoa",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "Ingredientes da Salada:",
+      "1 xícara de quinoa cozida",
+      "½ xícara de tomates secos picados",
+      "2 xícaras de espinafre ou rúcula picados grosseiramente",
+      "¼ xícara de amêndoas fatiadas",
+      "¼ colher de chá de azeite de oliva",
+      "Sal à gosto Ingredientes do Molho de limão:",
+      "2 colheres de sopa de azeite de oliva",
+      "2 colheres de suco de limão",
+      "2 dentes de alho picados",
+      "1 colher de chá de mostarda Dijon",
+      "½ colher de chá de sal",
+      "Pitada de flocos de pimenta vermelha",
+      "Pimenta preta moída à gosto"
+    ],
+    "steps": [
+      "Lave bem todas as folhas, verduras e legumes, corte os vegetais da forma de sua preferência e junte todos os ingredientes em um pote ou bowl.",
+      "Esta é uma salada leve, com poucas calorias, mas ainda possui uma boa qualidade nutricional.",
+      "A quinoa é uma boa fonte de proteína, gorduras boas (ômega-3), fibra alimentar, além de ser o grão que tem maior teor de ferro.",
+      "Já o espinafre, é um vegetal riquíssimo em vitaminas e minerais, como o Cálcio que é muito importante para quem pratica atividade física, uma vez que é necessário para contração muscular."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 59,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-48.jpeg",
+    "imageSha256": "b96c0eb8f292f4a96e489ea1d0afb3e69e76135c3b19ab6af1813a76fdfce8bb"
+  },
+  {
+    "id": "iridium-49",
+    "name": "Salada colorida de Beterraba, Cenoura, Quinoa e Espinafre",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "Ingredientes da Salada:",
+      "½ xícara de quinoa cozida",
+      "1 xícara de edamame cozido",
+      "¼ xícara de amêndoas ou sementes de abóbora",
+      "1 beterraba crua",
+      "1 cenoura",
+      "2 xícaras de espinafre ou rúcula picadas",
+      "1 abacate em cubos Ingredientes do Molho:",
+      "3 colheres de sopa de vinagre de maçã",
+      "2 colheres de sopa de suco de limão",
+      "2 colheres de sopa de azeite de oliva",
+      "1 colher de sopa de hortelã cortada ou coentro",
+      "2 colheres de mel",
+      "½ a 1 colher de chá de mostarda de Dijon",
+      "¼ colher de chá de sal",
+      "Pimenta preta moída à gosto"
+    ],
+    "steps": [
+      "Lave bem todas as folhas, verduras e legumes, corte os vegetais da forma de sua preferência e junte todos os ingredientes em um pote ou bowl.",
+      "Esta salada é muito rica, pois contém quinoa, espinafre, cenoura, beterraba e semente de abóbora, ou seja, contém uma boa quantidade de proteína, carboidratos e gorduras boas.",
+      "A beterraba é interessante para quem treina, pois contém nitrato. O Nitrato, por sua vez, aumenta os níveis de óxido nítrico que é o responsável pela vasodilatação, o que aumenta o fluxo sanguíneo para os músculos. Além disso, um estudo publicado no Journal do American College of Sports Medicine mostrou que, além de aumentar o fluxo de sangue nos músculos, o consumo do suco de beterraba pode aumentar isoladamente o poder de contração dos músculos.",
+      "Mas o principal ingrediente desta salada é o edamame, também conhecido como soja verde. Este grão vem ganhando espaço na alimentação dos brasileiros, pois o grão é uma excelente fonte de proteína, 17g em 100g de alimento aproximadamente, além de conter gorduras boas, como ômega 3, fibras e vitaminas e minerais."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 60,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-49.jpeg",
+    "imageSha256": "b251a201935bc56ddde54a4ef31b67a730a5bea4680c089994dce50258d5098c"
+  },
+  {
+    "id": "iridium-50",
+    "name": "Salada Grega de Brócolis",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "Ingredientes da Salada:",
+      "1 brócolis (cozido) cortados em pedaços pequenos",
+      "½ copo de tomates secos",
+      "¼ xícara de cebola roxa",
+      "¼ xícara de queijo feta (ou outro queijo de cabra) em fatias finas",
+      "¼ xícara de amêndoas fatiadas Ingredientes do Molho:",
+      "¼ xícara de azeite",
+      "2 colheres de suco de limão",
+      "1 colher de chá de mel",
+      "1 dente de alho triturado",
+      "½ colher de chá de orégano seco",
+      "½ colher de chá de mostarda Dijon",
+      "¼ colher de chá de sal à gosto",
+      "Uma pitada de pimenta vermelha"
+    ],
+    "steps": [
+      "Lave bem todas as folhas, verduras e legumes, corte os vegetais da forma de sua preferência e junte todos os ingredientes em um pote ou bowl.",
+      "Está cansado de comer brócolis cozido? Esta é uma salada leve que vai deixar o brócolis mais saboroso. O brócolis é muito consumido por quem pratica atividade física, pois tem um bom valor nutricional.",
+      "Além de ser rico em diversas vitaminas e minerais, este vegetal contém uma boa quantidade de proteína em relação à quantidade de carboidrato."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 61,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-50.jpeg",
+    "imageSha256": "310e0a7988cf092d783ced6046de5656599d68fdb2d36de37af2632ac6de2aa2"
+  },
+  {
+    "id": "iridium-51",
+    "name": "Salada de Batata-Doce",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 kg de batata doce cozida cortada em rodelas média",
+      "1 colher de sopa de sal",
+      "¼ xícara de azeite de oliva",
+      "½ xícara de salsinha fresca",
+      "½ xícara de cebolinha",
+      "2 colheres de sopa de suco de limão",
+      "2 colheres de chá de mostarda Dijon",
+      "2 dentes de alho triturado",
+      "Pimenta preta moída à gosto",
+      "3 talos de salsão picado"
+    ],
+    "steps": [
+      "Lave bem todas as folhas, verduras e legumes, corte os vegetais da forma de sua preferência e junte todos os ingredientes em um pote ou bowl.",
+      "Esta salada, além de ser uma é uma ótima opção para quem não aguenta mais comer batata-doce pura, cozida ou assada, e é uma ótima opção para o pré- treino!",
+      "A batata-doce é uma ótima fonte de carboidrato com baixo índice glicêmico, ou seja, ajuda a manter a energia por mais tempo durante o treino.",
+      "Além disso, a salada contém pimenta, que possui ação termogênica e antioxidante, azeite, que é rico em gorduras boas, e também salsinha, salsão e cebolinha, que são bastante nutritivos."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 62,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-51.jpeg",
+    "imageSha256": "43ef34009e939f1d53759cc7479263335dca873afa84bb55dc4d1505141037fd"
+  },
+  {
+    "id": "iridium-52",
+    "name": "Barra de proteína 1",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 xícaras (de chá) de aveia",
+      "1/2 xícara (de chá) de pasta de amendoim",
+      "4 scoops de whey protein (qualquer sabor)",
+      "1 colher (sopa) de linhaça moída",
+      "1/2 xícara (de chá) de água"
+    ],
+    "steps": [
+      "Misture todos os ingredientes em uma tigela até ficar uma mistura uniforme.",
+      "Coloque a mistura numa assadeira forrada com papel manteiga. Com o auxílio de uma espátula pressione e espalhe até a superfície ficar lisa.",
+      "Coloque a forma no congelador por aproximadamente 30 minutos. Retire, corte as barrinhas e mantenha na geladeira."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 64,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-52.jpeg",
+    "imageSha256": "6d62bd1151ef285d0361b5ad784606a43983d6fc6e73036bdd9684f9b6e87026"
+  },
+  {
+    "id": "iridium-53",
+    "name": "Barra de Proteína 2",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "4 scoops de whey de chocolate",
+      "3 à 4 claras de ovos batida",
+      "1 banana",
+      "1 batata doce cozida",
+      "¼ xícara (de chá) de coco sem açúcar",
+      "2 colheres (sopa) de cacau sem açúcar",
+      "Adoçante à gosto"
+    ],
+    "steps": [
+      "Amasse a banana e a batata doce e misture os outros ingredientes. Quando a mistura estiver homogênea, coloque na assadeira e leve ao forno por aproximadamente 10 minutos. O importante é não deixe a massa dura, então acompanhe enquanto ela estiver no forno.",
+      "Retire e corte no formato de barra. Guarde na geladeira."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 65,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-53.jpeg",
+    "imageSha256": "ca1051c151da9c2506f2ffa9817aa470e209fb608bad293dd3fb2b5ae3472196"
+  },
+  {
+    "id": "iridium-54",
+    "name": "Pasta de amendoim",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": true,
+    "vegan": true,
+    "kind": "green",
+    "ingredients": [
+      "Amendoim cru descascado e sem sal"
+    ],
+    "steps": [
+      "Coloque o amendoim em uma assadeira e leve ao forno à 200ºC por aproximadamente 15 minutos (o tempo certo é quando ele está torrado).",
+      "Deixe esfriar e coloque no processador. Primeiro o amendoim vai se transformar numa farofa, mas não se assuste: continue batendo e ele vai começar a liberar gordura, formando uma massa e, posteriormente, a pasta de amendoim.",
+      "Esse processo pode demorar um pouquinho, mas deixe no processador até ficar na consistência das pastas de amendoim que você conhece. Se quiser a pasta doce, use Stévia."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 66,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-54.jpeg",
+    "imageSha256": "240d0caa2db8a2428a514259cbf50685bf24eec3410c016ca7709b9497e6b57c"
+  },
+  {
+    "id": "iridium-55",
+    "name": "Barra de cereal 1",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "150 g de amêndoas cruas trituradas",
+      "200 g de tâmaras desidratadas",
+      "50 g de ameixa seca sem caroço",
+      "50 g de castanha do pará trituradas",
+      "100 g de coco fresco ralado",
+      "1 colher (sopa) de chia hidratada (1 colher de chia para 1 de água)",
+      "2 colheres (sopa) de mel"
+    ],
+    "steps": [
+      "Deixe a chia de molho na água, na proporção de 1 para 1 (1 colher de chia para 1 colher de água), por 10 minutos. Escoe a água e misture todos os ingredientes até formar uma massa moldável.",
+      "Coloque a massa em uma assadeira ou forma forrada com papel manteiga e pressione com uma colher para que fique uniforme.",
+      "Depois disso, leve à geladeira e deixe resfriar por mais ou menos 2 horas. Retire e corte."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 67,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-55.jpeg",
+    "imageSha256": "1a9b56741f060e6aea3f7c8d9c06f9bac74a02be550a6fb33681e8c5da8a80c2"
+  },
+  {
+    "id": "iridium-56",
+    "name": "Barra de Cereal 2",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 xícara (de chá) de aveia em flocos",
+      "2 claras",
+      "2 bananas secas picadas",
+      "1 banana amassada",
+      "3 colheres sopa de mel (ou adoçante)"
+    ],
+    "steps": [
+      "Misture todos os ingredientes, coloque a massa em uma assadeira, espalhando com uma colher. Diferente das outras receitas de barras, nesta você deve cortar as barrinhas antes de levar ao forno.",
+      "Coloque para assar em forno pré aquecido à 180ºC por 15 minutos, aproximadamente. Quando estiverem assadas, retire e deixe esfriar antes de tirar da forma."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 68,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-56.jpeg",
+    "imageSha256": "32ce576e8d7749ea142b3115ded7a4e054a75e4873f1ab4e6d0e60a7699242de"
+  },
+  {
+    "id": "iridium-57",
+    "name": "Maionese",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "3 ovos cozidos",
+      "1 limão",
+      "Meia xícara (de chá) de azeite",
+      "1 pitada de sal."
+    ],
+    "steps": [
+      "Cozinhe os ovos até solidificar o interior da gema. Retire a casca e coloque os ovos no liquidificador junto com o sal e o suco do limão. Em velocidade baixa, coloque o azeite aos poucos e observando a consistência. Quando estiver tudo homogêneo e com a consistência da maionese, está pronto."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 69,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-57.jpeg",
+    "imageSha256": "6fc90a53da8f138500f550674f4d68125b6e2cc405f6a17ee76feb3a7e3ace73"
+  },
+  {
+    "id": "iridium-58",
+    "name": "Nuggets caseiro",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "500 g de frango moído",
+      "4 fatias de pão de forma integral (esfareladas)",
+      "Meia cebola pequena",
+      "3 dentes de alho",
+      "Pimenta à gosto",
+      "Sal à gosto",
+      "Cebolinha à gosto",
+      "1 xícara (de chá) de farinha de milho",
+      "2 ovos"
+    ],
+    "steps": [
+      "Pique o alho e a cebola, misture com o frango e adicione os outros temperos (sal, cebolinha e pimenta) até formar uma mistura homogênea.",
+      "Molde bolinhos (no formato de nuggets) e empane passando primeiro no ovo e depois na farinha de milho. Pré-aqueça o forno à 200ºC por 10 minutos e asse por aproximadamente 30 minutos."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 70,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-58.jpeg",
+    "imageSha256": "4f0a9f79892b0a789ac3ebcf93baa9ea5ce508e99caaec1ac3360f52a3c3a39a"
+  },
+  {
+    "id": "iridium-59",
+    "name": "Frango crocante com molho de mostarda",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 ½ de aveia em flocos finos",
+      "½ xícara de cebola picada",
+      "1 colher de chá de sal",
+      "½ colher de chá de pimenta vermelha",
+      "2 ovos",
+      "1 colher de sopa de água",
+      "500g de peito de frango sem osso",
+      "Azeite de oliva à gosto Ingredientes para o molho:",
+      "1 colher de sopa de iogurte desnatado",
+      "1 colher de sopa de mostarda dijon",
+      "1 colher de chá de stévia"
+    ],
+    "steps": [
+      "Preaqueça o forno a 180°C. Coloque a aveia, a cebola, o sal e a pimenta em um refratário e misture bem. Em outra tigela, misture bem as claras e a água, até formar clara em neve.",
+      "Corte o frango em pedaços pequenos e mergulhe-os nas claras de ovos e depois passe na mistura da aveia. Pressione para baixo para ajudar na fixação do cereal. Depois, coloque o frango em uma assadeira e coloque um pouco de azeite sobre o frango (se o azeite for em forma de spray, melhor).",
+      "Coloque a assadeira no forno e asse a 180ºC por aproximadamente 10 minutos, vire o frango, jogue mais um pouco do cereal e deixe assar por mais 10 minutos, aproximadamente. Quando o frango estiver dourado, estará pronto.",
+      "Enquanto o frango estiver no forno, prepare o molho. Misture o iogurte, a mostarda e a Stevia."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 72,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-59.jpeg",
+    "imageSha256": "972a57b1be60ccf4f9baea36de5b822341e496792438a096562c66ba3edea236"
+  },
+  {
+    "id": "iridium-60",
+    "name": "Wrap de Frango",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 peitos de frangos cozidos picados ou desfiados",
+      "¼ de copo de maionese light",
+      "1 colher de sopa de vinagre branco",
+      "1 colher de sopa de açúcar",
+      "¼ xícara de aipo (salsão) picado",
+      "2 colheres de sopa de cranberries ou tomates secos sem óleo",
+      "2 colheres de sopa de nozes picada",
+      "2 xícaras de folhas de espinafre",
+      "2 pães de trigo integral no formato de folha (wrap)"
+    ],
+    "steps": [
+      "Misture o vinagre, a sucralose e a maionese, depois adicione o frango e o aipo e mexa bem. Acrescente os cranberries e as nozes até misturar. Depois coloque no pão o espinafre e em seguida a mistura com o frango e dobre na forma de wrap."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 73,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-60.jpeg",
+    "imageSha256": "a8f0cbe55fc651a6e038edb3e198e2475718dd9488c3d9dd216a97317e61829c"
+  },
+  {
+    "id": "iridium-61",
+    "name": "Frango Poá",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "120g de peito de frango em pedaços",
+      "60 ml de molho pesto",
+      "1 colher de sopa de azeite de oliva",
+      "¼ de pimentão vermelho",
+      "½ cebola cortada",
+      "1 dente de alho picado",
+      "½ xícara de vinho branco",
+      "1 xícara de tomates italianos",
+      "¼ xícara queijo parmesão",
+      "¼ xícara de queijo mussarela"
+    ],
+    "steps": [
+      "Regue o frango com o molho pesto. Aqueça o azeite em fogo médio e coloque o pimentão vermelho, a cebola e o alho, até que fiquem macios. Acrescente o frango na panela e deixe cozinhar até dourar (certifique-se que o mesmo não está cru por dentro). Quando o frango estiver bem cozido, adicione os tomates e o vinho branco e deixe cozinhar por 10 minutos em fogo baixo.",
+      "Por último, polvilhe o queijo parmesão e o queijo mussarela, cozinhando até que os queijos derretam."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 74,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-61.jpeg",
+    "imageSha256": "70d4c546c949300723bbb1c35c7333fc0f466e03e5ee4b94c18c02356a35cb1c"
+  },
+  {
+    "id": "iridium-62",
+    "name": "Frango thai",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "120g de peito de frango em pedaços médios",
+      "2 xícaras de macarrão integral cabelo de anjo cozido",
+      "1 xícara de cogumelos cortados",
+      "½ xícara de pimenta amarela cortada",
+      "1 colher de sopa de caldo de galinha",
+      "¼ de xícara de coentro picado",
+      "1 colher de chá de azeite",
+      "1 colher de sopa de manteiga de amendoim integral",
+      "1 colher de chá de açúcar",
+      "1 colher de sopa de pimenta em flocos"
+    ],
+    "steps": [
+      "Prepare o macarrão conforme instruções da embalagem. Em seguida, aqueça o azeite em uma frigideira em fogo médio e acrescente o frango e o cogumelo e deixe-os na panela por 5 minutos.",
+      "Enquanto isso, misture a pimenta amarela, o caldo de galinha, a manteiga de amendoim, a sucralose e os flocos de pimenta. Coloque esta mistura na panela e deixe cozinhar por mais 5 minutos. Quando o frango estiver bem cozido, estará pronto! Polvilhe o coentro sobre o prato pronto e sirva."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 75,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-62.jpeg",
+    "imageSha256": "3cd2c0a57025e8b895a3983158882865c777dd60461a374613c5fac86aceab6c"
+  },
+  {
+    "id": "iridium-63",
+    "name": "Espetinho de frango",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "200g de peito de frango cortado",
+      "1 colher de chá de alho picado ou em pó",
+      "1 colher de chá de gengibre",
+      "1 colher de chá de cebola ralada",
+      "1 colher de chá de coentro picado",
+      "1 colher de chá de páprica",
+      "1 colher de chá de pimenta moída",
+      "Sal à gosto",
+      "½ xícara de iogurte natural desnatado",
+      "2 colheres de sopa de limão"
+    ],
+    "steps": [
+      "Corte o frango em pedaços pequenos e coloque em um espeto.",
+      "Misture todas as especiarias e coloque sobre o frango deixando o frango bem temperado. Coloque os espetos em uma grelha ou no forno e deixe cozinhar cerca de 10 minutos de cada lado ou até que o frango esteja bem cozido e dourado.",
+      "Use o iogurte com limão para fazer o molho."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 76,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-63.jpeg",
+    "imageSha256": "c7ce71522e885d2bb7a88fc846bb40d80d1dd5e6626c8512e4a019ecf624169a"
+  },
+  {
+    "id": "iridium-64",
+    "name": "Frango à rolê",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 filés de frango",
+      "Sal e pimenta a gosto",
+      "1 fatia de mussarela",
+      "1 fatia de peito de peru",
+      "1 colher de chá de manjericão picado",
+      "1 colher de chá de manteiga",
+      "Azeite"
+    ],
+    "steps": [
+      "Tempere o frango com sal e pimenta do reino. Com um martelo de carne ou um rolo de macarrão, bata levemente sobre ele para que fique um pouco mais fino e mais extenso, e deixe descansar por 15 minutos na geladeira.",
+      "Enquanto isso, corte as fatias de queijo e de peito de peru ao meio. Retire o frango da geladeira, coloque um pedaço de queijo e outro de peru no centro do filé e distribua um pouco de manjericão por cima.",
+      "Enrole o frango em formato de charuto e feche as bordas. Você pode amarrar com barbante de cozinha ou usar palitos de dentes para manter fechado enquanto estiver no fogo.",
+      "Aqueça uma frigideira e derreta a manteiga em fogo baixo. Coloque umas gotinhas de azeite e comece a grelhar todos os lados do ‘charuto’ até que o frango esteja cozido. Deixe a frigideira um pouco tampada para cozinhar o frango por dentro e para o queijo derreter."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 77,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-64.png",
+    "imageSha256": "e61f5273748d3d1856998fcf2289679d6ffbffc8e541dc9663641a2fca46f6d2"
+  },
+  {
+    "id": "iridium-65",
+    "name": "Filé de frango assado com molho cremoso",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 filé de frango",
+      "Sal e pimenta a gosto",
+      "1 fiozinho de azeite",
+      "3 colheres de sopa de molho de tomate",
+      "1 ½ colher de sopa de requeijão ou de creme de leite",
+      "1 colher de sopa de queijo ralado grosso"
+    ],
+    "steps": [
+      "Tempere o filé de frango e deixe descansar na geladeira enquanto você pré-aquece o forno em 250° C e corte um pedaço de papel alumínio 3 vezes maior, mais ou menos, que o tamanho do frango.",
+      "Coloque o papel alumínio em uma assadeira com a parte brilhante para cima, espalhe um fiozinho de azeite para não grudar e o molho de tomate no meio dele.",
+      "Coloque o frango sobre o molho e o requeijão por cima. Salpique o queijo ralado e feche bem o papel alumínio, dobrando as pontas.",
+      "Leve ao forno por uns 20 minutos, abra a trouxinha de papel com cuidado, veja se o frango está bem cozido e estará pronto."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 78,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-65.jpeg",
+    "imageSha256": "d4c216fdc88e7ed1f5d43916687c6088ba97a9b1ee35471a071561eb0c0dd1af"
+  },
+  {
+    "id": "iridium-66",
+    "name": "Bolinho de frango com batata doce",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "100 g de frango cozido",
+      "50 g de batata doce (cozida) ou cenoura",
+      "Gema de ovo para pincelar"
+    ],
+    "steps": [
+      "Bata o frango e a batata doce cozida no liquidificador ou processador e adicione 2 colheres de sopa de água. Quando formar um patê, coloque-o em um refratário e leve ao congelador por pouco tempo apenas para facilitar a modelagem. Enquanto isso, bata as gemas de ovos e preaqueça o forno a 250ºC.",
+      "Faça os bolinhos, pincele a gema de ovo batida na parte de cima e leve ao forno por mais ou menos 20 minutos."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 79,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-66.jpeg",
+    "imageSha256": "ec3b87acc32717840dc26478952e1aeffb3d4e395808cbc62bb53afb90bbb07d"
+  },
+  {
+    "id": "iridium-67",
+    "name": "Torta Proteica",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "6 ovos;",
+      "6 fatias de peito de peru",
+      "Salsinha e cebolinha a gosto;",
+      "Sal a gosto."
+    ],
+    "steps": [
+      "Em uma forma de cupcakes, intercale as fatias de peito de peru e os ovos. Coloque uma pitada de sal, a salsinha e a cebolinha. Leve ao forno e asse até que o ovo esteja cozido."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 81,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-67.jpeg",
+    "imageSha256": "53595809a58c354d984d40530d82e0bcc3ad164e16a0016ce35b211f3e4b41ef"
+  },
+  {
+    "id": "iridium-68",
+    "name": "Panquecas proteicas de ovo e aveia",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar",
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "5 claras de ovo;",
+      "5 colheres (sopa) de aveia;",
+      "1 colher de chá de azeite;",
+      "Canela a gosto."
+    ],
+    "steps": [
+      "Espalhe o azeite na frigideira e aqueça-a no fogão. Enquanto a frigideira esquenta, bata todos os demais ingredientes no liquidificador. Em seguida, coloque um copo da mistura por vez na frigideira e espere de um a dois minutos, até que os dois lados da panqueca fiquem dourados."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 82,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-68.jpeg",
+    "imageSha256": "30704840068ba538ac5722287b9dc59e8ad1efcc1163dff83d6edfc42400d36c"
+  },
+  {
+    "id": "iridium-69",
+    "name": "Omelete Proteico",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar",
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "5 claras de ovo;",
+      "1 ovo inteiro;",
+      "1 colher (sopa) de leite;",
+      "1 tomate picado;",
+      "1 colher (sopa) de cebolinha;",
+      "1 fatia de queijo branco;",
+      "Sal a gosto;",
+      "Pimenta a gosto;",
+      "Azeite para untar a frigideira."
+    ],
+    "steps": [
+      "Bata uma das claras em neve e, em seguida, reserve-a. Depois, bata o restante dos ingredientes em um recipiente. Misture a clara batida em neve com os demais ingredientes e frite na frigideira untada com o azeite."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 83,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-69.jpeg",
+    "imageSha256": "59c39e14411cac0fc675b562b6812b85211e57054a0f0068f5810e06ad0653dd"
+  },
+  {
+    "id": "iridium-70",
+    "name": "Bolo de Proteínas",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "6 claras de ovo;",
+      "2 colheres (sopa) de suco natural de limão;",
+      "2 colheres (sopa) de coco ralado;",
+      "Adoçante líquido a gosto;",
+      "½ xícara de farinha de aveia;",
+      "1 pitada de sal;",
+      "1 pitada de extrato de baunilha."
+    ],
+    "steps": [
+      "Preaqueça o forno em uma temperatura de 160º. Bata as claras em neve e, em seguida, acrescente o suco de limão, o sal e o adoçante à mistura. Quando tudo formar uma massa homogênea, misture a farinha de aveia com cuidado. Coloque a massa em uma forma untada e polvilhe o coco ralado. Asse por cerca de 30 minutos.",
+      "Com essa dica de receitas proteicas com ovo você poderá ter uma alimentação com a quantidade ideal de proteínas sem enjoar de comer ovo cozido puro todos os dias."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 84,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-70.jpeg",
+    "imageSha256": "6e2af39de6817ee443e434db2e067601449bff449a9b4f9146f64fcdfd403551"
+  },
+  {
+    "id": "iridium-71",
+    "name": "Torta proteica de frango",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "Ingredientes da Massa:",
+      "250 g de batata doce cozida",
+      "2 ovos inteiros",
+      "3 claras",
+      "2 colheres de sobremesa de farinha de linhaça",
+      "2 colheres de sobremesa de farinha de berinjela",
+      "1 colher de sobremesa de chia",
+      "1 scoop de whey protein sem sabor",
+      "Temperos a gosto Ingredientes do Recheio:",
+      "400 g de frango cozido e desfiado",
+      "2 colheres de sopa de queijo cottage"
+    ],
+    "steps": [
+      "Amasse a batata doce com a ajuda de um garfo, depois acrescente os ovos, as clara, as farinhas, a chia e o whey – misturando todos muito bem. Em outra vasilha misture todos os ingredientes do recheio.",
+      "Use uma assadeira e coloque massa suficiente para cobrir o fundo. Acrescente o recheio e cubra com o restante da massa. Leve ao forno pré aquecido a 180ºC por aproximadamente 30 minutos."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 86,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-71.jpeg",
+    "imageSha256": "d8d7e9465c89d5a8662d154081127e00ad1aa0008e093981bf85104f130087e7"
+  },
+  {
+    "id": "iridium-72",
+    "name": "Panqueca Salgada",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 scoop de whey protein (baunilha ou sem sabor)",
+      "1 ovo inteiro",
+      "2 colheres de aveia em flocos finos",
+      "1 colher de farinha de linhaça",
+      "1/4 de xícara de leite semi desnatado",
+      "1/4 de água",
+      "Sal a gosto",
+      "Azeite"
+    ],
+    "steps": [
+      "Coloque todos os ingredientes no liquidificador, até que a massa ficar homogênea. Lembre-se que a massa tem que ficar bem líquida, caso fique grossa, coloque um pouco mais de leite. Em uma frigideira antiaderente, coloque um fio de azeite e deixe aquecer.",
+      "Depois, coloque uma concha da massa e espalhe por toda a circunferência da frigideira. Mantenha em fogo baixo até dourar e vire com cuidado. Esta é uma das receitas com whey protein em que você pode soltar a sua imaginação e escolher o seu recheio favorito."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 87,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-72.jpeg",
+    "imageSha256": "4840ccf55d17ca000dd6f1bc52104e0db9bc18ab0597edeb36614f8672515e5d"
+  },
+  {
+    "id": "iridium-73",
+    "name": "Coxinha",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "4 batatas doces médias",
+      "2 colheres de sopa de azeite",
+      "800g de frango",
+      "2 colheres de sopa de farinha de aveia",
+      "2 colheres de sopa de whey sem sabor",
+      "1 ovo",
+      "Aveia em flocos e/ou linhaça dourada para empanar"
+    ],
+    "steps": [
+      "Cozinhe as batatas, descasque e amasse com o azeite até formar um purê, acrescente o whey, a farinha de aveia para dar liga, e reserve o purê na geladeira por 20 minutos.",
+      "Em outra panela cozinhe o frango com os temperos de sua preferência e desfie.",
+      "Retire o purê da geladeira e acrescente 2 colheres do frango desfiado a mistura para dar mais consistência.",
+      "Faça pequenos “discos” com o purê de batata doce e vá recheando com o frango desfiado para formar as coxinhas (as coxinhas não devem ser grandes).",
+      "Por fim, passe as coxinhas no ovo, depois na aveia em flocos para empanar e leve ao forno por 40 minutos ou até dourar e pronto, agora é só saborear e curtir esta receita!"
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 88,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-73.jpeg",
+    "imageSha256": "a96c2914232933cbfbf7607e0fd47a92eec26e4803e6b269c0eaed170d7ef156"
+  },
+  {
+    "id": "iridium-74",
+    "name": "Pão de Mandioca com Whey",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Almoço",
+    "categories": [
+      "Almoço",
+      "Jantar",
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "400g de mandioca cozida amassada",
+      "2 ovos batidos",
+      "1 gema batida",
+      "2 tabletes de fermento para pão",
+      "2 colheres de sopa de manteiga sem sal em temperatura ambiente",
+      "1 colher de chá de sal",
+      "1 colher de chá de açúcar",
+      "2 xícaras de whey protein sem sabor (ou de baunilha)"
+    ],
+    "steps": [
+      "Desmanche o fermento no açúcar. Depois, acrescente o sal, os ovos, a manteiga e a mandioca, misture tudo e coloque o whey. Sove até a massa ficar macia e, para alcançar a consistência lisa, você pode adicionar mais whey quando necessário. Unte a forma para pão e adicione a massa.",
+      "Depois, asse tudo em forno pré-aquecido à 180ºC por aproximadamente 30 minutos, e pronto. Com essas quatro receitas, você pode matar a vontade de comer doce e massa durante a dieta, e ainda complementar seu treino com qualidade!"
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 89,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-74.png",
+    "imageSha256": "e61f5273748d3d1856998fcf2289679d6ffbffc8e541dc9663641a2fca46f6d2"
+  },
+  {
+    "id": "iridium-75",
+    "name": "Brigadeiro Proteico",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche",
+      "Sobremesa"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "100g de batata doce",
+      "30g de Whey Protein de chocolate",
+      "10g de cacau em pó ou 1 barrinha de proteína ralada para decorar"
+    ],
+    "steps": [
+      "Cozinhe a batata doce. Depois de cozida, amasse e acrescente o Whey Protein. Misture com as mãos até ficar bem homogêneo. Depois faça bolinhas e finalize passando no cacau em pó ou na barrinha ralada para decorar."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 91,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-75.jpeg",
+    "imageSha256": "3f2c7330f09bb3b75fdf76f45d5d0988c8ffa042fc05deea67f5fae2aa5b6b92"
+  },
+  {
+    "id": "iridium-76",
+    "name": "Panqueca de Whey com Aveia",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Café da manhã",
+    "categories": [
+      "Café da manhã",
+      "Lanche"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "1 copo de leite desnatado",
+      "2 claras de ovos",
+      "2 scoops de whey protein de baunilha",
+      "1/2 xícara de café de aveia"
+    ],
+    "steps": [
+      "Bata todos os ingredientes no liquidificador. Depois, coloque o líquido em uma frigideira antiaderente, vire quando a panqueca estiver firme e sua panqueca está pronta. Você pode colocar algumas frutas quando ela estiver quase no ponto certo ou após a finalização da receita."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 92,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-76.jpeg",
+    "imageSha256": "85b0035d75021b881fc5ff5563ff54d65f976e44cab31ec00140b068c483bc01"
+  },
+  {
+    "id": "iridium-77",
+    "name": "Sorvete de Banana com Whey",
+    "subtitle": "Receita do e-book 77 Receitas Fitness — Iridium Labs.",
+    "category": "Lanche",
+    "categories": [
+      "Lanche",
+      "Sobremesa"
+    ],
+    "minutes": null,
+    "kcal": null,
+    "protein": null,
+    "carbs": null,
+    "fat": null,
+    "vegetarian": null,
+    "vegan": null,
+    "kind": "green",
+    "ingredients": [
+      "2 bananas nanicas maduras congeladas",
+      "1 scoop (1 medida) de Whey protein sabor baunilha (ou o sabor de sua preferência)",
+      "1/4 xícara leite de amêndoa."
+    ],
+    "steps": [
+      "Corte as bananas em rodelas e congele. Quando estiverem congeladas, coloque-as no processador com o leite de amêndoas e o Whey. Você precisará abrir algumas vezes para mexer e quando estiver cremoso, seu sorvete estará pronto."
+    ],
+    "source": {
+      "document": "77-receitas-fitness-iridium-labs.pdf",
+      "page": 93,
+      "credit": "Iridium Labs"
+    },
+    "sourceNutrition": null,
+    "yieldLabel": "Rendimento não informado no PDF. Ingredientes da preparação completa.",
+    "notes": [],
+    "imageFile": "iridium-77.jpeg",
+    "imageSha256": "8608669644190885206f66d40dc030bdc449aa47ea05370806b901bddb1f02c7"
+  }
+]

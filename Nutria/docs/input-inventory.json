@@ -1,0 +1,47 @@
+[
+  {
+    "file": "classes5.dex",
+    "bytes": 10364272,
+    "sha256": "828d2f36b09d390ad9afdb825bc74d46f60fea43c8e85f2a0288f17d5fd8ecee"
+  },
+  {
+    "file": "resources.arsc",
+    "bytes": 9730632,
+    "sha256": "b8eabdb3d988caedbdd9f756b22d8bd217dd2feeb8bc18969b50a1c33ab173cf"
+  },
+  {
+    "file": "assets.zip",
+    "bytes": 11169561,
+    "sha256": "b559d59012d7692901719ea2630eacbe045f16cedbab27f1f9d787c4af7b5f4b"
+  },
+  {
+    "file": "classes3.dex",
+    "bytes": 10959100,
+    "sha256": "8d17d09b423aac323c96621d38b3eb06d61fc8e0ebf5345d137e6fefdd23184c"
+  },
+  {
+    "file": "AndroidManifest.xml",
+    "bytes": 83588,
+    "sha256": "86f2b1a179662a04fc95fe0913e92bbc4a88e47d41aa9612573abbb52fbe65f7"
+  },
+  {
+    "file": "classes2.dex",
+    "bytes": 1749776,
+    "sha256": "b1eb7d7324a1389e8a0b33de389e976a38949a3924a8d849fd9435e26d8ecadb"
+  },
+  {
+    "file": "classes4.dex",
+    "bytes": 9738448,
+    "sha256": "322043e9a77943d4a90d9dda518395e83daf5533319ebd1de1dbb88a44c6a831"
+  },
+  {
+    "file": "res.zip",
+    "bytes": 7029537,
+    "sha256": "9bc1bd787d3fbc9346eca17cc1a9dfcabe5600cc83b4b4a29cb7de3afea74816"
+  },
+  {
+    "file": "classes.dex",
+    "bytes": 8107424,
+    "sha256": "fa902a68967b3524022abbb798536bc9e819d4e61440733ef9d9bff76a8da356"
+  }
+]

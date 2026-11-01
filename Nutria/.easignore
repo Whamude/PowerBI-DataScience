@@ -1,0 +1,12 @@
+node_modules/
+.git/
+.expo/
+dist/
+docs/
+tests/
+*.zip
+*.apk
+*.aab
+*.jks
+*.keystore
+.env*
