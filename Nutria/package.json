@@ -1,6 +1,6 @@
 {
   "name": "nutria",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "main": "expo-router/entry",
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
@@ -34,7 +34,7 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit",
-    "test": "node tests/nutrition.test.mjs && node tests/model.test.mjs && node tests/recipes.test.mjs && node tests/license.test.mjs",
+    "test": "node tests/nutrition.test.mjs && node tests/model.test.mjs && node tests/recipes.test.mjs && node tests/license.test.mjs && node tests/trial.test.mjs",
     "activation:configure": "node tools/configurar-chave-publica.mjs"
   },
   "private": true

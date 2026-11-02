@@ -1,3 +1,5 @@
+> Atualização 0.5: chave pública de produção configurada e teste experimental de 96 horas implementado. Leia primeiro README.md e docs/08-teste-experimental.md. As notas de preparação 0.4 abaixo são históricas.
+
 # Nutria — backup para continuar em outra conta
 
 Estado: APK de produção atual 0.3.0 (versionCode 3). Código preparado para 0.4.0 com ativação offline por e-mail, aguardando a chave pública real do proprietário. Aplicativo Android/iOS em Expo SDK 58. O APK Android foi compilado com sucesso no Expo/EAS. iOS foi exportado, mas não foi gerado IPA.

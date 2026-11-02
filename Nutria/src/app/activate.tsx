@@ -14,7 +14,7 @@ import { useActivation } from "../auth/ActivationProvider";
 import { C, s, serif } from "../ui/theme";
 import { Icon, Button } from "../ui/components";
 export default function Activate() {
-  const { activate, error, configured } = useActivation();
+  const { activate, startTrial, error, configured } = useActivation();
   const [email, setEmail] = useState(""),
     [code, setCode] = useState(""),
     [busy, setBusy] = useState(false),
@@ -22,6 +22,12 @@ export default function Activate() {
   async function submit() {
     setBusy(true);
     const ok = await activate(email, code);
+    setBusy(false);
+    if (ok) router.replace("/");
+  }
+  async function tryTrial() {
+    setBusy(true);
+    const ok = await startTrial(email);
     setBusy(false);
     if (ok) router.replace("/");
   }
@@ -72,8 +78,8 @@ export default function Activate() {
               {"Seu cuidado tem\num espaço aqui."}
             </Text>
             <Text style={[s.body, { textAlign: "center" }]}>
-              Entre com seu e-mail e o código de ativação individual fornecido
-              pelo responsável pelo Nutria.
+              Experimente o Nutria por 4 dias com seu e-mail, sem código. Se já
+              tem um código de ativação, informe-o abaixo.
             </Text>
           </View>
           <Text style={s.title}>Ative seu acesso.</Text>
@@ -90,6 +96,20 @@ export default function Activate() {
               onChangeText={setEmail}
               placeholder="voce@exemplo.com"
             />
+          </View>
+          <View style={s.card}>
+            <Text style={s.h3}>Experimente grátis por 4 dias</Text>
+            <Text style={s.body}>
+              Informe seu e-mail acima e comece sem código de ativação. O prazo
+              começa agora e continua contando mesmo com o app fechado.
+            </Text>
+            <Button light disabled={busy} onPress={() => void tryTrial()}>
+              {busy ? "Aguarde…" : "Começar ou retomar teste de 4 dias"}
+            </Button>
+            <Text style={s.small}>
+              Ao terminar, será necessário ativar. Use o mesmo e-mail para
+              manter seus registros. Retomar um teste não reinicia o prazo.
+            </Text>
           </View>
           <View>
             <View style={s.between}>

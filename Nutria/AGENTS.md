@@ -42,4 +42,4 @@ Docs: https://docs.expo.dev/eas/index.md
 
 ## Ativação do Nutria
 
-Todas as novas telas privadas devem ficar em src/app/(private), sob Stack.Protected. Não adicionar bypass de ativação, senha mestra ou chave privada no app. Manter os dados separados por e-mail. A configuração pública vazia é intencional até o proprietário fornecer sua chave; nunca distribuir APK com chave de testes. Consulte docs/07-ativacao-email.md.
+Todas as novas telas privadas devem ficar em src/app/(private), sob Stack.Protected. O proprietário autorizou teste experimental de 96 horas sem código, uma vez por instalação, vinculado ao e-mail. Manter o prazo original ao retomar, exigir ativação após vencer e preservar os dados do mesmo e-mail. Não adicionar outros bypasses, senha mestra ou chave privada no app. Manter os dados separados por e-mail. A chave pública de produção foi fornecida pelo proprietário; nunca distribuir APK com chave de testes. Consulte docs/07-ativacao-email.md.

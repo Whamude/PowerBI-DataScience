@@ -1,14 +1,12 @@
-> **Ativação por e-mail em preparação:** baixe [o gerador offline](tools/Nutria-Gerador-Ativacao.zip) e siga [as instruções](tools/LEIA-ME-ATIVACAO.txt). O proprietário precisa fornecer somente a chave pública para concluir o próximo APK. O último APK publicado ainda é 0.3.
->
-> Para continuar em outra conta GPT: [COMECAR-AQUI.md](COMECAR-AQUI.md) e [backup da preparação 0.4](backup/Nutria-0.4-preparacao.zip). A [versão 0.3 anterior](backup/Nutria-0.3-projeto.zip) foi preservada.
+# Nutria 0.5 — teste experimental de 4 dias
 
-# Nutria 0.4 — preparação de ativação por e-mail
+Novos usuários podem informar o e-mail e iniciar 96 horas de uso sem código de ativação. O prazo começa ao tocar em **Começar ou retomar teste de 4 dias**, continua com o app fechado e não reinicia ao sair, reabrir ou trocar de e-mail. Um único teste é permitido por instalação.
 
-**APK de produção atual: 0.3. A versão 0.4 ainda aguarda a chave pública do proprietário para compilar um APK utilizável.**
+Ao vencer, o aplicativo solicita o código individual. Ativar com o mesmo e-mail mantém o diário e as preferências. O Perfil mostra quando o teste termina e permite sair para inserir o código antes do vencimento.
 
-O gerador offline está em tools/gerador-ativacao.html. Leia tools/LEIA-ME-ATIVACAO.txt e docs/07-ativacao-email.md. Gere a chave no seu computador e forneça somente a pública. Nunca enviar a chave privada protegida nem sua senha ao chat, Git ou APK.
+A chave pública de produção `9def3ab908ff7344` já está configurada. A versão 0.5 usa versionCode 5 e requer um novo APK. O gerador offline e a mesma chave privada do proprietário continuam sendo usados para emitir ativações.
 
-A ativação usa código Ed25519 individual para cada e-mail. Não há senha mestra ou servidor obrigatório. Rotas privadas são protegidas, a sessão nativa usa SecureStore e registros são separados por e-mail. Os testes e limites estão em docs/07-ativacao-email.md.
+O controle do teste é local: SecureStore no Android/iOS e armazenamento local no navegador. Reinstalar/apagar os dados no Android ou limpar o armazenamento do navegador pode permitir novo teste; não existe controle de elegibilidade por servidor. Veja [a documentação](docs/08-teste-experimental.md).
 
 ## Funcionalidades preservadas da versão 0.3
 
@@ -53,7 +51,7 @@ Use os comandos de docs/07-ativacao-email.md com uma chave pública descartável
 npx eas-cli@latest build --platform android --profile preview
 ```
 
-Perfil preview produz APK autônomo para celulares ARM de 32 e 64 bits. O projeto EAS e a chave gerenciada são preservados para atualizar a instalação anterior. versionCode=3. Arquiteturas x86 de emuladores não são alvos deste APK. O perfil production produz AAB para loja.
+Perfil preview produz APK autônomo para celulares ARM de 32 e 64 bits. O projeto EAS e a chave gerenciada são preservados para atualizar a instalação anterior. versionCode=5. Arquiteturas x86 de emuladores não são alvos deste APK. O perfil production produz AAB para loja.
 
 ## Limites desta entrega
 
@@ -61,4 +59,4 @@ Não há IA, scanner de código de barras, login, sincronização, Health Connec
 
 Veja docs/03-capturas-e-reformulacao.md para rastreabilidade entre referência e implementação.
 
-A integração dos PDFs está documentada em docs/05-receitas-pdfs.md. O build Android 0.3 usa versionCode 3 e a mesma chave gerenciada.
+A integração dos PDFs está documentada em docs/05-receitas-pdfs.md. O build Android 0.3 usava versionCode 3; a versão 0.5 usa 5 e preserva a mesma chave gerenciada.

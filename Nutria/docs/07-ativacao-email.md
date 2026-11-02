@@ -1,3 +1,5 @@
+> Atualização 0.5: a chave pública de produção já está configurada. Existe também teste experimental de 96 horas sem código, documentado em [08-teste-experimental.md](08-teste-experimental.md). As referências à chave pendente abaixo descrevem a preparação 0.4.
+
 # Nutria 0.4 — ativação individual por e-mail
 
 O usuário escolheu código de ativação individual baseado no e-mail. Foi preparado um emissor offline e a validação Ed25519 no aplicativo. Não é uma autenticação com senha de servidor.

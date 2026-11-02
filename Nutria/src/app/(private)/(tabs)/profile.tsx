@@ -168,11 +168,15 @@ export default function ProfileScreen() {
         </Text>
       ) : null}
       <View style={s.card}>
-        <Text style={s.h3}>Ativação individual</Text>
+        <Text style={s.h3}>
+          {activation?.trial
+            ? "Teste experimental de 4 dias"
+            : "Ativação individual"}
+        </Text>
         <Text style={s.body}>{activation?.email}</Text>
         <Text style={s.small}>
           {activation?.expiresAt
-            ? `Válida até ${new Date(activation.expiresAt).toLocaleDateString("pt-BR")}`
+            ? `${activation.trial ? "Teste até" : "Válida até"} ${new Date(activation.expiresAt).toLocaleString("pt-BR")}`
             : "Sem vencimento"}
         </Text>
         <Button
@@ -181,11 +185,14 @@ export default function ProfileScreen() {
             void signOut();
           }}
         >
-          Sair desta ativação
+          {activation?.trial
+            ? "Sair do teste / inserir código"
+            : "Sair desta ativação"}
         </Button>
         <Text style={s.footer}>
-          Seus registros deste e-mail serão preservados neste aparelho. Será
-          necessário informar o código para entrar novamente.
+          {activation?.trial
+            ? "Seus registros serão preservados. Você pode ativar com este mesmo e-mail a qualquer momento ou retomar o teste dentro do prazo original."
+            : "Seus registros deste e-mail serão preservados neste aparelho. Será necessário informar o código para entrar novamente."}
         </Text>
       </View>
       <Section title="Seu aplicativo" />
