@@ -1,0 +1,14 @@
+.git
+**/node_modules
+.expo
+dist
+backup
+docs
+**/.env
+**/.env.*
+**/*.issuer.json
+**/.activation-private
+server/data
+*.apk
+*.aab
+*.zip
