@@ -1,3 +1,7 @@
+> **Estado atual consolidado (02/11/2026):** leia primeiro [docs/09-registro-trabalho-2026-11-02.md](docs/09-registro-trabalho-2026-11-02.md). A chave pública já foi configurada, o app 0.5 tem teste de 96 horas e o backend Stripe está no PR #1, ainda sem deploy ou envio real.
+>
+> **Arquivo histórico abaixo:** as notas sobre chave pendente, APK 0.3 e ZIP 0.4 descrevem a preparação antiga; não representam o estado atual. Os ZIPs antigos não substituem a branch atual.
+
 > Atualização 0.5: chave pública de produção configurada e teste experimental de 96 horas implementado. Leia primeiro README.md e docs/08-teste-experimental.md. As notas de preparação 0.4 abaixo são históricas.
 
 # Nutria — backup para continuar em outra conta
