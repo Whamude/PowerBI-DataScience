@@ -12,7 +12,7 @@ O plugin Stripe conectado ao chat criou o catálogo, mas não fornece credenciai
 2. O servidor verifica a assinatura sobre o corpo original, o ambiente e recupera a fatura pela API na conta configurada.
 3. Apenas fatura paga de criação/renovação, em BRL, com pagamento mínimo de 850 centavos e uma linha do preço esperado, sem proporcionalidade, gera licença. Não emitir a partir da página de sucesso.
 4. O código NTR1 usa o e-mail da fatura e o fim do período daquela linha paga; não adiciona 30 dias arbitrários.
-5. SQLite registra a fatura e o mesmo código na fila antes de confirmar o evento. O worker tenta entregar a cada 15 segundos. Reiniciar o processo mantém a fila.
+5. SQLite registra a fatura e o mesmo código na fila antes de confirmar o evento. O worker tenta entregar a cada 15 segundos. Reiniciar o processo mantém a fila. Uma falha de envio mantém aquela entrega pendente e permite processar as seguintes. A próxima tentativa usa o mesmo código; entregas já enviadas, vencidas ou substituídas por período mais recente não são reenviadas. Ao final da passagem, falhas geram um aviso genérico, sem dados pessoais, códigos ou detalhes do provedor. A trava do worker impede passagens simultâneas no mesmo processo; permanece obrigatório usar uma única instância.
 6. Renovação gera novo código com o novo vencimento; pagamento falho/cancelamento não prorroga acesso. Os códigos já enviados continuam válidos até vencer: o APK offline não oferece revogação imediata.
 
 E-mails precisam usar o mesmo endereço do teste gratuito para preservar os registros. A renovação nesta etapa é por novo código enviado por e-mail, que o cliente cola no aplicativo. Não há login online/renovação silenciosa no APK.

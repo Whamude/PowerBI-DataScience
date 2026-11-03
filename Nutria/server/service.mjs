@@ -114,6 +114,7 @@ export class ActivationService {
       .run(event.id, event.type, event.created);
   }
   async deliver() {
+    let failed = false;
     for (const row of this.db
       .prepare(
         "SELECT * FROM deliveries WHERE sent_at IS NULL AND expires_at > ? ORDER BY expires_at DESC",
@@ -128,10 +129,18 @@ export class ActivationService {
       this.db
         .prepare("UPDATE deliveries SET attempts=attempts+1 WHERE invoice_id=?")
         .run(row.invoice_id);
-      await this.send(row);
+      try {
+        await this.send(row);
+      } catch {
+        // Keep the original code pending, but let other recipients progress.
+        failed = true;
+        continue;
+      }
       this.db
         .prepare("UPDATE deliveries SET sent_at=? WHERE invoice_id=?")
         .run(this.now(), row.invoice_id);
     }
+    // Do not expose provider errors: they may contain recipients or codes.
+    if (failed) throw Error("One or more deliveries remain pending");
   }
 }

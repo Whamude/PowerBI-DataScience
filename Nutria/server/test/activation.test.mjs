@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { Buffer } from "node:buffer";
 import { webcrypto, createHash } from "node:crypto";
 import { mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -263,6 +264,72 @@ test("mail failures retry same code after restart, without generating another li
     db.close();
   } finally {
     rmSync(dir, { recursive: true, force: true });
+  }
+});
+test("a failed delivery does not block another; retry sends only the pending original code", async () => {
+  const attempts = [];
+  const { service, db } = fixture({
+    issue: () => {
+      throw Error("delivery retries must not issue another code");
+    },
+    send: async (row) => {
+      attempts.push({ invoice: row.invoice_id, code: row.code });
+      if (row.invoice_id === "in_retry" && row.attempts === 0)
+        throw Error("synthetic provider failure: private details must not escape");
+    },
+  });
+  try {
+    const insert = db.prepare(
+      "INSERT INTO deliveries(invoice_id, subscription_id, email, expires_at, code) VALUES(?,?,?,?,?)",
+    );
+    insert.run("in_retry", "sub_retry", "retry@example.com", expiry + 1000, "original-retry-code");
+    insert.run("in_ok", "sub_ok", "ok@example.com", expiry, "original-ok-code");
+    let failure;
+    await assert.rejects(service.deliver(), (error) => {
+      failure = error;
+      return true;
+    });
+    assert.deepEqual(attempts, [
+      { invoice: "in_retry", code: "original-retry-code" },
+      { invoice: "in_ok", code: "original-ok-code" },
+    ]);
+    assert.equal(failure.message, "One or more deliveries remain pending");
+    const pending = db.prepare("SELECT * FROM deliveries WHERE invoice_id=?").get("in_retry");
+    const sent = db.prepare("SELECT * FROM deliveries WHERE invoice_id=?").get("in_ok");
+    assert.equal(pending.sent_at, null);
+    assert.equal(pending.attempts, 1);
+    assert.equal(sent.sent_at, now);
+    await service.deliver();
+    await service.deliver();
+    assert.deepEqual(attempts, [
+      { invoice: "in_retry", code: "original-retry-code" },
+      { invoice: "in_ok", code: "original-ok-code" },
+      { invoice: "in_retry", code: "original-retry-code" },
+    ]);
+    assert.equal(db.prepare("SELECT attempts FROM deliveries WHERE invoice_id=?").get("in_retry").attempts, 2);
+    assert.equal(db.prepare("SELECT attempts FROM deliveries WHERE invoice_id=?").get("in_ok").attempts, 1);
+  } finally {
+    db.close();
+  }
+});
+test("delivery skips expired, already sent and superseded codes", async () => {
+  const sent = [];
+  const { service, db } = fixture({ send: async (row) => sent.push(row.invoice_id) });
+  try {
+    const insert = db.prepare(
+      "INSERT INTO deliveries(invoice_id, subscription_id, email, expires_at, code, sent_at) VALUES(?,?,?,?,?,?)",
+    );
+    insert.run("in_expired", "sub_expired", "pessoa@example.com", now, "expired-code", null);
+    insert.run("in_sent", "sub_sent", "pessoa@example.com", expiry, "sent-code", now);
+    insert.run("in_old", "sub_renewed", "pessoa@example.com", expiry, "old-code", null);
+    insert.run("in_new", "sub_renewed", "pessoa@example.com", expiry + 1000, "new-code", null);
+    await service.deliver();
+    await service.deliver();
+    assert.deepEqual(sent, ["in_new"]);
+    for (const id of ["in_expired", "in_sent", "in_old"])
+      assert.equal(db.prepare("SELECT attempts FROM deliveries WHERE invoice_id=?").get(id).attempts, 0);
+  } finally {
+    db.close();
   }
 });
 test("failures and subscription lifecycle do not grant access; risk events enter review queue", async () => {
