@@ -78,7 +78,7 @@ export default function Activate() {
               {"Seu cuidado tem\num espaço aqui."}
             </Text>
             <Text style={[s.body, { textAlign: "center" }]}>
-              Experimente o Nutria por 4 dias com seu e-mail, sem código. Se já
+              Experimente o Nutria por 7 dias com seu e-mail, sem código. Se já
               tem um código de ativação, informe-o abaixo.
             </Text>
           </View>
@@ -98,13 +98,13 @@ export default function Activate() {
             />
           </View>
           <View style={s.card}>
-            <Text style={s.h3}>Experimente grátis por 4 dias</Text>
+            <Text style={s.h3}>Experimente grátis por 7 dias</Text>
             <Text style={s.body}>
               Informe seu e-mail acima e comece sem código de ativação. O prazo
               começa agora e continua contando mesmo com o app fechado.
             </Text>
             <Button light disabled={busy} onPress={() => void tryTrial()}>
-              {busy ? "Aguarde…" : "Começar ou retomar teste de 4 dias"}
+              {busy ? "Aguarde…" : "Começar ou retomar teste de 7 dias"}
             </Button>
             <Text style={s.small}>
               Ao terminar, será necessário ativar. Use o mesmo e-mail para

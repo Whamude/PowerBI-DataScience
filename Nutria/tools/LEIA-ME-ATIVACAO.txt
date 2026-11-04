@@ -19,4 +19,4 @@ Se o navegador da empresa bloquear arquivos locais, o HTML pode ser servido em l
 Limites: o e-mail é um identificador, sem confirmação de posse da caixa postal. O código pode funcionar em mais de um aparelho com o mesmo e-mail. Vencimento depende do relógio do aparelho. Revogação imediata e limite de aparelhos exigem serviço online. APKs antigos já distribuídos continuam sem essa exigência.
 
 ESTADO DO PROJETO
-A chave pública de produção 9def3ab908ff7344 já está configurada. Não crie outra chave para emitir novos códigos: continue usando a mesma chave privada protegida. A versão 0.5 adiciona teste experimental de 96 horas sem código e requer novo APK; consulte docs/08-teste-experimental.md.
+A chave pública de produção 9def3ab908ff7344 já está configurada. Não crie outra chave para emitir novos códigos: continue usando a mesma chave privada protegida. A versão 0.6 adiciona teste experimental de 168 horas sem código e requer novo APK; consulte docs/08-teste-experimental.md.

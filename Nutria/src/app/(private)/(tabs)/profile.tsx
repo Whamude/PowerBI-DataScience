@@ -170,7 +170,7 @@ export default function ProfileScreen() {
       <View style={s.card}>
         <Text style={s.h3}>
           {activation?.trial
-            ? "Teste experimental de 4 dias"
+            ? "Teste experimental de 7 dias"
             : "Ativação individual"}
         </Text>
         <Text style={s.body}>{activation?.email}</Text>

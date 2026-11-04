@@ -1,4 +1,4 @@
-> Atualização 0.5: chave pública de produção configurada e teste experimental de 96 horas implementado. Leia primeiro README.md e docs/08-teste-experimental.md. As notas de preparação 0.4 abaixo são históricas.
+> Atualização 0.6: chave pública de produção configurada e teste experimental de 168 horas implementado. Leia primeiro README.md e docs/08-teste-experimental.md. As notas de preparação 0.4 abaixo são históricas.
 
 # Nutria — backup para continuar em outra conta
 

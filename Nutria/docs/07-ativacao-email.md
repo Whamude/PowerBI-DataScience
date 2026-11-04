@@ -1,4 +1,4 @@
-> Atualização 0.5: a chave pública de produção já está configurada. Existe também teste experimental de 96 horas sem código, documentado em [08-teste-experimental.md](08-teste-experimental.md). As referências à chave pendente abaixo descrevem a preparação 0.4.
+> Atualização 0.6: a chave pública de produção já está configurada. Existe também teste experimental de 168 horas sem código, documentado em [08-teste-experimental.md](08-teste-experimental.md). As referências à chave pendente abaixo descrevem a preparação 0.4.
 
 # Nutria 0.4 — ativação individual por e-mail
 
