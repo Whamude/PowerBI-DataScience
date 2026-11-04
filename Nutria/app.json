@@ -2,14 +2,14 @@
   "expo": {
     "name": "Nutria",
     "slug": "Nutria",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "orientation": "portrait",
     "icon": "./assets/nutria-icon.png",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "app.nutria.mobile",
-      "buildNumber": "5"
+      "buildNumber": "6"
     },
     "android": {
       "adaptiveIcon": {
@@ -17,7 +17,7 @@
         "foregroundImage": "./assets/nutria-foreground.png"
       },
       "package": "app.nutria.mobile",
-      "versionCode": 5
+      "versionCode": 6
     },
     "web": {
       "favicon": "./assets/nutria-icon.png"

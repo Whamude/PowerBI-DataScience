@@ -1,5 +1,5 @@
 import { normalizeEmail, accountId } from "./license.mjs";
-export const TRIAL_DURATION = 4 * 24 * 60 * 60 * 1000;
+export const TRIAL_DURATION = 7 * 24 * 60 * 60 * 1000;
 const CLOCK_TOLERANCE = 5 * 60 * 1000;
 export function createTrial(email, now = Date.now()) {
   return {
@@ -56,7 +56,7 @@ export function resumeTrial(saved, email, now = Date.now()) {
     );
   if (!result.activation)
     throw new Error(
-      "Seu teste de 4 dias terminou. Ative com seu e-mail e código para continuar; seus registros estão preservados.",
+      "Seu teste de 7 dias terminou. Ative com seu e-mail e código para continuar; seus registros estão preservados.",
     );
   return { ...result, record: { ...result.record, signedOut: false } };
 }

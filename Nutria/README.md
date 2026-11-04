@@ -1,12 +1,14 @@
-# Nutria 0.5 — teste experimental de 4 dias
+# Nutria 0.6 — teste experimental de 7 dias
 
-Novos usuários podem informar o e-mail e iniciar 96 horas de uso sem código de ativação. O prazo começa ao tocar em **Começar ou retomar teste de 4 dias**, continua com o app fechado e não reinicia ao sair, reabrir ou trocar de e-mail. Um único teste é permitido por instalação.
+Novos usuários podem informar o e-mail e iniciar 168 horas de uso sem código de ativação. O prazo começa ao tocar em **Começar ou retomar teste de 7 dias**, continua com o app fechado e não reinicia ao sair, reabrir ou trocar de e-mail. Um único teste é permitido por instalação.
 
 Ao vencer, o aplicativo solicita o código individual. Ativar com o mesmo e-mail mantém o diário e as preferências. O Perfil mostra quando o teste termina e permite sair para inserir o código antes do vencimento.
 
-A chave pública de produção `9def3ab908ff7344` já está configurada. A versão 0.5 usa versionCode 5 e requer um novo APK. O gerador offline e a mesma chave privada do proprietário continuam sendo usados para emitir ativações.
+A chave pública de produção `9def3ab908ff7344` já está configurada. A versão 0.6 usa versionCode 6 e requer um novo APK. O gerador offline e a mesma chave privada do proprietário continuam sendo usados para emitir ativações.
 
 O controle do teste é local: SecureStore no Android/iOS e armazenamento local no navegador. Reinstalar/apagar os dados no Android ou limpar o armazenamento do navegador pode permitir novo teste; não existe controle de elegibilidade por servidor. Veja [a documentação](docs/08-teste-experimental.md).
+
+Na atualização para 0.6, testes em andamento usam os 7 dias a partir do início já salvo. Testes já encerrados não são reabertos. Códigos de ativação e registros existentes são preservados.
 
 ## Funcionalidades preservadas da versão 0.3
 
@@ -29,16 +31,17 @@ Valores do catálogo e das oito receitas Nutria são indicativos. Os 24 quadros 
 
 ## Desenvolvimento
 
-Use o checkout existente em /workspace/Nutria. Não crie worktrees para iniciar este projeto.
+Use o checkout da branch desta versão. Não crie worktrees para iniciar este projeto. No PowerShell, a partir da raiz do repositório:
 
-```sh
-cd /workspace/Nutria
+```powershell
+Set-Location Nutria
 npm ci
 npm start
 npm run lint
 npm run typecheck
 npm test
-EXPO_OFFLINE=1 npx expo export --platform all
+$env:EXPO_OFFLINE = "1"
+npx expo export --platform all
 ```
 
 ## Testes de interface da ativação
@@ -51,7 +54,7 @@ Use os comandos de docs/07-ativacao-email.md com uma chave pública descartável
 npx eas-cli@latest build --platform android --profile preview
 ```
 
-Perfil preview produz APK autônomo para celulares ARM de 32 e 64 bits. O projeto EAS e a chave gerenciada são preservados para atualizar a instalação anterior. versionCode=5. Arquiteturas x86 de emuladores não são alvos deste APK. O perfil production produz AAB para loja.
+Perfil preview produz APK autônomo para celulares ARM de 32 e 64 bits. O projeto EAS e a chave gerenciada são preservados para atualizar a instalação anterior. versionCode=6. Arquiteturas x86 de emuladores não são alvos deste APK. O perfil production produz AAB para loja.
 
 ## Limites desta entrega
 
@@ -59,4 +62,4 @@ Não há IA, scanner de código de barras, login, sincronização, Health Connec
 
 Veja docs/03-capturas-e-reformulacao.md para rastreabilidade entre referência e implementação.
 
-A integração dos PDFs está documentada em docs/05-receitas-pdfs.md. O build Android 0.3 usava versionCode 3; a versão 0.5 usa 5 e preserva a mesma chave gerenciada.
+A integração dos PDFs está documentada em docs/05-receitas-pdfs.md. O build Android 0.3 usava versionCode 3; a versão 0.6 usa 5 e preserva a mesma chave gerenciada.
