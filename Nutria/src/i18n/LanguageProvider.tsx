@@ -10,10 +10,12 @@ import {
   ActivityIndicator,
   Platform,
   Pressable,
+  ScrollView,
   Text,
   View,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { LANGUAGE_KEY, LANGUAGES, setCurrentLanguage, tr } from "./core.mjs";
 import { C, s } from "../ui/theme";
 
@@ -186,17 +188,24 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       {chosen ? (
         children
       ) : (
-        <View
-          style={[s.page, { padding: 24, justifyContent: "center", gap: 24 }]}
-        >
-          <Text style={s.title}>nutria.</Text>
-          <Text style={s.h2}>Português / English</Text>
-          <Text style={s.body}>
-            Escolha seu idioma para começar.{"\n"}Choose your language to get
-            started.
-          </Text>
-          <LanguagePicker />
-        </View>
+        <SafeAreaView style={s.page}>
+          <ScrollView
+            contentContainerStyle={{
+              flexGrow: 1,
+              padding: 24,
+              justifyContent: "center",
+              gap: 24,
+            }}
+          >
+            <Text style={s.title}>nutria.</Text>
+            <Text style={s.h2}>Português / English</Text>
+            <Text style={s.body}>
+              Escolha seu idioma para começar.{"\n"}Choose your language to get
+              started.
+            </Text>
+            <LanguagePicker />
+          </ScrollView>
+        </SafeAreaView>
       )}
     </Context.Provider>
   );

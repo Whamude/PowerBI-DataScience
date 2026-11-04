@@ -7,8 +7,15 @@ import {
 } from "../../../i18n/core.mjs";
 import { LanguagePicker, useLanguage } from "../../../i18n/LanguageProvider";
 import { useActivation } from "../../../auth/ActivationProvider";
-import React, { useState } from "react";
-import { View, Text, Pressable, Share } from "react-native";
+import React, { useRef, useState } from "react";
+import {
+  View,
+  Text,
+  Pressable,
+  Share,
+  Platform,
+  findNodeHandle,
+} from "react-native";
 import { useStore, Profile } from "../../../state/store";
 import { numberValue } from "../../../domain/model.mjs";
 import { C, s, serif } from "../../../ui/theme";
@@ -21,10 +28,42 @@ import {
   Chip,
   Button,
 } from "../../../ui/components";
+function ProfileItem({
+  title,
+  caption,
+  icon,
+  onPress,
+  anchorRef,
+}: {
+  title: string;
+  caption: string;
+  icon: React.ComponentProps<typeof Icon>["name"];
+  onPress: () => void;
+  anchorRef?: React.Ref<React.ElementRef<typeof Pressable>>;
+}) {
+  return (
+    <Pressable
+      ref={anchorRef}
+      accessibilityRole="button"
+      onPress={onPress}
+      style={[s.card, s.between, { padding: 19 }]}
+    >
+      <View style={[s.row, { flex: 1 }]}>
+        <Icon name={icon} />
+        <View style={{ flex: 1, gap: 4 }}>
+          <Text style={s.h3}>{tr(title)}</Text>
+          <Text style={s.small}>{tr(caption)}</Text>
+        </View>
+      </View>
+      <Icon name="chevron-right" size={17} color={C.muted} />
+    </Pressable>
+  );
+}
 export default function ProfileScreen() {
   useLanguage();
   const { data, mutate } = useStore();
   const { activation, signOut, error: activationError } = useActivation();
+  const exportAnchor = useRef<React.ElementRef<typeof Pressable>>(null);
   const [edit, setEdit] = useState(false),
     [info, setInfo] = useState(false),
     [form, setForm] = useState<Record<string, string>>({}),
@@ -83,35 +122,24 @@ export default function ProfileScreen() {
   }
   async function exportData() {
     try {
-      await Share.share({
-        title: tr("Meus dados Nutria"),
-        message: JSON.stringify(data, null, 2),
-      });
+      const anchor =
+        Platform.OS === "ios" ? findNodeHandle(exportAnchor.current) : null;
+      await Share.share(
+        {
+          title: tr("Meus dados Nutria"),
+          message: JSON.stringify(data, null, 2),
+        },
+        Platform.OS === "ios"
+          ? {
+              subject: tr("Meus dados Nutria"),
+              ...(anchor !== null ? { anchor } : {}),
+            }
+          : undefined,
+      );
     } catch {
       setNotice("Não foi possível abrir o compartilhamento. Tente novamente.");
     }
   }
-  const item = (
-    title: string,
-    caption: string,
-    icon: React.ComponentProps<typeof Icon>["name"],
-    action: () => void,
-  ) => (
-    <Pressable
-      accessibilityRole="button"
-      onPress={action}
-      style={[s.card, s.between, { padding: 19 }]}
-    >
-      <View style={[s.row, { flex: 1 }]}>
-        <Icon name={icon} />
-        <View style={{ flex: 1, gap: 4 }}>
-          <Text style={s.h3}>{tr(title)}</Text>
-          <Text style={s.small}>{tr(caption)}</Text>
-        </View>
-      </View>
-      <Icon name="chevron-right" size={17} color={C.muted} />
-    </Pressable>
-  );
   return (
     <Page>
       <Text style={s.eyebrow}>{tr("SEU ESPAÇO")}</Text>
@@ -231,24 +259,25 @@ export default function ProfileScreen() {
       </View>
       <Section title={tr("Seu aplicativo")} />
       <LanguagePicker />
-      {item(
-        "Editar preferências",
-        "Nome, estilo alimentar e objetivos",
-        "sliders",
-        open,
-      )}
-      {item(
-        "Exportar meus registros",
-        "Compartilhar uma cópia dos dados",
-        "download",
-        () => void exportData(),
-      )}
-      {item(
-        "Sobre seus dados",
-        "Privacidade e recursos desta versão",
-        "shield",
-        () => setInfo(true),
-      )}
+      <ProfileItem
+        title="Editar preferências"
+        caption="Nome, estilo alimentar e objetivos"
+        icon="sliders"
+        onPress={open}
+      />
+      <ProfileItem
+        title="Exportar meus registros"
+        caption="Compartilhar uma cópia dos dados"
+        icon="download"
+        onPress={() => void exportData()}
+        anchorRef={exportAnchor}
+      />
+      <ProfileItem
+        title="Sobre seus dados"
+        caption="Privacidade e recursos desta versão"
+        icon="shield"
+        onPress={() => setInfo(true)}
+      />
       <View style={[s.card, { backgroundColor: "#ECE9DE" }]}>
         <Icon name="feather" />
         <Text style={s.h2}>{tr("Sem pressa. Sem comparação.")}</Text>

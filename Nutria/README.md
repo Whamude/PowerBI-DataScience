@@ -2,6 +2,8 @@
 
 Escolha Português ou English no primeiro uso e altere a preferência no Perfil ou na tela de ativação. A escolha é salva neste aparelho e atualiza a interface, alimentos, 105 receitas, datas e números. Textos livres, nomes próprios e registros existentes são preservados. Consulte [docs/10-idiomas.md](docs/10-idiomas.md).
 
+Preparação iPhone/iPad: iOS build 8, perfis `ios-simulator` e `ios-device`, ajustes de teclado, áreas seguras e compartilhamento no iPad. Consulte [docs/11-ios-iphone.md](docs/11-ios-iphone.md) para instalação, dependências de assinatura e critérios de teste. O APK Android 0.7.0/build 7 já entregue permanece preservado; build para simulador não é IPA para iPhone.
+
 Novos usuários podem informar o e-mail e iniciar 168 horas de uso sem código de ativação. O prazo começa ao tocar em **Começar ou retomar teste de 7 dias**, continua com o app fechado e não reinicia ao sair, reabrir ou trocar de e-mail. Um único teste é permitido por instalação.
 
 Ao vencer, o aplicativo solicita o código individual. Ativar com o mesmo e-mail mantém o diário e as preferências. O Perfil mostra quando o teste termina e permite sair para inserir o código antes do vencimento.

@@ -9,7 +9,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "app.nutria.mobile",
-      "buildNumber": "7"
+      "buildNumber": "8",
+      "infoPlist": {
+        "CFBundleDevelopmentRegion": "pt-BR",
+        "CFBundleLocalizations": ["pt-BR", "en"]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -28,10 +32,7 @@
         "expo-build-properties",
         {
           "android": {
-            "buildArchs": [
-              "armeabi-v7a",
-              "arm64-v8a"
-            ]
+            "buildArchs": ["armeabi-v7a", "arm64-v8a"]
           }
         }
       ],

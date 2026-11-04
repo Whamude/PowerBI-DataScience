@@ -216,17 +216,22 @@ export function Page({
   return (
     <SafeAreaView edges={["top"]} style={s.page}>
       <Header title={title ? tr(title) : undefined} back={back} />
-      <ScrollView
-        contentContainerStyle={s.container}
-        keyboardShouldPersistTaps="handled"
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
       >
-        {error ? (
-          <Text accessibilityRole="alert" style={s.error}>
-            {tr(error)}
-          </Text>
-        ) : null}
-        {children}
-      </ScrollView>
+        <ScrollView
+          contentContainerStyle={s.container}
+          keyboardShouldPersistTaps="handled"
+        >
+          {error ? (
+            <Text accessibilityRole="alert" style={s.error}>
+              {tr(error)}
+            </Text>
+          ) : null}
+          {children}
+        </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }

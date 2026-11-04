@@ -10,6 +10,23 @@
         "buildType": "apk"
       }
     },
+    "ios-simulator": {
+      "distribution": "internal",
+      "environment": "preview",
+      "ios": {
+        "simulator": true,
+        "buildConfiguration": "Release"
+      }
+    },
+    "ios-device": {
+      "distribution": "internal",
+      "environment": "preview",
+      "credentialsSource": "remote",
+      "ios": {
+        "simulator": false,
+        "buildConfiguration": "Release"
+      }
+    },
     "production": {
       "android": {
         "buildType": "app-bundle"
