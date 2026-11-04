@@ -1,3 +1,5 @@
+import { tr } from "../../../i18n/core.mjs";
+import { useLanguage } from "../../../i18n/LanguageProvider";
 import React from "react";
 import { Tabs, Redirect } from "expo-router";
 import { ActivityIndicator, View, Text } from "react-native";
@@ -6,6 +8,7 @@ import { useStore } from "../../../state/store";
 import { C, s } from "../../../ui/theme";
 import { Icon } from "../../../ui/components";
 export default function TabLayout() {
+  useLanguage();
   const { ready, data, error, legacyAvailable } = useStore();
   const insets = useSafeAreaInsets();
   if (!ready)
@@ -23,7 +26,7 @@ export default function TabLayout() {
       >
         <ActivityIndicator color={C.green} />
         <Text style={error ? s.error : s.body}>
-          {error || "Preparando seu espaço…"}
+          {tr(error) || tr("Preparando seu espaço…")}
         </Text>
       </View>
     );
@@ -57,7 +60,7 @@ export default function TabLayout() {
           key={name}
           name={name}
           options={{
-            title,
+            title: tr(title),
             tabBarIcon: ({ color, size }) => (
               <Icon
                 name={icon as React.ComponentProps<typeof Icon>["name"]}

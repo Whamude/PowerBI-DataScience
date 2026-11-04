@@ -22,6 +22,7 @@ const assert = require("node:assert/strict");
       waitUntil: "networkidle",
       timeout: 120000,
     });
+    await page.getByRole("radio", { name: "Português", exact: true }).click();
     await page.getByLabel("E-mail de ativação").waitFor();
     const email = "trial@example.com",
       id = lib.accountId(email);
@@ -87,14 +88,18 @@ const assert = require("node:assert/strict");
     );
     await page.reload({ waitUntil: "networkidle" });
     await page.getByRole("tab", { name: /Perfil/ }).click();
-    await page.getByText("Teste experimental de 7 dias", { exact: true }).waitFor();
+    await page
+      .getByText("Teste experimental de 7 dias", { exact: true })
+      .waitFor();
     assert.equal(
       await page.evaluate(
         () => JSON.parse(localStorage.getItem("nutria.trial.v1")).startedAt,
       ),
       continued.startedAt,
     );
-    console.log("PASS fifth day remains accessible with original start and records");
+    console.log(
+      "PASS fifth day remains accessible with original start and records",
+    );
     // Seed a near-expiry trial and exercise the real provider timer with browser time.
     const now = Date.now();
     const saved = {
@@ -108,6 +113,8 @@ const assert = require("node:assert/strict");
     await page.clock.install({ time: now });
     await page.reload({ waitUntil: "networkidle" });
     await page.getByRole("tab", { name: /Perfil/ }).waitFor();
+    // Finish font loading before advancing timers, including font-load timeouts.
+    await page.evaluate(() => document.fonts.ready);
     await page.clock.fastForward(90000);
     await page.getByLabel("E-mail de ativação").waitFor();
     await page.getByText(/Seu teste de 7 dias terminou/).waitFor();

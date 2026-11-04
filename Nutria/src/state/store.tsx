@@ -24,6 +24,10 @@ export type Meal = {
   fat: number;
   group: string;
   grams?: number;
+  sourceFoodId?: string;
+  sourceRecipeId?: string;
+  sourceServings?: number;
+  portionNote?: string;
 };
 export type Day = {
   meals: Meal[];

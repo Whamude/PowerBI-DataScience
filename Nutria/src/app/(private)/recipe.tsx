@@ -1,8 +1,12 @@
+import { tr, num, locale, inputNumber } from "../../i18n/core.mjs";
+import { useLanguage } from "../../i18n/LanguageProvider";
+import { useCatalog } from "../../i18n/catalog";
 import React, { useState } from "react";
 import { View, Text, Pressable, ScrollView } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
-import { recipes } from "../../data/catalog";
+
 import { useStore } from "../../state/store";
+import { recipes as canonicalRecipes } from "../../data/catalog";
 import {
   emptyDay,
   GROUPS,
@@ -14,6 +18,8 @@ import { C, s } from "../../ui/theme";
 import { Page, Icon, Button, Chip, Section, Field } from "../../ui/components";
 import { RecipePhoto } from "../../ui/RecipePhoto";
 export default function RecipeDetail() {
+  useLanguage();
+  const { recipes } = useCatalog();
   const { id } = useLocalSearchParams<{ id: string }>();
   const r = recipes.find((r) => r.id === id);
   const { data, selected, mutate } = useStore();
@@ -27,8 +33,8 @@ export default function RecipeDetail() {
     [error, setError] = useState("");
   if (!r)
     return (
-      <Page title="Receita" back>
-        <Text style={s.body}>Receita não encontrada.</Text>
+      <Page title={tr("Receita")} back>
+        <Text style={s.body}>{tr("Receita não encontrada.")}</Text>
       </Page>
     );
   const favorite = data.recipeFavorites.includes(r.id),
@@ -36,10 +42,13 @@ export default function RecipeDetail() {
   async function add() {
     if (!r) return;
     try {
+      const canonical = canonicalRecipes.find((recipe) => recipe.id === r.id)!;
       let entry;
       if (known)
         entry = {
-          name: `${r.name}${servings !== 1 ? ` (${servings} porções)` : ""}`,
+          name: `${canonical.name}${servings !== 1 ? ` (${servings} porções)` : ""}`,
+          sourceRecipeId: r.id,
+          sourceServings: servings,
           kcal: Math.round(r.kcal! * servings),
           protein: +(r.protein! * servings).toFixed(1),
           carbs: +(r.carbs! * servings).toFixed(1),
@@ -49,11 +58,33 @@ export default function RecipeDetail() {
         if (!values[0].trim())
           throw new Error("Descreva a porção que você consumiu.");
         entry = {
-          name: `${r.name} (${values[0].trim()})`,
-          kcal: numberValue(values[1], 1, 10000, "Calorias da porção"),
-          protein: numberValue(values[2], 0, 2000, "Proteínas da porção"),
-          carbs: numberValue(values[3], 0, 2000, "Carboidratos da porção"),
-          fat: numberValue(values[4], 0, 2000, "Gorduras da porção"),
+          name: `${canonical.name} (${values[0].trim()})`,
+          sourceRecipeId: r.id,
+          portionNote: values[0].trim(),
+          kcal: numberValue(
+            inputNumber(values[1]),
+            1,
+            10000,
+            "Calorias da porção",
+          ),
+          protein: numberValue(
+            inputNumber(values[2]),
+            0,
+            2000,
+            "Proteínas da porção",
+          ),
+          carbs: numberValue(
+            inputNumber(values[3]),
+            0,
+            2000,
+            "Carboidratos da porção",
+          ),
+          fat: numberValue(
+            inputNumber(values[4]),
+            0,
+            2000,
+            "Gorduras da porção",
+          ),
         };
       }
       setBusy(true);
@@ -78,7 +109,7 @@ export default function RecipeDetail() {
     }
   }
   return (
-    <Page title="Na sua cozinha" back>
+    <Page title={tr("Na sua cozinha")} back>
       <View
         style={[
           s.card,
@@ -86,11 +117,13 @@ export default function RecipeDetail() {
         ]}
       >
         <View style={s.between}>
-          <Text style={s.eyebrow}>{r.category.toUpperCase()}</Text>
+          <Text style={s.eyebrow}>{tr(r.category).toUpperCase()}</Text>
           <Pressable
             accessibilityRole="button"
             accessibilityLabel={
-              favorite ? "Remover receita dos favoritos" : "Favoritar receita"
+              favorite
+                ? tr("Remover receita dos favoritos")
+                : tr("Favoritar receita")
             }
             onPress={() =>
               void mutate((d) => ({
@@ -108,7 +141,7 @@ export default function RecipeDetail() {
         <RecipePhoto recipe={r} detail />
         {r.source && (
           <Text style={[s.footer, { textAlign: "center" }]}>
-            Imagem extraída do PDF · ilustração da receita
+            {tr("Imagem extraída do PDF · ilustração da receita")}
           </Text>
         )}
       </View>
@@ -118,7 +151,10 @@ export default function RecipeDetail() {
         {r.minutes !== null && (
           <View style={[s.chip, s.row, { gap: 7 }]}>
             <Icon name="clock" size={15} />
-            <Text style={s.small}>{r.minutes} min</Text>
+            <Text style={s.small}>
+              {num(r.minutes)}
+              {tr(" min")}
+            </Text>
           </View>
         )}
         {(r.vegetarian !== null || r.vegan !== null) && (
@@ -126,36 +162,36 @@ export default function RecipeDetail() {
             <Icon name="feather" size={15} />
             <Text style={s.small}>
               {r.vegan
-                ? "Vegana"
+                ? tr("Vegana")
                 : r.vegetarian
-                  ? "Vegetariana"
-                  : "Tradicional"}
+                  ? tr("Vegetariana")
+                  : tr("Tradicional")}
             </Text>
           </View>
         )}
       </View>
       {r.notes?.map((note) => (
         <Text key={note} accessibilityRole="alert" style={s.error}>
-          {note}
+          {tr(note)}
         </Text>
       ))}
       {known ? (
         <View style={s.card}>
           <View style={s.between}>
-            <Text style={s.h3}>Porções</Text>
+            <Text style={s.h3}>{tr("Porções")}</Text>
             <View style={s.row}>
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel="Diminuir porções"
+                accessibilityLabel={tr("Diminuir porções")}
                 style={s.iconButton}
                 onPress={() => setServings(Math.max(0.5, servings - 0.5))}
               >
                 <Icon name="minus" size={16} />
               </Pressable>
-              <Text style={s.h3}>{servings}</Text>
+              <Text style={s.h3}>{num(servings)}</Text>
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel="Aumentar porções"
+                accessibilityLabel={tr("Aumentar porções")}
                 style={s.iconButton}
                 onPress={() => setServings(Math.min(10, servings + 0.5))}
               >
@@ -164,34 +200,40 @@ export default function RecipeDetail() {
             </View>
           </View>
           <Text style={s.metric}>
-            {Math.round(r.kcal! * servings)} <Text style={s.small}>kcal</Text>
+            {num(Math.round(r.kcal! * servings))}{" "}
+            <Text style={s.small}>{tr("kcal")}</Text>
           </Text>
           <Text style={s.small}>
-            {(r.protein! * servings).toFixed(1)} g proteínas ·{" "}
-            {(r.carbs! * servings).toFixed(1)} g carboidratos ·{" "}
-            {(r.fat! * servings).toFixed(1)} g gorduras
+            {num((r.protein! * servings).toFixed(1))}
+            {tr(" g proteínas ·")} {num((r.carbs! * servings).toFixed(1))}
+            {tr(" g carboidratos ·")} {num((r.fat! * servings).toFixed(1))}
+            {tr(" g gorduras")}
           </Text>
         </View>
       ) : (
         <View style={s.card}>
           <Text style={s.h3}>
             {r.sourceNutrition
-              ? "Informação nutricional da fonte"
-              : "Nutrição não informada no PDF"}
+              ? tr("Informação nutricional da fonte")
+              : tr("Nutrição não informada no PDF")}
           </Text>
           {r.sourceNutrition && <Text style={s.body}>{r.sourceNutrition}</Text>}
           <Text style={s.small}>
             {r.sourceNutrition
-              ? "Valores transcritos do PDF. A base de cálculo deve ser conferida na fonte; não são aplicados automaticamente à porção consumida."
-              : "Não atribuímos calorias ou macronutrientes a esta receita. Para registrar no diário, informe os valores da porção consumida."}
+              ? tr(
+                  "Valores transcritos do PDF. A base de cálculo deve ser conferida na fonte; não são aplicados automaticamente à porção consumida.",
+                )
+              : tr(
+                  "Não atribuímos calorias ou macronutrientes a esta receita. Para registrar no diário, informe os valores da porção consumida.",
+                )}
           </Text>
         </View>
       )}
       <Section
-        title="O que você vai precisar"
+        title={tr("O que você vai precisar")}
         caption={
-          r.yieldLabel ||
-          "Ingredientes para 1 porção. Ajuste proporcionalmente."
+          tr(r.yieldLabel) ||
+          tr("Ingredientes para 1 porção. Ajuste proporcionalmente.")
         }
       />
       <View style={s.card}>
@@ -202,7 +244,7 @@ export default function RecipeDetail() {
           </View>
         ))}
       </View>
-      <Section title="Mãos à obra" />
+      <Section title={tr("Mãos à obra")} />
       {r.steps.map((step, i) => (
         <View style={[s.card, s.row]} key={i}>
           <View
@@ -215,27 +257,32 @@ export default function RecipeDetail() {
               justifyContent: "center",
             }}
           >
-            <Text style={s.h3}>{i + 1}</Text>
+            <Text style={s.h3}>{num(i + 1)}</Text>
           </View>
           <Text style={[s.body, { flex: 1 }]}>{step}</Text>
         </View>
       ))}
       {r.source && (
         <View style={s.card}>
-          <Text style={s.h3}>Origem da receita e da imagem</Text>
+          <Text style={s.h3}>{tr("Origem da receita e da imagem")}</Text>
           <Text style={s.body}>{r.source.credit}</Text>
           <Text style={s.small}>
-            {r.source.document} · página {r.source.page}
+            {r.source.document}
+            {tr(" · página ")}
+            {num(r.source.page)}
           </Text>
           <Text style={s.footer}>
-            Ingredientes e preparo transcritos do material fornecido. Confira
-            quantidades, alergênicos e orientações de preparo na fonte.
+            {tr(
+              "Ingredientes e preparo transcritos do material fornecido. Confira quantidades, alergênicos e orientações de preparo na fonte.",
+            )}
           </Text>
         </View>
       )}
       <Section
-        title="Levar para o diário"
-        caption={`Dia ${new Date(selected + "T12:00:00").toLocaleDateString("pt-BR")}`}
+        title={tr("Levar para o diário")}
+        caption={tr("Dia {0}", {
+          0: new Date(selected + "T12:00:00").toLocaleDateString(locale()),
+        })}
       />
       <ScrollView
         horizontal
@@ -245,7 +292,7 @@ export default function RecipeDetail() {
         {GROUPS.map((g: string) => (
           <Chip
             key={g}
-            label={g}
+            label={tr(g)}
             active={g === group}
             onPress={() => setGroup(g)}
           />
@@ -253,15 +300,16 @@ export default function RecipeDetail() {
       </ScrollView>
       {!known && !manual ? (
         <Button light onPress={() => setManual(true)}>
-          Informar minha porção e nutrientes
+          {tr("Informar minha porção e nutrientes")}
         </Button>
       ) : (
         <>
           {!known && (
             <>
               <Text style={s.body}>
-                Informe os nutrientes apenas da quantidade consumida. Estes
-                campos não serão preenchidos com estimativas automáticas.
+                {tr(
+                  "Informe os nutrientes apenas da quantidade consumida. Estes campos não serão preenchidos com estimativas automáticas.",
+                )}
               </Text>
               {[
                 "Porção consumida (ex.: 1 fatia)",
@@ -272,7 +320,7 @@ export default function RecipeDetail() {
               ].map((label, i) => (
                 <Field
                   key={label}
-                  label={label}
+                  label={tr(label)}
                   value={values[i]}
                   onChange={(v) =>
                     setValues((f) => f.map((x, j) => (i === j ? v : x)))
@@ -284,18 +332,22 @@ export default function RecipeDetail() {
           )}
           {error ? (
             <Text style={s.error} accessibilityRole="alert">
-              {error}
+              {tr(error)}
             </Text>
           ) : null}
           <Button disabled={busy} onPress={() => void add()}>
-            {busy ? "Salvando…" : "Adicionar ao diário"}
+            {busy ? tr("Salvando…") : tr("Adicionar ao diário")}
           </Button>
         </>
       )}
       <Text style={s.footer}>
         {r.source
-          ? "Os valores e o rendimento variam conforme marcas, preparo e quantidade consumida."
-          : "Informações nutricionais estimadas. O preparo e as marcas utilizadas podem alterar os valores."}
+          ? tr(
+              "Os valores e o rendimento variam conforme marcas, preparo e quantidade consumida.",
+            )
+          : tr(
+              "Informações nutricionais estimadas. O preparo e as marcas utilizadas podem alterar os valores.",
+            )}
       </Text>
     </Page>
   );

@@ -1,4 +1,4 @@
-# Nutria 0.6 — teste experimental
+# Nutria 0.7 — teste experimental
 
 - Início voluntário com e-mail válido, sem código: 168 horas corridas, uma vez por instalação.
 - E-mail normalizado identifica a mesma conta local usada pela licença assinada. Ativar com o mesmo e-mail preserva os registros; outro e-mail tem dados separados.
@@ -10,7 +10,7 @@
 
 ## Atualização de instalações existentes
 
-A versão 0.6 amplia o prazo para 7 dias (168 horas), contados do mesmo `startedAt` já salvo. O formato do registro e as chaves de armazenamento permanecem os mesmos. Um teste ainda em andamento ganha o prazo maior sem reiniciar o contador; sair e reabrir continuam preservando o início. Registros já marcados como encerrados, inclusive por ativação assinada, não são reabertos pela atualização. Assinaturas pagas, códigos existentes e dados separados por e-mail mantêm as regras anteriores.
+A versão 0.6 ampliou o prazo para 7 dias (168 horas), contados do mesmo `startedAt` já salvo. A versão 0.7 acrescenta Português e English sem alterar o formato do registro ou as chaves de armazenamento. Sair, reabrir ou trocar o idioma preserva o início. Registros já marcados como encerrados, inclusive por ativação assinada, não são reabertos pela atualização. Assinaturas pagas, códigos existentes e dados separados por e-mail mantêm as regras anteriores.
 
 ## Limites
 
@@ -24,4 +24,4 @@ Para executar o teste de navegador no Windows, configure `NUTRIA_CHROMIUM_EXECUT
 
 ## APK
 
-Versão 0.6.0, Android versionCode 6, iOS buildNumber 6. Baixar o código atualizado e gerar novo APK com `npx eas-cli@latest build --platform android --profile preview`. Instalar sobre a versão anterior preserva os dados, desde que a chave Android seja a mesma. Testes físicos Android/iOS ainda são necessários.
+Versão 0.7.0, Android versionCode 7, iOS buildNumber 7. Baixar o código atualizado e gerar novo APK com `npx eas-cli@latest build --platform android --profile preview`. Instalar sobre a versão anterior preserva os dados, desde que a chave Android seja a mesma. Testes físicos Android/iOS ainda são necessários.

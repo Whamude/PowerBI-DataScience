@@ -1,3 +1,5 @@
+import { tr } from "../i18n/core.mjs";
+import { LanguageProvider, useLanguage } from "../i18n/LanguageProvider";
 import React from "react";
 import { Stack } from "expo-router";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -6,6 +8,7 @@ import { View, Text, ActivityIndicator } from "react-native";
 import { ActivationProvider, useActivation } from "../auth/ActivationProvider";
 import { C, s } from "../ui/theme";
 function Routes() {
+  useLanguage();
   const { activation, ready } = useActivation();
   if (!ready)
     return (
@@ -16,7 +19,7 @@ function Routes() {
         ]}
       >
         <ActivityIndicator color={C.green} />
-        <Text style={s.body}>Verificando seu acesso…</Text>
+        <Text style={s.body}>{tr("Verificando seu acesso…")}</Text>
       </View>
     );
   return (
@@ -36,9 +39,11 @@ function Routes() {
 export default function Layout() {
   return (
     <SafeAreaProvider>
-      <ActivationProvider>
-        <Routes />
-      </ActivationProvider>
+      <LanguageProvider>
+        <ActivationProvider>
+          <Routes />
+        </ActivationProvider>
+      </LanguageProvider>
     </SafeAreaProvider>
   );
 }

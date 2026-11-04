@@ -1,3 +1,5 @@
+import { tr } from "../i18n/core.mjs";
+import { useLanguage } from "../i18n/LanguageProvider";
 import React from "react";
 import { Image, View } from "react-native";
 import type { Recipe } from "../data/catalog";
@@ -12,6 +14,7 @@ export function RecipePhoto({
   detail?: boolean;
   compact?: boolean;
 }) {
+  useLanguage();
   const source = recipeImages[recipe.id];
   if (!source)
     return (
@@ -28,7 +31,7 @@ export function RecipePhoto({
   return (
     <Image
       source={source}
-      accessibilityLabel={`Foto da receita ${recipe.name}`}
+      accessibilityLabel={tr("Foto da receita {0}", { 0: recipe.name })}
       resizeMode={detail ? "contain" : "cover"}
       style={
         compact

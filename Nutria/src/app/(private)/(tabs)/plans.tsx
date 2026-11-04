@@ -1,8 +1,12 @@
+import { tr } from "../../../i18n/core.mjs";
+import { useLanguage } from "../../../i18n/LanguageProvider";
+import { useCatalog } from "../../../i18n/catalog";
 import React, { useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { router } from "expo-router";
 import { recipeMeta } from "../../../domain/recipes.mjs";
-import { plans, recipes } from "../../../data/catalog";
+import { recipes as canonicalRecipes } from "../../../data/catalog";
+
 import { useStore } from "../../../state/store";
 import { C, s } from "../../../ui/theme";
 import {
@@ -14,6 +18,8 @@ import {
   Button,
 } from "../../../ui/components";
 export default function Plans() {
+  useLanguage();
+  const { plans, recipes } = useCatalog();
   const { data, mutate } = useStore();
   const [detail, setDetail] = useState<string | null>(null),
     [shopping, setShopping] = useState(false),
@@ -23,34 +29,34 @@ export default function Plans() {
   const list = Array.from(
     new Set(
       active.recipeIds.flatMap(
-        (id) => recipes.find((r) => r.id === id)?.ingredients || [],
+        (id) => canonicalRecipes.find((r) => r.id === id)?.ingredients || [],
       ),
     ),
   );
   return (
     <Page>
-      <Text style={s.eyebrow}>INSPIRAÇÃO PARA COMER BEM</Text>
-      <Text style={s.title}>{"Uma rotina\ncom mais sabor."}</Text>
+      <Text style={s.eyebrow}>{tr("INSPIRAÇÃO PARA COMER BEM")}</Text>
+      <Text style={s.title}>{tr("Uma rotina\ncom mais sabor.")}</Text>
       <View style={[s.card, { backgroundColor: C.green }]}>
         <View style={s.between}>
           <View style={{ flex: 1, gap: 10 }}>
             <Text style={{ fontSize: 10, letterSpacing: 1.5, color: C.lime }}>
-              SUA INSPIRAÇÃO ATIVA
+              {tr("SUA INSPIRAÇÃO ATIVA")}
             </Text>
             <Text style={[s.h2, { color: "white" }]}>{active.name}</Text>
             <Text style={{ fontSize: 12, lineHeight: 19, color: "#DDE8D2" }}>
-              Ideias para montar seu dia, com flexibilidade.
+              {tr("Ideias para montar seu dia, com flexibilidade.")}
             </Text>
           </View>
           <FoodArt kind={active.kind} size={125} />
         </View>
         <Button light onPress={() => setShopping(true)}>
-          Ver lista de ingredientes
+          {tr("Ver lista de ingredientes")}
         </Button>
       </View>
       <Section
-        title="Seu dia, com ideias"
-        caption="Toque para ver o preparo e registrar uma receita"
+        title={tr("Seu dia, com ideias")}
+        caption={tr("Toque para ver o preparo e registrar uma receita")}
       />
       {active.recipeIds.map((id) => {
         const r = recipes.find((r) => r.id === id)!;
@@ -63,15 +69,15 @@ export default function Plans() {
           >
             <FoodArt kind={r.kind} size={70} />
             <View style={{ flex: 1, gap: 5 }}>
-              <Text style={s.eyebrow}>{r.category.toUpperCase()}</Text>
+              <Text style={s.eyebrow}>{tr(r.category).toUpperCase()}</Text>
               <Text style={s.h3}>{r.name}</Text>
-              <Text style={s.small}>{recipeMeta(r)}</Text>
+              <Text style={s.small}>{tr(recipeMeta(r))}</Text>
             </View>
             <Icon name="chevron-right" size={18} />
           </Pressable>
         );
       })}
-      <Section title="Explore outros caminhos" />
+      <Section title={tr("Explore outros caminhos")} />
       {plans.map((plan) => (
         <Pressable
           accessibilityRole="button"
@@ -92,17 +98,17 @@ export default function Plans() {
             </View>
             <FoodArt kind={plan.kind} size={110} />
           </View>
-          <Text style={s.link}>Explorar inspiração →</Text>
+          <Text style={s.link}>{tr("Explorar inspiração →")}</Text>
         </Pressable>
       ))}
       <Text style={s.footer}>
-        Estas coleções são sugestões culinárias, não dietas individualizadas ou
-        planos prescritos. Porções e necessidades variam. Não há promessa de
-        perda de peso.
+        {tr(
+          "Estas coleções são sugestões culinárias, não dietas individualizadas ou planos prescritos. Porções e necessidades variam. Não há promessa de perda de peso.",
+        )}
       </Text>
       <Sheet
         visible={!!chosen}
-        title={chosen?.name || ""}
+        title={tr(chosen?.name) || ""}
         onClose={() => setDetail(null)}
       >
         {chosen && (
@@ -112,8 +118,9 @@ export default function Plans() {
             </View>
             <Text style={s.body}>{chosen.description}</Text>
             <Text style={s.small}>
-              Inclui quatro ideias de refeições e uma lista de ingredientes.
-              Nenhuma receita será adicionada automaticamente ao seu diário.
+              {tr(
+                "Inclui quatro ideias de refeições e uma lista de ingredientes. Nenhuma receita será adicionada automaticamente ao seu diário.",
+              )}
             </Text>
             <Button
               disabled={busy}
@@ -129,24 +136,28 @@ export default function Plans() {
                 });
               }}
             >
-              {busy ? "Salvando…" : "Usar esta inspiração"}
+              {busy ? tr("Salvando…") : tr("Usar esta inspiração")}
             </Button>
           </>
         )}
       </Sheet>
       <Sheet
         visible={shopping}
-        title="Sua lista de ingredientes"
+        title={tr("Sua lista de ingredientes")}
         onClose={() => setShopping(false)}
       >
         <Text style={s.body}>
-          Ingredientes das quatro receitas de {active.name.toLowerCase()}. As
-          quantidades são por receita; some itens repetidos conforme o preparo.
+          {tr("Ingredientes das quatro receitas de ")}
+          {active.name.toLowerCase()}
+          {tr(
+            ". As quantidades são por receita; some itens repetidos conforme o preparo.",
+          )}
         </Text>
         {list.map((item) => (
           <Pressable
             accessibilityRole="checkbox"
             accessibilityState={{ checked: data.shopping.includes(item) }}
+            aria-checked={data.shopping.includes(item)}
             key={item}
             onPress={() =>
               void mutate((d) => ({
@@ -179,11 +190,13 @@ export default function Plans() {
                 },
               ]}
             >
-              {item}
+              {tr(item)}
             </Text>
           </Pressable>
         ))}
-        <Text style={s.small}>Seu checklist é salvo neste aparelho.</Text>
+        <Text style={s.small}>
+          {tr("Seu checklist é salvo neste aparelho.")}
+        </Text>
       </Sheet>
     </Page>
   );

@@ -1,3 +1,5 @@
+import { tr } from "../../i18n/core.mjs";
+import { useLanguage } from "../../i18n/LanguageProvider";
 import React from "react";
 import { Stack } from "expo-router";
 import { View, Text, ActivityIndicator } from "react-native";
@@ -5,6 +7,7 @@ import { StoreProvider, useStore } from "../../state/store";
 import { useActivation } from "../../auth/ActivationProvider";
 import { s, C } from "../../ui/theme";
 function PrivateRoutes() {
+  useLanguage();
   const { ready, error } = useStore();
   if (!ready)
     return (
@@ -21,7 +24,7 @@ function PrivateRoutes() {
       >
         <ActivityIndicator color={C.green} />
         <Text style={error ? s.error : s.body}>
-          {error || "Preparando seus registros…"}
+          {tr(error) || tr("Preparando seus registros…")}
         </Text>
       </View>
     );
@@ -36,6 +39,7 @@ function PrivateRoutes() {
   );
 }
 export default function PrivateLayout() {
+  useLanguage();
   const { activation } = useActivation();
   if (!activation) return null;
   return (

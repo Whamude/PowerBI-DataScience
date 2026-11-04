@@ -1,3 +1,5 @@
+import { tr, locale } from "../i18n/core.mjs";
+import { useLanguage } from "../i18n/LanguageProvider";
 import React, { ReactNode } from "react";
 import {
   View,
@@ -34,6 +36,7 @@ export function Icon({
   size?: number;
   color?: string;
 }) {
+  useLanguage();
   return <Feather name={name} size={size} color={color} />;
 }
 export function IconButton({
@@ -45,10 +48,11 @@ export function IconButton({
   onPress: () => void;
   label: string;
 }) {
+  useLanguage();
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={label}
+      accessibilityLabel={tr(label)}
       onPress={onPress}
       style={s.iconButton}
     >
@@ -67,6 +71,7 @@ export function Button({
   light?: boolean;
   disabled?: boolean;
 }) {
+  useLanguage();
   return (
     <Pressable
       accessibilityRole="button"
@@ -91,6 +96,7 @@ export function Chip({
   active: boolean;
   onPress: () => void;
 }) {
+  useLanguage();
   return (
     <Pressable
       accessibilityRole="button"
@@ -98,7 +104,9 @@ export function Chip({
       onPress={onPress}
       style={[s.chip, active && s.chipActive]}
     >
-      <Text style={[s.chipText, active && { color: "white" }]}>{label}</Text>
+      <Text style={[s.chipText, active && { color: "white" }]}>
+        {tr(label)}
+      </Text>
     </Pressable>
   );
 }
@@ -115,16 +123,17 @@ export function Field({
   numeric?: boolean;
   placeholder?: string;
 }) {
+  useLanguage();
   return (
     <View>
-      <Text style={s.label}>{label}</Text>
+      <Text style={s.label}>{tr(label)}</Text>
       <TextInput
-        accessibilityLabel={label}
+        accessibilityLabel={tr(label)}
         style={s.input}
         value={value}
         onChangeText={onChange}
         keyboardType={numeric ? "decimal-pad" : "default"}
-        placeholder={placeholder}
+        placeholder={tr(placeholder)}
         placeholderTextColor="#9DA498"
       />
     </View>
@@ -137,6 +146,7 @@ export function Header({
   title?: string;
   back?: boolean;
 }) {
+  useLanguage();
   return (
     <View
       style={[
@@ -154,7 +164,7 @@ export function Header({
         {back ? (
           <IconButton
             name="arrow-left"
-            label="Voltar"
+            label={tr("Voltar")}
             onPress={() => router.back()}
           />
         ) : (
@@ -179,13 +189,13 @@ export function Header({
             letterSpacing: -1,
           }}
         >
-          {title}
+          {tr(title)}
         </Text>
       </View>
       {!back && (
         <IconButton
           name="user"
-          label="Abrir meu perfil"
+          label={tr("Abrir meu perfil")}
           onPress={() => router.push("/profile")}
         />
       )}
@@ -201,17 +211,18 @@ export function Page({
   title?: string;
   back?: boolean;
 }) {
+  useLanguage();
   const { error } = useStore();
   return (
     <SafeAreaView edges={["top"]} style={s.page}>
-      <Header title={title} back={back} />
+      <Header title={title ? tr(title) : undefined} back={back} />
       <ScrollView
         contentContainerStyle={s.container}
         keyboardShouldPersistTaps="handled"
       >
         {error ? (
           <Text accessibilityRole="alert" style={s.error}>
-            {error}
+            {tr(error)}
           </Text>
         ) : null}
         {children}
@@ -230,6 +241,7 @@ export function Sheet({
   onClose: () => void;
   children: ReactNode;
 }) {
+  useLanguage();
   const insets = useSafeAreaInsets();
   const { error } = useStore();
   return (
@@ -249,12 +261,12 @@ export function Sheet({
             contentContainerStyle={s.sheetContent}
           >
             <View style={s.between}>
-              <Text style={[s.h2, { flex: 1 }]}>{title}</Text>
-              <IconButton name="x" label="Fechar" onPress={onClose} />
+              <Text style={[s.h2, { flex: 1 }]}>{tr(title)}</Text>
+              <IconButton name="x" label={tr("Fechar")} onPress={onClose} />
             </View>
             {error ? (
               <Text accessibilityRole="alert" style={s.error}>
-                {error}
+                {tr(error)}
               </Text>
             ) : null}
             {children}
@@ -275,11 +287,14 @@ export function Section({
   action?: string;
   onPress?: () => void;
 }) {
+  useLanguage();
   return (
     <View style={s.between}>
       <View style={{ flex: 1 }}>
-        <Text style={s.h2}>{title}</Text>
-        {caption && <Text style={[s.small, { marginTop: 4 }]}>{caption}</Text>}
+        <Text style={s.h2}>{tr(title)}</Text>
+        {caption && (
+          <Text style={[s.small, { marginTop: 4 }]}>{tr(caption)}</Text>
+        )}
       </View>
       {action && (
         <Pressable
@@ -287,7 +302,10 @@ export function Section({
           onPress={onPress}
           style={{ paddingVertical: 12 }}
         >
-          <Text style={s.link}>{action} →</Text>
+          <Text style={s.link}>
+            {tr(action)}
+            {tr(" →")}
+          </Text>
         </Pressable>
       )}
     </View>
@@ -300,6 +318,7 @@ export function FoodArt({
   kind?: string;
   size?: number;
 }) {
+  useLanguage();
   const palette =
     kind === "fruit"
       ? ["#D16F5B", "#E7B37E", "#769D53"]
@@ -313,7 +332,7 @@ export function FoodArt({
       width={size}
       height={size}
       viewBox="0 0 180 180"
-      accessibilityLabel="Ilustração de uma refeição"
+      accessibilityLabel={tr("Ilustração de uma refeição")}
     >
       <Circle cx="92" cy="97" r="73" fill="#173E3210" />
       <Circle cx="88" cy="88" r="71" fill="#F7F5E9" />
@@ -373,6 +392,7 @@ export function Ring({
   label: string;
   sub?: string;
 }) {
+  useLanguage();
   const radius = 76,
     circ = 2 * Math.PI * radius,
     progress = Math.max(0, Math.min(1, value / Math.max(1, max)));
@@ -412,7 +432,7 @@ export function Ring({
         />
       </Svg>
       <Text style={{ fontSize: 11, color: "#DCE9D3" }}>
-        {sub || "RESTANTES"}
+        {tr(sub) || tr("RESTANTES")}
       </Text>
       <Text
         style={{
@@ -422,9 +442,9 @@ export function Ring({
           marginVertical: 3,
         }}
       >
-        {label}
+        {tr(label)}
       </Text>
-      <Text style={{ fontSize: 11, color: "#DCE9D3" }}>kcal</Text>
+      <Text style={{ fontSize: 11, color: "#DCE9D3" }}>{tr("kcal")}</Text>
     </View>
   );
 }
@@ -433,12 +453,15 @@ export function WeightChart({
 }: {
   entries: { date: string; value: number }[];
 }) {
+  useLanguage();
   const rows = [...entries]
     .sort((a, b) => a.date.localeCompare(b.date))
     .slice(-12);
   if (!rows.length)
     return (
-      <Text style={s.body}>Seu gráfico começa com o primeiro registro.</Text>
+      <Text style={s.body}>
+        {tr("Seu gráfico começa com o primeiro registro.")}
+      </Text>
     );
   const values = rows.map((x) => x.value),
     low = Math.min(...values) - 1,
@@ -470,14 +493,15 @@ export function WeightChart({
       </Svg>
       <View style={s.between}>
         <Text style={s.small}>
-          {rows[0].date.split("-").reverse().slice(0, 2).join("/")}
+          {new Date(rows[0].date + "T12:00:00").toLocaleDateString(locale(), {
+            day: "2-digit",
+            month: "2-digit",
+          })}
         </Text>
         <Text style={s.small}>
-          {rows[rows.length - 1].date
-            .split("-")
-            .reverse()
-            .slice(0, 2)
-            .join("/")}
+          {new Date(
+            rows[rows.length - 1].date + "T12:00:00",
+          ).toLocaleDateString(locale(), { day: "2-digit", month: "2-digit" })}
         </Text>
       </View>
     </View>
