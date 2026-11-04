@@ -1,6 +1,6 @@
 # Ponto de retomada — 04/11/2026
 
-Trabalho pausado a pedido do proprietário para continuar amanhã. Não iniciar novas compilações ou instalações durante a pausa.
+Checkpoint registrado durante a pausa solicitada pelo proprietário. O proprietário retomou o trabalho depois com a mensagem **prossiga**; a atualização ao final registra o estado após a retomada. Não confundir os resultados históricos da pausa com os posteriores.
 
 ## Entrega Android preservada
 
@@ -51,3 +51,25 @@ Para IPA de aparelho faltam conta Apple Developer elegível vinculada, assinatur
 O bloqueio de rede `EACCES` é diferente do erro de serviço `Unable to verify model access right now`. O primeiro foi superado com `request_permissions` para rede, com escopo de turno; não presumir que a permissão persistirá amanhã. O segundo não teve causa interna confirmada nem correção comprovada. Não usar `sandbox_permissions=require_escalated`, contornar revisão/permissões ou alterar modelo/proteções globais.
 
 Dados dos usuários, chaves de persistência, licenças, início dos sete dias, fontes originais das receitas e APK entregue permanecem preservados. Não houve merge, publicação em loja, mudança de Stripe ou publicação de backend. Não há sincronização automática Android → iOS nesta versão.
+
+## Atualização após a retomada autorizada
+
+O checkpoint foi salvo na branch `nutria/ios-preparation`, commit `ff93c3bee76aa12466fd9a57736e63e808c29594`, e em JSON/ZIP locais em `outputs/Nutria-iOS-checkpoint-2026-11-04.*`.
+
+Com as dependências atualizadas: 30 testes, duas auditorias, lint, typecheck e `diff --check` aprovados. A consulta online `expo install --check` confirmou dependências atualizadas. A exportação iOS foi concluída: 1437 módulos, 118 assets e bundle Hermes `entry-60e9f7ff1ab01f97e86f0736324086c6.hbc`, 3.361.489 bytes, em `work/nutria-ios-export`.
+
+Os testes Chrome/Windows de idiomas e prazo passaram sem erros de navegador: seleção persistida, cinco abas, receitas, checklist, formatos, textos livres, ativação assinada de teste, registros/backup e início do período preservados; quinto dia e vencimento com app aberto também confirmados. Isso é evidência de navegador e código compartilhado, não execução iOS.
+
+Uma compilação `ios-simulator` foi solicitada com snapshot local correspondente ao checkpoint `ff93c3b`, chave pública original e sem credenciais Apple. ID: `e84afbcd-5e31-4e8c-9eae-5935d38a35bf`; fingerprint: `d41259b7984fb459f0ec208aa92c5437b5b3990b`. Acompanhar essa mesma solicitação; não iniciar outra por falta de resposta imediata. O EAS advertiu que a declaração `ITSAppUsesNonExemptEncryption` não foi preenchida; ela continua pendente de decisão do proprietário antes de eventual App Store Connect/TestFlight. Não preencher declaração legal automaticamente para silenciar o aviso.
+
+A consulta `npm audit --json` após a atualização confirmou 12 achados moderados, nenhum alto/crítico, nas cadeias de ferramentas Expo/ESLint/glob/minimatch. As correções sugeridas pelo npm incluíam regressar para Expo 52 e ESLint config 6, incompatíveis com a preparação SDK 58; não aplicar `audit fix --force`. Esses achados permanecem registrados para triagem; não afirmar que a atualização os corrigiu.
+
+## Encerramento seguro solicitado pelo proprietário
+
+O proprietário pediu novamente para encerrar em 04/11/2026. Trabalho pausado: não iniciar novas verificações, instalações ou compilações durante a pausa. O servidor local Metro de testes foi encerrado. Instalações e testes anteriores terminaram; não há instalação local em andamento.
+
+Na última consulta, o build iOS `e84afbcd-5e31-4e8c-9eae-5935d38a35bf` estava **IN_PROGRESS**, perfil `ios-simulator`, versão 0.7.0/build 8. Ele já está no serviço remoto Expo e pode terminar independentemente deste chat. Não cancelar nem duplicar a solicitação. Na retomada, consultar esse ID primeiro, baixar e verificar o artefato se concluído, ou investigar o erro se houver. Não afirmar sucesso de compilação ou execução nativa antes dessa conferência.
+
+Link de acompanhamento: https://expo.dev/accounts/whamudes-team/projects/Nutria/builds/e84afbcd-5e31-4e8c-9eae-5935d38a35bf
+
+As credenciais Apple continuam ausentes e nenhum IPA de aparelho foi solicitado. Permanecem pendentes conta Apple Developer/provisionamento/aparelho para teste físico, execução nativa do simulador e decisões sobre exportação/loja antes de qualquer submissão. APK Android bilíngue preservado. Sem merge nem publicação.

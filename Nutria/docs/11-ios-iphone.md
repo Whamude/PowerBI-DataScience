@@ -66,6 +66,8 @@ Compilação não valida o fluxo externo Stripe → emissão → e-mail. O backe
 
 ## Referências oficiais consultadas
 
+Validação desta preparação: 30 testes e duas auditorias de tradução aprovados, lint/typecheck e compatibilidade Expo aprovados após atualização SDK 58, exportação iOS Hermes concluída com 118 assets. Regressões Chrome/Windows de idiomas e prazo aprovadas. Build de simulador solicitado: `e84afbcd-5e31-4e8c-9eae-5935d38a35bf`, fonte checkpoint `ff93c3bee76aa12466fd9a57736e63e808c29594`; acompanhar até o resultado antes de afirmar que o app iOS foi compilado. Execução nativa e aparelho permanecem pendentes. Consultar `12-retomada-ios-2026-11-04.md` para histórico, limitações e triagem de dependências.
+
 - [Expo SDK 58](https://docs.expo.dev/versions/v58.0.0/)
 - [Build para simulador](https://docs.expo.dev/build-reference/simulators/)
 - [Distribuição interna e provisionamento ad hoc](https://docs.expo.dev/build/internal-distribution/)
