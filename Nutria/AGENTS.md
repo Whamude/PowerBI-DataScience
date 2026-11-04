@@ -43,3 +43,7 @@ Docs: https://docs.expo.dev/eas/index.md
 ## Ativação do Nutria
 
 Todas as novas telas privadas devem ficar em src/app/(private), sob Stack.Protected. O proprietário autorizou teste experimental de 168 horas sem código, uma vez por instalação, vinculado ao e-mail. Manter o prazo original ao retomar, exigir ativação após vencer e preservar os dados do mesmo e-mail. Não adicionar outros bypasses, senha mestra ou chave privada no app. Manter os dados separados por e-mail. A chave pública de produção foi fornecida pelo proprietário; nunca distribuir APK com chave de testes. Consulte docs/07-ativacao-email.md.
+
+## Idiomas
+
+O proprietário autorizou Português e English. Centralize textos da interface e erros em src/i18n/en.mjs e traduções das receitas importadas em src/i18n/recipes.en.json. Use a preferência persistida e os formatadores de src/i18n/core.mjs. Preserve textos livres, nomes próprios, IDs, categorias canônicas, registros por e-mail e o início do teste de 7 dias. Não traduza valores usados como chaves de persistência. Leia docs/10-idiomas.md e execute a auditoria de tradução incluída em npm test.

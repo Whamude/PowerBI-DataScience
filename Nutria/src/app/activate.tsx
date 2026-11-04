@@ -1,3 +1,5 @@
+import { tr } from "../i18n/core.mjs";
+import { LanguagePicker, useLanguage } from "../i18n/LanguageProvider";
 import React, { useState } from "react";
 import {
   View,
@@ -14,6 +16,7 @@ import { useActivation } from "../auth/ActivationProvider";
 import { C, s, serif } from "../ui/theme";
 import { Icon, Button } from "../ui/components";
 export default function Activate() {
+  useLanguage();
   const { activate, startTrial, error, configured } = useActivation();
   const [email, setEmail] = useState(""),
     [code, setCode] = useState(""),
@@ -43,11 +46,11 @@ export default function Activate() {
         >
           <View style={s.between}>
             <Text style={{ fontFamily: serif, fontSize: 36, color: C.ink }}>
-              nutria.
+              {tr("nutria.")}
             </Text>
             <View style={s.row}>
               <Icon name="shield" size={16} color={C.green} />
-              <Text style={s.eyebrow}>ACESSO INDIVIDUAL</Text>
+              <Text style={s.eyebrow}>{tr("ACESSO INDIVIDUAL")}</Text>
             </View>
           </View>
           <View
@@ -75,18 +78,20 @@ export default function Activate() {
               <Icon name="key" color={C.lime} size={33} />
             </View>
             <Text style={[s.h2, { textAlign: "center" }]}>
-              {"Seu cuidado tem\num espaço aqui."}
+              {tr("Seu cuidado tem\num espaço aqui.")}
             </Text>
             <Text style={[s.body, { textAlign: "center" }]}>
-              Experimente o Nutria por 7 dias com seu e-mail, sem código. Se já
-              tem um código de ativação, informe-o abaixo.
+              {tr(
+                "Experimente o Nutria por 7 dias com seu e-mail, sem código. Se já tem um código de ativação, informe-o abaixo.",
+              )}
             </Text>
           </View>
-          <Text style={s.title}>Ative seu acesso.</Text>
+          <LanguagePicker />
+          <Text style={s.title}>{tr("Ative seu acesso.")}</Text>
           <View>
-            <Text style={s.label}>Seu e-mail</Text>
+            <Text style={s.label}>{tr("Seu e-mail")}</Text>
             <TextInput
-              accessibilityLabel="E-mail de ativação"
+              accessibilityLabel={tr("E-mail de ativação")}
               style={s.input}
               autoCapitalize="none"
               autoCorrect={false}
@@ -94,37 +99,39 @@ export default function Activate() {
               textContentType="emailAddress"
               value={email}
               onChangeText={setEmail}
-              placeholder="voce@exemplo.com"
+              placeholder={tr("voce@exemplo.com")}
             />
           </View>
           <View style={s.card}>
-            <Text style={s.h3}>Experimente grátis por 7 dias</Text>
+            <Text style={s.h3}>{tr("Experimente grátis por 7 dias")}</Text>
             <Text style={s.body}>
-              Informe seu e-mail acima e comece sem código de ativação. O prazo
-              começa agora e continua contando mesmo com o app fechado.
+              {tr(
+                "Informe seu e-mail acima e comece sem código de ativação. O prazo começa agora e continua contando mesmo com o app fechado.",
+              )}
             </Text>
             <Button light disabled={busy} onPress={() => void tryTrial()}>
-              {busy ? "Aguarde…" : "Começar ou retomar teste de 7 dias"}
+              {busy ? tr("Aguarde…") : tr("Começar ou retomar teste de 7 dias")}
             </Button>
             <Text style={s.small}>
-              Ao terminar, será necessário ativar. Use o mesmo e-mail para
-              manter seus registros. Retomar um teste não reinicia o prazo.
+              {tr(
+                "Ao terminar, será necessário ativar. Use o mesmo e-mail para manter seus registros. Retomar um teste não reinicia o prazo.",
+              )}
             </Text>
           </View>
           <View>
             <View style={s.between}>
-              <Text style={s.label}>Código de ativação</Text>
+              <Text style={s.label}>{tr("Código de ativação")}</Text>
               <Pressable
                 accessibilityRole="button"
                 onPress={() => setShow((v) => !v)}
               >
                 <Text style={s.link}>
-                  {show ? "Ocultar código" : "Mostrar código"}
+                  {show ? tr("Ocultar código") : tr("Mostrar código")}
                 </Text>
               </Pressable>
             </View>
             <TextInput
-              accessibilityLabel="Código de ativação"
+              accessibilityLabel={tr("Código de ativação")}
               style={[s.input, { minHeight: 90, fontSize: 13 }]}
               value={code}
               onChangeText={setCode}
@@ -132,32 +139,34 @@ export default function Activate() {
               autoCorrect={false}
               multiline={show}
               secureTextEntry={!show}
-              placeholder="Cole o código completo NTR1…"
+              placeholder={tr("Cole o código completo NTR1…")}
             />
           </View>
           {!configured && (
             <Text style={s.error}>
-              A chave pública do administrador ainda não foi configurada nesta
-              versão. Solicite ao responsável a versão configurada do
-              aplicativo.
+              {tr(
+                "A chave pública do administrador ainda não foi configurada nesta versão. Solicite ao responsável a versão configurada do aplicativo.",
+              )}
             </Text>
           )}
           {error ? (
             <Text style={s.error} accessibilityRole="alert">
-              {error}
+              {tr(error)}
             </Text>
           ) : null}
           <Button disabled={busy || !configured} onPress={() => void submit()}>
-            {busy ? "Conferindo código…" : "Ativar e entrar"}
+            {busy ? tr("Conferindo código…") : tr("Ativar e entrar")}
           </Button>
           <Text style={s.small}>
-            O código deve ter sido emitido para o mesmo e-mail. Você pode
-            colá-lo completo, mesmo que tenha quebras de linha.
+            {tr(
+              "O código deve ter sido emitido para o mesmo e-mail. Você pode colá-lo completo, mesmo que tenha quebras de linha.",
+            )}
           </Text>
           <View style={{ flex: 1 }} />
           <Text style={[s.footer, { textAlign: "center" }]}>
-            A validação funciona sem internet. Precisa de um código ou de
-            renovação? Fale com o administrador do Nutria.
+            {tr(
+              "A validação funciona sem internet. Precisa de um código ou de renovação? Fale com o administrador do Nutria.",
+            )}
           </Text>
         </ScrollView>
       </KeyboardAvoidingView>

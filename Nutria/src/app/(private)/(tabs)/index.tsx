@@ -1,3 +1,6 @@
+import { tr, num, locale, inputNumber } from "../../../i18n/core.mjs";
+import { useLanguage } from "../../../i18n/LanguageProvider";
+import { mealName } from "../../../i18n/catalog";
 import React, { useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
@@ -23,20 +26,23 @@ import {
   Sheet,
 } from "../../../ui/components";
 export default function Diary() {
+  useLanguage();
   const { data, selected, setSelected, today, updateDay } = useStore();
   const day = data.days[selected] || emptyDay();
   const total = totals(day.meals),
     p = data.profile;
   const [activity, setActivity] = useState(false),
-    [form, setForm] = useState(["Caminhada", "30", ""]),
+    [form, setForm] = useState([tr("Caminhada"), "30", ""]),
     [error, setError] = useState(""),
     [busy, setBusy] = useState(false);
   const dates = Array.from({ length: 7 }, (_, i) => shiftDate(selected, i - 3));
   const kcalLeft = p.calories - total.kcal;
   async function saveActivity() {
     try {
-      const minutes = numberValue(form[1], 1, 1440, "Minutos"),
-        kcal = form[2] ? numberValue(form[2], 0, 10000, "Calorias") : 0;
+      const minutes = numberValue(inputNumber(form[1]), 1, 1440, "Minutos"),
+        kcal = form[2]
+          ? numberValue(inputNumber(form[2]), 0, 10000, "Calorias")
+          : 0;
       if (!form[0].trim()) throw new Error("Informe o nome da atividade.");
       setBusy(true);
       const ok = await updateDay((d) => ({
@@ -48,7 +54,7 @@ export default function Diary() {
       }));
       if (ok) {
         setActivity(false);
-        setForm(["Caminhada", "30", ""]);
+        setForm([tr("Caminhada"), "30", ""]);
       }
     } catch (e) {
       setError((e as Error).message);
@@ -60,17 +66,19 @@ export default function Diary() {
     <Page>
       <View style={s.between}>
         <View>
-          <Text style={s.eyebrow}>BOM TE VER POR AQUI</Text>
+          <Text style={s.eyebrow}>{tr("BOM TE VER POR AQUI")}</Text>
           <Text style={s.title}>
-            {p.name === "Você" ? "Seu dia" : p.name.split(" ")[0]}, no seu
-            ritmo.
+            {!p.name || p.name === "Você"
+              ? tr("Seu dia")
+              : p.name.split(" ")[0]}
+            {tr(", no seu ritmo.")}
           </Text>
         </View>
       </View>
       <View style={s.between}>
         <IconButton
           name="chevron-left"
-          label="Dia anterior"
+          label={tr("Dia anterior")}
           onPress={() => setSelected(shiftDate(selected, -1))}
         />
         <Pressable
@@ -78,19 +86,19 @@ export default function Diary() {
           onPress={() => setSelected(today)}
         >
           <Text style={s.h3}>
-            {selected === today ? "Hoje · " : ""}
-            {new Date(selected + "T12:00:00").toLocaleDateString("pt-BR", {
+            {selected === today ? tr("Hoje · ") : ""}
+            {new Date(selected + "T12:00:00").toLocaleDateString(locale(), {
               day: "numeric",
               month: "long",
             })}
           </Text>
           <Text style={[s.small, { textAlign: "center" }]}>
-            Toque para voltar a hoje
+            {tr("Toque para voltar a hoje")}
           </Text>
         </Pressable>
         <IconButton
           name="chevron-right"
-          label="Dia seguinte"
+          label={tr("Dia seguinte")}
           onPress={() => setSelected(shiftDate(selected, 1))}
         />
       </View>
@@ -98,7 +106,9 @@ export default function Diary() {
         {dates.map((date) => (
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel={`Abrir ${date}`}
+            accessibilityLabel={tr("Abrir {0}", {
+              0: new Date(date + "T12:00:00").toLocaleDateString(locale()),
+            })}
             accessibilityState={{ selected: date === selected }}
             key={date}
             onPress={() => setSelected(date)}
@@ -118,7 +128,7 @@ export default function Diary() {
               }}
             >
               {new Date(date + "T12:00:00")
-                .toLocaleDateString("pt-BR", { weekday: "narrow" })
+                .toLocaleDateString(locale(), { weekday: "narrow" })
                 .toUpperCase()}
             </Text>
             <Text
@@ -128,7 +138,7 @@ export default function Diary() {
                 color: date === selected ? "white" : C.ink,
               }}
             >
-              {+date.slice(-2)}
+              {num(+date.slice(-2))}
             </Text>
             <View
               style={{
@@ -149,35 +159,37 @@ export default function Diary() {
       >
         <View style={s.between}>
           <Text style={{ fontSize: 10, letterSpacing: 1.7, color: "#C7D6BD" }}>
-            SEU EQUILÍBRIO DIÁRIO
+            {tr("SEU EQUILÍBRIO DIÁRIO")}
           </Text>
           <Icon name="sun" color={C.lime} />
         </View>
         <View style={[s.row, { justifyContent: "space-between", gap: 0 }]}>
           <View style={{ alignItems: "center", flex: 1 }}>
             <Text style={{ color: "white", fontSize: 21 }}>
-              {Math.round(total.kcal)}
+              {num(Math.round(total.kcal))}
             </Text>
             <Text style={{ fontSize: 10, color: "#C7D6BD", marginTop: 5 }}>
-              consumidas
+              {tr("consumidas")}
             </Text>
           </View>
           <Ring
             value={total.kcal}
             max={p.calories}
-            label={String(Math.round(Math.abs(kcalLeft)))}
-            sub={kcalLeft < 0 ? "ACIMA DA META" : "RESTANTES"}
+            label={num(String(Math.round(Math.abs(kcalLeft))))}
+            sub={kcalLeft < 0 ? tr("ACIMA DA META") : tr("RESTANTES")}
             size={180}
           />
           <View style={{ alignItems: "center", flex: 1 }}>
-            <Text style={{ color: "white", fontSize: 21 }}>{p.calories}</Text>
+            <Text style={{ color: "white", fontSize: 21 }}>
+              {num(p.calories)}
+            </Text>
             <Text style={{ fontSize: 10, color: "#C7D6BD", marginTop: 5 }}>
-              meta diária
+              {tr("meta diária")}
             </Text>
           </View>
         </View>
         <Text style={{ fontSize: 11, color: "#C7D6BD", textAlign: "center" }}>
-          Uma refeição de cada vez. Sem pressa.
+          {tr("Uma refeição de cada vez. Sem pressa.")}
         </Text>
       </LinearGradient>
       <View style={[s.row, { gap: 9 }]}>
@@ -191,13 +203,15 @@ export default function Diary() {
             style={[s.card, { flex: 1, padding: 12, borderRadius: 18, gap: 9 }]}
           >
             <Text style={{ fontSize: 10, fontWeight: "600", color: C.ink }}>
-              {label}
+              {tr(label)}
             </Text>
             <Text style={s.small}>
               <Text style={{ color: C.ink, fontSize: 18 }}>
-                {Math.round(Number(value))}
+                {num(Math.round(Number(value)))}
               </Text>{" "}
-              / {max} g
+              {tr("/ ")}
+              {num(max)}
+              {tr(" g")}
             </Text>
             <View
               style={{
@@ -218,7 +232,10 @@ export default function Diary() {
           </View>
         ))}
       </View>
-      <Section title="À sua mesa" caption="Seu diário, refeição por refeição" />
+      <Section
+        title={tr("À sua mesa")}
+        caption={tr("Seu diário, refeição por refeição")}
+      />
       {GROUPS.map((group: string, i: number) => {
         const meals = day.meals.filter((m: any) => m.group === group);
         return (
@@ -246,17 +263,19 @@ export default function Diary() {
                   />
                 </View>
                 <View>
-                  <Text style={s.h3}>{group}</Text>
+                  <Text style={s.h3}>{tr(group)}</Text>
                   <Text style={s.small}>
                     {meals.length
-                      ? `${Math.round(totals(meals).kcal)} kcal registradas`
-                      : "Ainda sem registros"}
+                      ? tr("{0} kcal registradas", {
+                          0: num(Math.round(totals(meals).kcal)),
+                        })
+                      : tr("Ainda sem registros")}
                   </Text>
                 </View>
               </View>
               <IconButton
                 name="plus"
-                label={`Adicionar alimento em ${group}`}
+                label={tr("Adicionar alimento em {0}", { 0: tr(group) })}
                 onPress={() =>
                   router.push({
                     pathname: "/food",
@@ -268,7 +287,7 @@ export default function Diary() {
             {meals.map((m: any) => (
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel={`Editar ${m.name}`}
+                accessibilityLabel={tr("Editar {0}", { 0: mealName(m) })}
                 key={m.id}
                 onPress={() =>
                   router.push({
@@ -282,10 +301,13 @@ export default function Diary() {
                 ]}
               >
                 <View style={{ flex: 1 }}>
-                  <Text style={{ fontSize: 13, color: C.ink }}>{m.name}</Text>
+                  <Text style={{ fontSize: 13, color: C.ink }}>
+                    {mealName(m)}
+                  </Text>
                   <Text style={s.small}>
-                    {m.grams ? `${m.grams} g · ` : ""}
-                    {Math.round(m.kcal)} kcal
+                    {m.grams ? tr("{0} g · ", { 0: num(m.grams) }) : ""}
+                    {num(Math.round(m.kcal))}
+                    {tr(" kcal")}
                   </Text>
                 </View>
                 <Icon name="chevron-right" size={16} color={C.muted} />
@@ -295,8 +317,8 @@ export default function Diary() {
         );
       })}
       <Section
-        title="Pequenos hábitos"
-        caption="Cultive o que faz você se sentir bem"
+        title={tr("Pequenos hábitos")}
+        caption={tr("Cultive o que faz você se sentir bem")}
       />
       <View
         style={[s.card, { backgroundColor: "#E9F1F0", borderColor: "#E2ECE9" }]}
@@ -304,10 +326,13 @@ export default function Diary() {
         <View style={s.between}>
           <View style={s.row}>
             <Icon name="droplet" color="#52858E" />
-            <Text style={s.h3}>Um gole de cuidado</Text>
+            <Text style={s.h3}>{tr("Um gole de cuidado")}</Text>
           </View>
           <Text style={s.small}>
-            {day.water} / {p.water} ml
+            {num(day.water)}
+            {tr(" / ")}
+            {num(p.water)}
+            {tr(" ml")}
           </Text>
         </View>
         <View
@@ -329,7 +354,7 @@ export default function Diary() {
         <View style={s.between}>
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel="Retirar 250 ml de água"
+            accessibilityLabel={tr("Retirar 250 ml de água")}
             onPress={() =>
               void updateDay((d) => ({
                 ...d,
@@ -355,7 +380,7 @@ export default function Diary() {
           </View>
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel="Adicionar 250 ml de água"
+            accessibilityLabel={tr("Adicionar 250 ml de água")}
             onPress={() =>
               void updateDay((d) => ({
                 ...d,
@@ -367,7 +392,9 @@ export default function Diary() {
             <Icon name="plus" size={16} />
           </Pressable>
         </View>
-        <Text style={s.small}>Cada toque adiciona ou retira 250 ml.</Text>
+        <Text style={s.small}>
+          {tr("Cada toque adiciona ou retira 250 ml.")}
+        </Text>
       </View>
       <View style={s.row}>
         {[
@@ -379,11 +406,13 @@ export default function Diary() {
             style={[s.card, { flex: 1, padding: 16, backgroundColor: color }]}
           >
             <Icon name={key === "fruit" ? "sun" : "feather"} />
-            <Text style={s.h3}>{label}</Text>
+            <Text style={s.h3}>{tr(label)}</Text>
             <View style={s.between}>
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel={`Retirar porção de ${label}`}
+                accessibilityLabel={tr("Retirar porção de {0}", {
+                  0: tr(label),
+                })}
                 onPress={() =>
                   void updateDay((d) => ({
                     ...d,
@@ -393,10 +422,12 @@ export default function Diary() {
               >
                 <Icon name="minus" />
               </Pressable>
-              <Text style={s.metric}>{day[key as "fruit"] || 0}</Text>
+              <Text style={s.metric}>{day[key as "fruit"] || num(0)}</Text>
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel={`Adicionar porção de ${label}`}
+                accessibilityLabel={tr("Adicionar porção de {0}", {
+                  0: tr(label),
+                })}
                 onPress={() =>
                   void updateDay((d) => ({
                     ...d,
@@ -407,13 +438,13 @@ export default function Diary() {
                 <Icon name="plus" />
               </Pressable>
             </View>
-            <Text style={s.small}>porções no dia</Text>
+            <Text style={s.small}>{tr("porções no dia")}</Text>
           </View>
         ))}
       </View>
       <Section
-        title="Corpo em movimento"
-        action="Registrar"
+        title={tr("Corpo em movimento")}
+        action={tr("Registrar")}
         onPress={() => {
           setError("");
           setActivity(true);
@@ -426,12 +457,16 @@ export default function Diary() {
               <View style={{ flex: 1 }}>
                 <Text style={s.h3}>{a.name}</Text>
                 <Text style={s.small}>
-                  {a.minutes} min{a.kcal ? ` · ${a.kcal} kcal informadas` : ""}
+                  {num(a.minutes)}
+                  {tr(" min")}
+                  {a.kcal
+                    ? tr(" · {0} kcal informadas", { 0: num(a.kcal) })
+                    : ""}
                 </Text>
               </View>
               <IconButton
                 name="trash-2"
-                label={`Excluir ${a.name}`}
+                label={tr("Excluir {0}", { 0: a.name })}
                 onPress={() =>
                   void updateDay((d) => ({
                     ...d,
@@ -445,25 +480,28 @@ export default function Diary() {
           <View style={s.row}>
             <Icon name="activity" color={C.muted} />
             <Text style={[s.body, { flex: 1 }]}>
-              Uma caminhada, uma dança, uma pausa ativa. Registre seu movimento.
+              {tr(
+                "Uma caminhada, uma dança, uma pausa ativa. Registre seu movimento.",
+              )}
             </Text>
           </View>
         )}
         <Text style={s.footer}>
-          Calorias de atividade são informadas por você e não alteram sua meta
-          alimentar.
+          {tr(
+            "Calorias de atividade são informadas por você e não alteram sua meta alimentar.",
+          )}
         </Text>
       </View>
       <Sheet
         visible={activity}
-        title="Registrar movimento"
+        title={tr("Registrar movimento")}
         onClose={() => setActivity(false)}
       >
         {["Atividade", "Duração (min)", "Calorias gastas (opcional)"].map(
           (label, i) => (
             <Field
               key={label}
-              label={label}
+              label={tr(label)}
               value={form[i]}
               onChange={(v) =>
                 setForm((f) => f.map((x, j) => (i === j ? v : x)))
@@ -472,9 +510,9 @@ export default function Diary() {
             />
           ),
         )}
-        {error ? <Text style={s.error}>{error}</Text> : null}
+        {error ? <Text style={s.error}>{tr(error)}</Text> : null}
         <Button disabled={busy} onPress={() => void saveActivity()}>
-          {busy ? "Salvando…" : "Salvar atividade"}
+          {busy ? tr("Salvando…") : tr("Salvar atividade")}
         </Button>
       </Sheet>
     </Page>

@@ -1,3 +1,11 @@
+import {
+  tr,
+  num,
+  locale,
+  inputNumber,
+  numberInput,
+} from "../../../i18n/core.mjs";
+import { LanguagePicker, useLanguage } from "../../../i18n/LanguageProvider";
 import { useActivation } from "../../../auth/ActivationProvider";
 import React, { useState } from "react";
 import { View, Text, Pressable, Share } from "react-native";
@@ -14,6 +22,7 @@ import {
   Button,
 } from "../../../ui/components";
 export default function ProfileScreen() {
+  useLanguage();
   const { data, mutate } = useStore();
   const { activation, signOut, error: activationError } = useActivation();
   const [edit, setEdit] = useState(false),
@@ -25,7 +34,10 @@ export default function ProfileScreen() {
   function open() {
     setForm(
       Object.fromEntries(
-        Object.entries(data.profile).map(([k, v]) => [k, String(v)]),
+        Object.entries(data.profile).map(([k, v]) => [
+          k,
+          typeof v === "number" ? numberInput(v) : String(v),
+        ]),
       ),
     );
     setError("");
@@ -34,17 +46,27 @@ export default function ProfileScreen() {
   async function save() {
     try {
       const profile: Profile = {
-        name: form.name.trim() || "Você",
+        name: form.name.trim(),
         goal: form.goal,
         style: form.style,
-        calories: numberValue(form.calories, 800, 6000, "Calorias"),
-        protein: numberValue(form.protein, 1, 500, "Proteínas"),
-        carbs: numberValue(form.carbs, 1, 1000, "Carboidratos"),
-        fat: numberValue(form.fat, 1, 300, "Gorduras"),
-        water: numberValue(form.water, 250, 8000, "Água"),
+        calories: numberValue(
+          inputNumber(form.calories),
+          800,
+          6000,
+          "Calorias",
+        ),
+        protein: numberValue(inputNumber(form.protein), 1, 500, "Proteínas"),
+        carbs: numberValue(inputNumber(form.carbs), 1, 1000, "Carboidratos"),
+        fat: numberValue(inputNumber(form.fat), 1, 300, "Gorduras"),
+        water: numberValue(inputNumber(form.water), 250, 8000, "Água"),
         targetWeight:
           form.targetWeight && form.targetWeight !== "0"
-            ? numberValue(form.targetWeight, 20, 500, "Meta de peso")
+            ? numberValue(
+                inputNumber(form.targetWeight),
+                20,
+                500,
+                "Meta de peso",
+              )
             : 0,
       };
       setBusy(true);
@@ -62,7 +84,7 @@ export default function ProfileScreen() {
   async function exportData() {
     try {
       await Share.share({
-        title: "Meus dados Nutria",
+        title: tr("Meus dados Nutria"),
         message: JSON.stringify(data, null, 2),
       });
     } catch {
@@ -83,8 +105,8 @@ export default function ProfileScreen() {
       <View style={[s.row, { flex: 1 }]}>
         <Icon name={icon} />
         <View style={{ flex: 1, gap: 4 }}>
-          <Text style={s.h3}>{title}</Text>
-          <Text style={s.small}>{caption}</Text>
+          <Text style={s.h3}>{tr(title)}</Text>
+          <Text style={s.small}>{tr(caption)}</Text>
         </View>
       </View>
       <Icon name="chevron-right" size={17} color={C.muted} />
@@ -92,8 +114,8 @@ export default function ProfileScreen() {
   );
   return (
     <Page>
-      <Text style={s.eyebrow}>SEU ESPAÇO</Text>
-      <Text style={s.title}>{"Cuidar começa\npor você."}</Text>
+      <Text style={s.eyebrow}>{tr("SEU ESPAÇO")}</Text>
+      <Text style={s.title}>{tr("Cuidar começa\npor você.")}</Text>
       <View style={[s.card, { backgroundColor: "#E8EEDB" }]}>
         <View style={s.row}>
           <View
@@ -107,39 +129,43 @@ export default function ProfileScreen() {
             }}
           >
             <Text style={{ color: C.lime, fontFamily: serif, fontSize: 30 }}>
-              {data.profile.name.charAt(0).toUpperCase()}
+              {(data.profile.name || tr("Você")).charAt(0).toUpperCase()}
             </Text>
           </View>
           <View style={{ flex: 1, gap: 5 }}>
-            <Text style={s.h2}>{data.profile.name}</Text>
-            <Text style={s.body}>{data.profile.goal}</Text>
+            <Text style={s.h2}>{data.profile.name || tr("Você")}</Text>
+            <Text style={s.body}>{tr(data.profile.goal)}</Text>
           </View>
         </View>
         <View style={s.divider} />
         <View style={s.between}>
-          <Text style={s.small}>{data.profile.style}</Text>
+          <Text style={s.small}>{tr(data.profile.style)}</Text>
           <Pressable accessibilityRole="button" onPress={open}>
-            <Text style={s.link}>Editar perfil →</Text>
+            <Text style={s.link}>{tr("Editar perfil →")}</Text>
           </Pressable>
         </View>
       </View>
       {notice ? (
         <Text accessibilityRole="alert" style={[s.body, { color: C.green }]}>
-          {notice}
+          {tr(notice)}
         </Text>
       ) : null}
-      <Section title="Metas no seu ritmo" action="Ajustar" onPress={open} />
+      <Section
+        title={tr("Metas no seu ritmo")}
+        action={tr("Ajustar")}
+        onPress={open}
+      />
       <View style={s.card}>
         {[
-          ["Calorias", `${data.profile.calories} kcal`, "sun"],
-          ["Água", `${data.profile.water} ml`, "droplet"],
-          ["Proteínas", `${data.profile.protein} g`, "circle"],
-          ["Carboidratos", `${data.profile.carbs} g`, "circle"],
-          ["Gorduras", `${data.profile.fat} g`, "circle"],
+          ["Calorias", `${num(data.profile.calories)} kcal`, "sun"],
+          ["Água", `${num(data.profile.water)} ml`, "droplet"],
+          ["Proteínas", `${num(data.profile.protein)} g`, "circle"],
+          ["Carboidratos", `${num(data.profile.carbs)} g`, "circle"],
+          ["Gorduras", `${num(data.profile.fat)} g`, "circle"],
           [
             "Meta de peso",
             data.profile.targetWeight
-              ? `${data.profile.targetWeight} kg`
+              ? `${num(data.profile.targetWeight)} kg`
               : "Não definida",
             "trending-up",
           ],
@@ -151,33 +177,37 @@ export default function ProfileScreen() {
                 size={16}
                 color={C.muted}
               />
-              <Text style={s.body}>{label}</Text>
+              <Text style={s.body}>{tr(label)}</Text>
             </View>
-            <Text style={s.h3}>{value}</Text>
+            <Text style={s.h3}>{tr(value)}</Text>
           </View>
         ))}
         <Text style={s.footer}>
-          Metas definidas por você. Calorias e nutrientes podem ser ajustados de
-          forma independente conforme sua orientação profissional.
+          {tr(
+            "Metas definidas por você. Calorias e nutrientes podem ser ajustados de forma independente conforme sua orientação profissional.",
+          )}
         </Text>
       </View>
-      <Section title="Seu acesso" />
+      <Section title={tr("Seu acesso")} />
       {activationError ? (
         <Text accessibilityRole="alert" style={s.error}>
-          {activationError}
+          {tr(activationError)}
         </Text>
       ) : null}
       <View style={s.card}>
         <Text style={s.h3}>
           {activation?.trial
-            ? "Teste experimental de 7 dias"
-            : "Ativação individual"}
+            ? tr("Teste experimental de 7 dias")
+            : tr("Ativação individual")}
         </Text>
         <Text style={s.body}>{activation?.email}</Text>
         <Text style={s.small}>
           {activation?.expiresAt
-            ? `${activation.trial ? "Teste até" : "Válida até"} ${new Date(activation.expiresAt).toLocaleString("pt-BR")}`
-            : "Sem vencimento"}
+            ? tr("{0} {1}", {
+                0: activation.trial ? tr("Teste até") : tr("Válida até"),
+                1: new Date(activation.expiresAt).toLocaleString(locale()),
+              })
+            : tr("Sem vencimento")}
         </Text>
         <Button
           light
@@ -186,16 +216,21 @@ export default function ProfileScreen() {
           }}
         >
           {activation?.trial
-            ? "Sair do teste / inserir código"
-            : "Sair desta ativação"}
+            ? tr("Sair do teste / inserir código")
+            : tr("Sair desta ativação")}
         </Button>
         <Text style={s.footer}>
           {activation?.trial
-            ? "Seus registros serão preservados. Você pode ativar com este mesmo e-mail a qualquer momento ou retomar o teste dentro do prazo original."
-            : "Seus registros deste e-mail serão preservados neste aparelho. Será necessário informar o código para entrar novamente."}
+            ? tr(
+                "Seus registros serão preservados. Você pode ativar com este mesmo e-mail a qualquer momento ou retomar o teste dentro do prazo original.",
+              )
+            : tr(
+                "Seus registros deste e-mail serão preservados neste aparelho. Será necessário informar o código para entrar novamente.",
+              )}
         </Text>
       </View>
-      <Section title="Seu aplicativo" />
+      <Section title={tr("Seu aplicativo")} />
+      <LanguagePicker />
       {item(
         "Editar preferências",
         "Nome, estilo alimentar e objetivos",
@@ -216,26 +251,27 @@ export default function ProfileScreen() {
       )}
       <View style={[s.card, { backgroundColor: "#ECE9DE" }]}>
         <Icon name="feather" />
-        <Text style={s.h2}>Sem pressa. Sem comparação.</Text>
+        <Text style={s.h2}>{tr("Sem pressa. Sem comparação.")}</Text>
         <Text style={s.body}>
-          Seu progresso é seu. O Nutria ajuda a registrar escolhas e enxergar
-          sua rotina com mais clareza.
+          {tr(
+            "Seu progresso é seu. O Nutria ajuda a registrar escolhas e enxergar sua rotina com mais clareza.",
+          )}
         </Text>
       </View>
       <Text style={[s.footer, { textAlign: "center" }]}>
-        nutria · versão 0.4.0 · feito para o seu cotidiano
+        {tr("nutria · versão 0.7.0 · feito para o seu cotidiano")}
       </Text>
       <Sheet
         visible={edit}
-        title="Seu perfil e suas metas"
+        title={tr("Seu perfil e suas metas")}
         onClose={() => setEdit(false)}
       >
         <Field
-          label="Seu nome"
+          label={tr("Seu nome")}
           value={form.name || ""}
           onChange={(v) => setForm((f) => ({ ...f, name: v }))}
         />
-        <Text style={s.label}>Seu objetivo</Text>
+        <Text style={s.label}>{tr("Seu objetivo")}</Text>
         {[
           "Mais equilíbrio",
           "Organizar a alimentação",
@@ -244,18 +280,18 @@ export default function ProfileScreen() {
         ].map((goal) => (
           <Chip
             key={goal}
-            label={goal}
+            label={tr(goal)}
             active={form.goal === goal}
             onPress={() => setForm((f) => ({ ...f, goal }))}
           />
         ))}
-        <Text style={s.label}>Estilo alimentar</Text>
+        <Text style={s.label}>{tr("Estilo alimentar")}</Text>
         <View style={[s.row, { flexWrap: "wrap" }]}>
           {["Sem restrições", "Vegetariano", "Vegano", "Pescetariano"].map(
             (style) => (
               <Chip
                 key={style}
-                label={style}
+                label={tr(style)}
                 active={form.style === style}
                 onPress={() => setForm((f) => ({ ...f, style }))}
               />
@@ -263,8 +299,9 @@ export default function ProfileScreen() {
           )}
         </View>
         <Text style={s.body}>
-          Use metas orientadas por um profissional. Os limites abaixo são
-          validações de entrada, não recomendações individuais.
+          {tr(
+            "Use metas orientadas por um profissional. Os limites abaixo são validações de entrada, não recomendações individuais.",
+          )}
         </Text>
         {[
           ["calories", "Meta de calorias (kcal)"],
@@ -276,46 +313,46 @@ export default function ProfileScreen() {
         ].map(([key, label]) => (
           <Field
             key={key}
-            label={label}
+            label={tr(label)}
             value={form[key] || ""}
             onChange={(v) => setForm((f) => ({ ...f, [key]: v }))}
             numeric
           />
         ))}
-        {error ? <Text style={s.error}>{error}</Text> : null}
+        {error ? <Text style={s.error}>{tr(error)}</Text> : null}
         <Button disabled={busy} onPress={() => void save()}>
-          {busy ? "Salvando…" : "Salvar minhas preferências"}
+          {busy ? tr("Salvando…") : tr("Salvar minhas preferências")}
         </Button>
       </Sheet>
       <Sheet
         visible={info}
-        title="Seus dados, com clareza"
+        title={tr("Seus dados, com clareza")}
         onClose={() => setInfo(false)}
       >
         <Icon name="shield" size={35} />
-        <Text style={s.h3}>Salvos neste aparelho</Text>
+        <Text style={s.h3}>{tr("Salvos neste aparelho")}</Text>
         <Text style={s.body}>
-          Seus registros ficam localmente. A versão atual não possui conta,
-          cópia na nuvem ou sincronização. Desinstalar o aplicativo pode apagar
-          esses dados. Use a exportação para guardar uma cópia.
+          {tr(
+            "Seus registros ficam localmente. A versão atual não possui conta, cópia na nuvem ou sincronização. Desinstalar o aplicativo pode apagar esses dados. Use a exportação para guardar uma cópia.",
+          )}
         </Text>
-        <Text style={s.h3}>O que já funciona</Text>
+        <Text style={s.h3}>{tr("O que já funciona")}</Text>
         <Text style={s.body}>
-          Diário por data, catálogo local, porções, edição, água, hábitos,
-          atividades, peso, gráficos, favoritos, receitas, coleções e lista de
-          ingredientes.
+          {tr(
+            "Diário por data, catálogo local, porções, edição, água, hábitos, atividades, peso, gráficos, favoritos, receitas, coleções e lista de ingredientes.",
+          )}
         </Text>
-        <Text style={s.h3}>Próximas integrações</Text>
+        <Text style={s.h3}>{tr("Próximas integrações")}</Text>
         <Text style={s.body}>
-          Reconhecimento de refeições por IA, código de barras, sincronização e
-          conexões de saúde ainda não estão disponíveis. Nenhuma assinatura é
-          cobrada nesta versão.
+          {tr(
+            "Reconhecimento de refeições por IA, código de barras, sincronização e conexões de saúde ainda não estão disponíveis. Nenhuma assinatura é cobrada nesta versão.",
+          )}
         </Text>
-        <Text style={s.h3}>Informações nutricionais</Text>
+        <Text style={s.h3}>{tr("Informações nutricionais")}</Text>
         <Text style={s.body}>
-          Valores do catálogo e receitas são aproximados e demonstrativos. O
-          aplicativo não diagnostica condições nem substitui acompanhamento
-          profissional.
+          {tr(
+            "Valores do catálogo e receitas são aproximados e demonstrativos. O aplicativo não diagnostica condições nem substitui acompanhamento profissional.",
+          )}
         </Text>
       </Sheet>
     </Page>

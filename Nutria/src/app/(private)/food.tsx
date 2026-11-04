@@ -1,8 +1,12 @@
+import { tr, num, locale, inputNumber, numberInput } from "../../i18n/core.mjs";
+import { useLanguage } from "../../i18n/LanguageProvider";
+import { mealName, useCatalog } from "../../i18n/catalog";
 import React, { useState } from "react";
 import { Text, View, Pressable, ScrollView, TextInput } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import { useStore, Meal } from "../../state/store";
-import { foods, Food } from "../../data/catalog";
+import type { Food } from "../../data/catalog";
+import { foods as canonicalFoods } from "../../data/catalog";
 import { emptyDay, GROUPS, scaleFood, uniqueId } from "../../domain/model.mjs";
 import { parseMeal } from "../../domain/nutrition.mjs";
 import { C, s } from "../../ui/theme";
@@ -21,6 +25,8 @@ const normalize = (v: string) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 export default function FoodScreen() {
+  useLanguage();
+  const { foods } = useCatalog();
   const params = useLocalSearchParams<{
     date: string;
     group: string;
@@ -40,11 +46,11 @@ export default function FoodScreen() {
     [form, setForm] = useState(
       original
         ? [
-            original.name,
-            String(original.kcal),
-            String(original.protein),
-            String(original.carbs),
-            String(original.fat),
+            mealName(original),
+            numberInput(original.kcal),
+            numberInput(original.protein),
+            numberInput(original.carbs),
+            numberInput(original.fat),
           ]
         : ["", "", "", "", ""],
     ),
@@ -59,10 +65,20 @@ export default function FoodScreen() {
     try {
       let meal: Meal;
       if (chosen && mode === "Catálogo")
-        meal = { ...scaleFood(chosen, grams), id: uniqueId(), group };
+        meal = {
+          ...scaleFood(chosen, inputNumber(grams)),
+          name: canonicalFoods.find((food) => food.id === chosen.id)!.name,
+          sourceFoodId: chosen.id,
+          id: uniqueId(),
+          group,
+        };
       else
         meal = {
-          ...parseMeal(...(form as [string, string, string, string, string])),
+          ...parseMeal(
+            ...(form.map((value, index) =>
+              index === 0 ? value : inputNumber(value),
+            ) as [string, string, string, string, string]),
+          ),
           group,
           ...(original?.grams ? { grams: original.grams } : {}),
         };
@@ -108,17 +124,20 @@ export default function FoodScreen() {
   }
   let preview;
   try {
-    if (chosen) preview = scaleFood(chosen, grams);
+    if (chosen) preview = scaleFood(chosen, inputNumber(grams));
   } catch {}
   return (
-    <Page title={original ? "Editar refeição" : "Adicionar alimento"} back>
+    <Page
+      title={original ? tr("Editar refeição") : tr("Adicionar alimento")}
+      back
+    >
       <Text style={s.eyebrow}>
         {new Date(date + "T12:00:00")
-          .toLocaleDateString("pt-BR", { day: "numeric", month: "long" })
+          .toLocaleDateString(locale(), { day: "numeric", month: "long" })
           .toUpperCase()}
       </Text>
       <Text style={s.title}>
-        {original ? "Ajuste seu registro." : "O que vai no\nseu prato?"}
+        {original ? tr("Ajuste seu registro.") : tr("O que vai no\nseu prato?")}
       </Text>
       <ScrollView
         horizontal
@@ -128,7 +147,7 @@ export default function FoodScreen() {
         {GROUPS.map((g: string) => (
           <Chip
             key={g}
-            label={g}
+            label={tr(g)}
             active={group === g}
             onPress={() => setGroup(g)}
           />
@@ -139,7 +158,7 @@ export default function FoodScreen() {
           {["Catálogo", "Recentes", "Manual"].map((m) => (
             <View key={m} style={{ flex: 1 }}>
               <Chip
-                label={m}
+                label={tr(m)}
                 active={mode === m}
                 onPress={() => {
                   setMode(m);
@@ -161,32 +180,41 @@ export default function FoodScreen() {
               ]}
             >
               <FoodArt kind={chosen.kind} size={140} />
-              <Text style={s.h2}>{chosen.name}</Text>
+              <Text style={s.h2}>{tr(chosen.name)}</Text>
               <Text style={s.small}>
-                {chosen.portion} g ≈ {chosen.unit}
+                {num(chosen.portion)}
+                {tr(" g ≈ ")}
+                {tr(chosen.unit)}
               </Text>
             </View>
             <Field
-              label="Quantidade (g)"
+              label={tr("Quantidade (g)")}
               numeric
               value={grams}
               onChange={setGrams}
             />
             {preview ? (
               <View style={s.card}>
-                <Text style={s.h3}>{preview.kcal} kcal nesta porção</Text>
+                <Text style={s.h3}>
+                  {num(preview.kcal)}
+                  {tr(" kcal nesta porção")}
+                </Text>
                 <Text style={s.body}>
-                  {preview.protein} g proteína · {preview.carbs} g carboidratos
-                  · {preview.fat} g gorduras
+                  {num(preview.protein)}
+                  {tr(" g proteína · ")}
+                  {num(preview.carbs)}
+                  {tr(" g carboidratos · ")}
+                  {num(preview.fat)}
+                  {tr(" g gorduras")}
                 </Text>
               </View>
             ) : (
               <Text style={s.error}>
-                Informe uma quantidade entre 1 e 3.000 g.
+                {tr("Informe uma quantidade entre 1 e 3.000 g.")}
               </Text>
             )}
             <Button light onPress={() => setChosen(null)}>
-              Escolher outro alimento
+              {tr("Escolher outro alimento")}
             </Button>
           </>
         ) : (
@@ -194,8 +222,8 @@ export default function FoodScreen() {
             <View style={[s.row, s.input]}>
               <Icon name="search" color={C.muted} />
               <TextInput
-                accessibilityLabel="Buscar alimento"
-                placeholder="Busque banana, arroz, frango…"
+                accessibilityLabel={tr("Buscar alimento")}
+                placeholder={tr("Busque banana, arroz, frango…")}
                 value={query}
                 onChangeText={setQuery}
                 style={{ flex: 1, fontSize: 14, color: C.ink }}
@@ -205,7 +233,7 @@ export default function FoodScreen() {
               {["Todos", "Favoritos"].map((f) => (
                 <Chip
                   key={f}
-                  label={f}
+                  label={tr(f)}
                   active={filter === f}
                   onPress={() => setFilter(f)}
                 />
@@ -214,10 +242,10 @@ export default function FoodScreen() {
             <Section
               title={
                 filter === "Favoritos"
-                  ? "Seus favoritos"
-                  : "Alimentos do dia a dia"
+                  ? tr("Seus favoritos")
+                  : tr("Alimentos do dia a dia")
               }
-              caption="24 alimentos · valores indicativos por 100 g"
+              caption={tr("24 alimentos · valores indicativos por 100 g")}
             />
             {foods
               .filter(
@@ -240,10 +268,12 @@ export default function FoodScreen() {
                 >
                   <Pressable
                     accessibilityRole="button"
-                    accessibilityLabel={`Selecionar ${f.name}`}
+                    accessibilityLabel={tr("Selecionar {0}", { 0: f.name })}
                     onPress={() => {
-                      setChosen(f);
-                      setGrams(String(f.portion));
+                      setChosen(
+                        canonicalFoods.find((food) => food.id === f.id)!,
+                      );
+                      setGrams(numberInput(f.portion));
                     }}
                     style={{
                       flex: 1,
@@ -255,12 +285,20 @@ export default function FoodScreen() {
                     <FoodArt kind={f.kind} size={58} />
                     <View style={{ flex: 1 }}>
                       <Text style={s.h3}>{f.name}</Text>
-                      <Text style={s.small}>{f.kcal} kcal / 100 g</Text>
+                      <Text style={s.small}>
+                        {num(f.kcal)}
+                        {tr(" kcal / 100 g")}
+                      </Text>
                     </View>
                   </Pressable>
                   <Pressable
                     accessibilityRole="button"
-                    accessibilityLabel={`${data.favorites.includes(f.id) ? "Remover" : "Salvar"} favorito ${f.name}`}
+                    accessibilityLabel={tr("{0} favorito {1}", {
+                      0: data.favorites.includes(f.id)
+                        ? tr("Remover")
+                        : tr("Salvar"),
+                      1: f.name,
+                    })}
                     onPress={() =>
                       void mutate((d) => ({
                         ...d,
@@ -287,11 +325,12 @@ export default function FoodScreen() {
             ) && (
               <View style={s.card}>
                 <Text style={s.body}>
-                  Nenhum alimento encontrado. Você pode cadastrar os valores no
-                  modo Manual.
+                  {tr(
+                    "Nenhum alimento encontrado. Você pode cadastrar os valores no modo Manual.",
+                  )}
                 </Text>
                 <Button light onPress={() => setMode("Manual")}>
-                  Registrar manualmente
+                  {tr("Registrar manualmente")}
                 </Button>
               </View>
             )}
@@ -307,18 +346,19 @@ export default function FoodScreen() {
                 style={s.card}
                 onPress={() => {
                   setForm([
-                    m.name,
-                    String(m.kcal),
-                    String(m.protein),
-                    String(m.carbs),
-                    String(m.fat),
+                    mealName(m),
+                    numberInput(m.kcal),
+                    numberInput(m.protein),
+                    numberInput(m.carbs),
+                    numberInput(m.fat),
                   ]);
                   setMode("Manual");
                 }}
               >
-                <Text style={s.h3}>{m.name}</Text>
+                <Text style={s.h3}>{mealName(m)}</Text>
                 <Text style={s.small}>
-                  {m.kcal} kcal · Usar os mesmos valores →
+                  {num(m.kcal)}
+                  {tr(" kcal · Usar os mesmos valores →")}
                 </Text>
               </Pressable>
             ))
@@ -326,7 +366,7 @@ export default function FoodScreen() {
             <View style={s.empty}>
               <Icon name="clock" size={30} color={C.muted} />
               <Text style={s.body}>
-                Os alimentos registrados aparecerão aqui.
+                {tr("Os alimentos registrados aparecerão aqui.")}
               </Text>
             </View>
           )}
@@ -342,7 +382,7 @@ export default function FoodScreen() {
           ].map((label, i) => (
             <Field
               key={label}
-              label={label}
+              label={tr(label)}
               value={form[i]}
               onChange={(v) =>
                 setForm((old) => old.map((x, j) => (j === i ? v : x)))
@@ -351,34 +391,35 @@ export default function FoodScreen() {
             />
           ))}
           <Text style={s.small}>
-            Informe os valores da porção consumida, conforme rótulo ou
-            orientação profissional.
+            {tr(
+              "Informe os valores da porção consumida, conforme rótulo ou orientação profissional.",
+            )}
           </Text>
         </>
       )}
       {error ? (
         <Text accessibilityRole="alert" style={s.error}>
-          {error}
+          {tr(error)}
         </Text>
       ) : null}
       {(mode === "Manual" || chosen) && (
         <Button disabled={busy} onPress={() => void save()}>
           {busy
-            ? "Salvando…"
+            ? tr("Salvando…")
             : original
-              ? "Salvar alterações"
-              : "Adicionar ao diário"}
+              ? tr("Salvar alterações")
+              : tr("Adicionar ao diário")}
         </Button>
       )}
       {original && (
         <Button light disabled={busy} onPress={() => void remove()}>
-          Excluir este registro
+          {tr("Excluir este registro")}
         </Button>
       )}
       <Text style={s.footer}>
-        O catálogo local usa valores aproximados para alimentos genéricos.
-        Marcas, preparo e porções variam. Prefira os valores do rótulo quando
-        disponíveis.
+        {tr(
+          "O catálogo local usa valores aproximados para alimentos genéricos. Marcas, preparo e porções variam. Prefira os valores do rótulo quando disponíveis.",
+        )}
       </Text>
     </Page>
   );
