@@ -35,6 +35,7 @@ function PrivateRoutes() {
       <Stack.Screen name="onboarding" />
       <Stack.Screen name="recipe" />
       <Stack.Screen name="restore" />
+      <Stack.Screen name="purchase" />
     </Stack>
   );
 }

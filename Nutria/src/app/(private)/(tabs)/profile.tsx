@@ -23,7 +23,7 @@ import {
 } from "../../../ui/components";
 export default function ProfileScreen() {
   useLanguage();
-  const { data, mutate } = useStore();
+  const { data, mutate, requestRegistration } = useStore();
   const { activation, signOut, error: activationError } = useActivation();
   const [edit, setEdit] = useState(false),
     [info, setInfo] = useState(false),
@@ -82,6 +82,10 @@ export default function ProfileScreen() {
     }
   }
   async function exportData() {
+    if (activation?.guest) {
+      requestRegistration();
+      return;
+    }
     try {
       await Share.share({
         title: tr("Meus dados Nutria"),
@@ -200,7 +204,11 @@ export default function ProfileScreen() {
             ? tr("Teste experimental de 7 dias")
             : tr("Ativação individual")}
         </Text>
-        <Text style={s.body}>{activation?.email}</Text>
+        <Text style={s.body}>
+          {activation?.guest
+            ? tr("Você está explorando como visitante.")
+            : activation?.email}
+        </Text>
         <Text style={s.small}>
           {activation?.expiresAt
             ? tr("{0} {1}", {
@@ -209,24 +217,38 @@ export default function ProfileScreen() {
               })
             : tr("Sem vencimento")}
         </Text>
-        <Button
-          light
-          onPress={() => {
-            void signOut();
-          }}
-        >
-          {activation?.trial
-            ? tr("Sair do teste / inserir código")
-            : tr("Sair desta ativação")}
+        <Button onPress={() => requestRegistration(true)}>
+          {tr("Comprar ou ativar acesso")}
         </Button>
+        {activation?.guest && (
+          <Button light onPress={() => requestRegistration()}>
+            {tr("Salvar minha evolução")}
+          </Button>
+        )}
+        {!activation?.guest && (
+          <Button
+            light
+            onPress={() => {
+              void signOut();
+            }}
+          >
+            {activation?.trial
+              ? tr("Sair do teste / inserir código")
+              : tr("Sair desta ativação")}
+          </Button>
+        )}
         <Text style={s.footer}>
-          {activation?.trial
+          {activation?.guest
             ? tr(
-                "Seus registros serão preservados. Você pode ativar com este mesmo e-mail a qualquer momento ou retomar o teste dentro do prazo original.",
+                "Explore à vontade. O cadastro só é necessário para comprar ou salvar sua evolução.",
               )
-            : tr(
-                "Seus registros deste e-mail serão preservados neste aparelho. Será necessário informar o código para entrar novamente.",
-              )}
+            : activation?.trial
+              ? tr(
+                  "Seus registros serão preservados. Você pode ativar com este mesmo e-mail a qualquer momento ou retomar o teste dentro do prazo original.",
+                )
+              : tr(
+                  "Seus registros deste e-mail serão preservados neste aparelho. Será necessário informar o código para entrar novamente.",
+                )}
         </Text>
       </View>
       <Section title={tr("Seu aplicativo")} />
@@ -259,7 +281,7 @@ export default function ProfileScreen() {
         </Text>
       </View>
       <Text style={[s.footer, { textAlign: "center" }]}>
-        {tr("nutria · versão 0.7.0 · feito para o seu cotidiano")}
+        {tr("nutria · versão 0.7.1 · feito para o seu cotidiano")}
       </Text>
       <Sheet
         visible={edit}
@@ -333,7 +355,7 @@ export default function ProfileScreen() {
         <Text style={s.h3}>{tr("Salvos neste aparelho")}</Text>
         <Text style={s.body}>
           {tr(
-            "Seus registros ficam localmente. A versão atual não possui conta, cópia na nuvem ou sincronização. Desinstalar o aplicativo pode apagar esses dados. Use a exportação para guardar uma cópia.",
+            "Após o cadastro, seus registros ficam neste aparelho, separados por e-mail. Não há cópia na nuvem ou sincronização. Desinstalar o aplicativo pode apagar esses dados. Use a exportação para guardar uma cópia.",
           )}
         </Text>
         <Text style={s.h3}>{tr("O que já funciona")}</Text>

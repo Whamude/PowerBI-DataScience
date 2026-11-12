@@ -17,8 +17,9 @@ import { C, s, serif } from "../ui/theme";
 import { Icon, Button } from "../ui/components";
 export default function Activate() {
   useLanguage();
-  const { activate, startTrial, error, configured } = useActivation();
-  const [email, setEmail] = useState(""),
+  const { activate, startTrial, startGuest, activation, error, configured } =
+    useActivation();
+  const [email, setEmail] = useState(activation?.email || ""),
     [code, setCode] = useState(""),
     [busy, setBusy] = useState(false),
     [show, setShow] = useState(false);
@@ -82,7 +83,7 @@ export default function Activate() {
             </Text>
             <Text style={[s.body, { textAlign: "center" }]}>
               {tr(
-                "Experimente o Nutria por 7 dias com seu e-mail, sem código. Se já tem um código de ativação, informe-o abaixo.",
+                "Conheça o Nutria sem cadastro. Para comprar ou guardar sua evolução, crie seu cadastro. Se já comprou, use seu e-mail e código de ativação.",
               )}
             </Text>
           </View>
@@ -102,22 +103,38 @@ export default function Activate() {
               placeholder={tr("voce@exemplo.com")}
             />
           </View>
-          <View style={s.card}>
-            <Text style={s.h3}>{tr("Experimente grátis por 7 dias")}</Text>
-            <Text style={s.body}>
-              {tr(
-                "Informe seu e-mail acima e comece sem código de ativação. O prazo começa agora e continua contando mesmo com o app fechado.",
-              )}
-            </Text>
-            <Button light disabled={busy} onPress={() => void tryTrial()}>
-              {busy ? tr("Aguarde…") : tr("Começar ou retomar teste de 7 dias")}
+          {!activation && (
+            <Button
+              light
+              onPress={() => {
+                void startGuest().then((ok) => {
+                  if (ok) router.replace("/");
+                });
+              }}
+            >
+              {tr("Continuar como visitante")}
             </Button>
-            <Text style={s.small}>
-              {tr(
-                "Ao terminar, será necessário ativar. Use o mesmo e-mail para manter seus registros. Retomar um teste não reinicia o prazo.",
-              )}
-            </Text>
-          </View>
+          )}
+          {!activation && (
+            <View style={s.card}>
+              <Text style={s.h3}>{tr("Experimente grátis por 7 dias")}</Text>
+              <Text style={s.body}>
+                {tr(
+                  "Informe seu e-mail acima e comece sem código de ativação. O prazo começa agora e continua contando mesmo com o app fechado.",
+                )}
+              </Text>
+              <Button light disabled={busy} onPress={() => void tryTrial()}>
+                {busy
+                  ? tr("Aguarde…")
+                  : tr("Começar ou retomar teste de 7 dias")}
+              </Button>
+              <Text style={s.small}>
+                {tr(
+                  "Ao terminar, será necessário ativar. Use o mesmo e-mail para manter seus registros. Retomar um teste não reinicia o prazo.",
+                )}
+              </Text>
+            </View>
+          )}
           <View>
             <View style={s.between}>
               <Text style={s.label}>{tr("Código de ativação")}</Text>

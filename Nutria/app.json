@@ -2,7 +2,7 @@
   "expo": {
     "name": "Nutria",
     "slug": "Nutria",
-    "version": "0.7.0",
+    "version": "0.7.2",
     "orientation": "portrait",
     "icon": "./assets/nutria-icon.png",
     "userInterfaceStyle": "light",
@@ -17,7 +17,7 @@
         "foregroundImage": "./assets/nutria-foreground.png"
       },
       "package": "app.nutria.mobile",
-      "versionCode": 7
+      "versionCode": 9
     },
     "web": {
       "favicon": "./assets/nutria-icon.png"

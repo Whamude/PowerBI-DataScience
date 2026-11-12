@@ -9,11 +9,18 @@ import React, {
 import { AppState, Platform } from "react-native";
 import * as SecureStore from "expo-secure-store";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { createTrial, checkTrial, resumeTrial } from "./trial.mjs";
+import {
+  createTrial,
+  createGuestTrial,
+  bindGuestTrial,
+  checkTrial,
+  resumeTrial,
+} from "./trial.mjs";
 import config from "./activation-config.json";
-import { verifyActivation } from "./license.mjs";
+import { verifyActivation, accountId as emailAccountId } from "./license.mjs";
 export type Activation = {
   trial?: boolean;
+  guest?: boolean;
   email: string;
   accountId: string;
   licenseId: string;
@@ -28,7 +35,9 @@ async function readTrial() {
     ? AsyncStorage.getItem(TRIAL_KEY)
     : SecureStore.getItemAsync(TRIAL_KEY);
 }
-async function writeTrial(record: ReturnType<typeof createTrial>) {
+async function writeTrial(
+  record: ReturnType<typeof createTrial> | ReturnType<typeof createGuestTrial>,
+) {
   const raw = JSON.stringify(record);
   if (Platform.OS === "web") await AsyncStorage.setItem(TRIAL_KEY, raw);
   else
@@ -44,6 +53,11 @@ type Value = {
   error: string;
   activate: (email: string, code: string) => Promise<boolean>;
   startTrial: (email: string) => Promise<boolean>;
+  startGuest: () => Promise<boolean>;
+  registerGuest: (
+    email: string,
+    prepare: (accountId: string) => Promise<void>,
+  ) => Promise<boolean>;
   signOut: () => Promise<boolean>;
 };
 const Context = createContext<Value | null>(null);
@@ -77,7 +91,12 @@ export function ActivationProvider({ children }: { children: ReactNode }) {
           }
         }
         if (!licensed) {
-          const raw = await readTrial();
+          let raw = await readTrial();
+          if (!raw) {
+            const guest = createGuestTrial();
+            await writeTrial(guest);
+            raw = JSON.stringify(guest);
+          }
           if (raw) {
             const result = checkTrial(JSON.parse(raw));
             await writeTrial(result.record);
@@ -191,6 +210,60 @@ export function ActivationProvider({ children }: { children: ReactNode }) {
     setError("");
     return true;
   }
+  async function startGuest() {
+    if (operation.current) return false;
+    operation.current = true;
+    try {
+      const raw = await readTrial();
+      const record = raw ? JSON.parse(raw) : createGuestTrial();
+      if (record.version !== 2) return false;
+      const result = checkTrial(record);
+      await writeTrial(result.record);
+      if (!result.activation) return false;
+      await writeTrial({ ...result.record, signedOut: false });
+      setActivation(result.activation);
+      setError("");
+      return true;
+    } catch {
+      setError("Não foi possível iniciar o teste. Tente novamente.");
+      return false;
+    } finally {
+      operation.current = false;
+    }
+  }
+  async function registerGuest(
+    email: string,
+    prepare: (accountId: string) => Promise<void>,
+  ) {
+    if (operation.current) return false;
+    operation.current = true;
+    try {
+      const raw = await readTrial();
+      if (!raw || !activation?.guest) return false;
+      const bound = bindGuestTrial(JSON.parse(raw), email);
+      const id = emailAccountId(bound.email);
+      // Save the requested record before switching the account namespace.
+      await prepare(id);
+      const checked = checkTrial(bound);
+      if (!checked.activation)
+        throw new Error(
+          "Seu teste de 7 dias terminou. Ative com seu e-mail e código para continuar; seus registros estão preservados.",
+        );
+      await writeTrial(checked.record);
+      setActivation(checked.activation);
+      setError("");
+      return true;
+    } catch (e) {
+      setError(
+        e instanceof Error
+          ? e.message
+          : "Não foi possível salvar. Tente novamente; seu último registro salvo foi preservado.",
+      );
+      return false;
+    } finally {
+      operation.current = false;
+    }
+  }
   async function startTrial(email: string) {
     if (operation.current) return false;
     operation.current = true;
@@ -247,6 +320,8 @@ export function ActivationProvider({ children }: { children: ReactNode }) {
         error,
         activate,
         startTrial,
+        startGuest,
+        registerGuest,
         signOut,
       }}
     >

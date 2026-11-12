@@ -2,6 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   createTrial,
+  createGuestTrial,
+  bindGuestTrial,
   checkTrial,
   resumeTrial,
   TRIAL_DURATION,
@@ -20,18 +22,23 @@ test("teste dura exatamente 168 horas e mantém o namespace da ativação por e-
 });
 test("registro existente retoma após quatro dias com o início original e sem renovar prazo", () => {
   const day = 24 * 3600000;
-  const saved = JSON.parse(JSON.stringify({
-    ...createTrial("pessoa@example.com", now),
-    lastSeenAt: now + 3 * day,
-    signedOut: true,
-  }));
+  const saved = JSON.parse(
+    JSON.stringify({
+      ...createTrial("pessoa@example.com", now),
+      lastSeenAt: now + 3 * day,
+      signedOut: true,
+    }),
+  );
   const resumed = resumeTrial(saved, "PESSOA@example.com", now + 5 * day);
   assert.equal(resumed.record.version, 1);
   assert.equal(resumed.record.startedAt, now);
   assert.equal(resumed.activation.issuedAt, now);
   assert.equal(resumed.activation.accountId, accountId(saved.email));
   assert.equal(resumed.activation.expiresAt, now + 7 * day);
-  const reopened = checkTrial(JSON.parse(JSON.stringify(resumed.record)), now + 6 * day);
+  const reopened = checkTrial(
+    JSON.parse(JSON.stringify(resumed.record)),
+    now + 6 * day,
+  );
   assert.equal(reopened.activation.expiresAt, now + 7 * day);
   assert.equal(reopened.record.startedAt, now);
 });
@@ -94,4 +101,37 @@ test("metadados inválidos falham sem criar outro período", () => {
   ])
     assert.throws(() => checkTrial(bad, now));
   assert.throws(() => createTrial("ruim", now));
+});
+
+test("visitante não exige e-mail e cadastro preserva exatamente o prazo original", () => {
+  const guest = createGuestTrial(now);
+  assert.equal(guest.email, null);
+  assert.equal(checkTrial(guest, now).activation.guest, true);
+  const bound = bindGuestTrial(guest, " NOVO@example.com ", now + 5 * 86400000);
+  assert.equal(bound.email, "novo@example.com");
+  assert.equal(bound.startedAt, now);
+  assert.equal(
+    checkTrial(bound, now + 5 * 86400000).activation.expiresAt,
+    now + TRIAL_DURATION,
+  );
+  assert.equal(
+    checkTrial(bound, now + 5 * 86400000).activation.accountId,
+    accountId(bound.email),
+  );
+  assert.equal(checkTrial(bound, now + 5 * 86400000).activation.guest, false);
+  assert.throws(() =>
+    bindGuestTrial(bound, "outro@example.com", now + 5 * 86400000),
+  );
+});
+test("cadastro não libera visitante vencido nem metadados inválidos", () => {
+  const guest = createGuestTrial(now);
+  assert.throws(() =>
+    bindGuestTrial(guest, "novo@example.com", now + TRIAL_DURATION),
+  );
+  assert.throws(() => bindGuestTrial(guest, "inválido", now));
+  assert.throws(() =>
+    checkTrial({ ...guest, email: "alguem@example.com" }, now),
+  );
+  const ended = checkTrial(guest, now + TRIAL_DURATION).record;
+  assert.equal(checkTrial(ended, now).activation, null);
 });

@@ -118,7 +118,7 @@ export default {
   "Seu progresso é seu. O Nutria ajuda a registrar escolhas e enxergar sua rotina com mais clareza.":
     "Your progress is your own. Nutria helps you log your choices and see your routine more clearly.",
   "nutria · versão 0.4.0 · feito para o seu cotidiano":
-    "nutria · version 0.7.0 · made for everyday life",
+    "nutria · version 0.7.1 · made for everyday life",
   "Seu perfil e suas metas": "Your profile and targets",
   "Seu nome": "Your name",
   "Seu objetivo": "Your goal",
@@ -576,8 +576,8 @@ export default {
   dia: "day",
   dias: "days",
   "voce@exemplo.com": "you@example.com",
-  "nutria · versão 0.7.0 · feito para o seu cotidiano":
-    "nutria · version 0.7.0 · made for everyday life",
+  "nutria · versão 0.7.1 · feito para o seu cotidiano":
+    "nutria · version 0.7.1 · made for everyday life",
   Idioma: "Language",
   "Escolha o idioma do aplicativo. Seus registros e o prazo do teste serão preservados.":
     "Choose the app language. Your records and trial period will be kept.",
@@ -598,4 +598,31 @@ export default {
   "· {0} kcal informadas": "· {0} kcal reported",
   "({0} porções)": "({0} servings)",
   "·": "·",
+  "Vamos criar seu cadastro?": "Let’s create your profile?",
+  "Seu próximo passo": "Your next step",
+  "Sua evolução merece um lugar especial":
+    "Your progress deserves a special place",
+  "Para comprar seu acesso, primeiro crie seu cadastro.":
+    "To purchase access, first create your profile.",
+  "Que bom acompanhar seus passos! Para salvar sua evolução e consultar seu histórico depois, você precisa criar um cadastro. É rapidinho.":
+    "It’s lovely to follow your journey! To save your progress and look back on your history, you need to create a profile. It only takes a moment.",
+  "E-mail do cadastro": "Profile email",
+  "Seu cadastro e histórico ficam neste aparelho. Não há backup na nuvem. O cadastro não reinicia os sete dias de teste.":
+    "Your profile and history stay on this device. There is no cloud backup. Creating a profile does not restart your seven-day trial.",
+  "Concluir cadastro": "Complete profile",
+  "Criar cadastro": "Create profile",
+  "Agora não": "Not now",
+
+  "Você pode continuar explorando sem cadastro. Nenhum registro de evolução será salvo até você concluir o cadastro.":
+    "You can keep exploring without a profile. Progress records will only be saved after you create your profile.",
+  "Você está explorando como visitante.": "You’re exploring as a guest.",
+  "Comprar ou ativar acesso": "Purchase or activate access",
+  "Salvar minha evolução": "Save my progress",
+  "Explore à vontade. O cadastro só é necessário para comprar ou salvar sua evolução.":
+    "Explore at your own pace. A profile is only needed to purchase access or save your progress.",
+  "Após o cadastro, seus registros ficam neste aparelho, separados por e-mail. Não há cópia na nuvem ou sincronização. Desinstalar o aplicativo pode apagar esses dados. Use a exportação para guardar uma cópia.":
+    "After you create a profile, your records stay on this device, separated by email. There is no cloud backup or sync. Uninstalling the app may delete this data. Export your records to keep a copy.",
+  "Conheça o Nutria sem cadastro. Para comprar ou guardar sua evolução, crie seu cadastro. Se já comprou, use seu e-mail e código de ativação.":
+    "Explore Nutria without a profile. Create one to purchase access or save your progress. If you already purchased access, use your email and activation code.",
+  "Continuar como visitante": "Continue as a guest",
 };

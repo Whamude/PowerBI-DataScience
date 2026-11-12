@@ -11,7 +11,7 @@ const root = new URL("../", import.meta.url);
 const imported = JSON.parse(
   readFileSync(new URL("src/data/imported-recipes.json", root)),
 );
-test("97 receitas dos dois PDFs corretos têm imagens originais legíveis e referências completas", () => {
+test("97 receitas dos dois PDFs têm imagens verificadas e referências completas", () => {
   assert.equal(imported.length, 97);
   assert.equal(new Set(imported.map((r) => r.id)).size, 97);
   assert.equal(imported.filter((r) => r.id.startsWith("cafe-")).length, 20);
@@ -77,4 +77,13 @@ test("favoritos e origem filtram sem alterar registros existentes", () => {
     ),
     false,
   );
+});
+
+// A importação anterior confundia o fundo do PDF com a fotografia nestas páginas.
+test("nenhuma receita reutiliza o fundo gráfico do PDF como fotografia", () => {
+  const background = "e61f5273748d3d1856998fcf2289679d6ffbffc8e541dc9663641a2fca46f6d2";
+  for (const r of imported) assert.notEqual(r.imageSha256, background, r.id);
+  const corrected = imported.filter(r => ["iridium-22", "iridium-34", "iridium-64", "iridium-74"].includes(r.id));
+  assert.equal(corrected.length, 4);
+  assert.equal(new Set(corrected.map(r => r.imageSha256)).size, 4);
 });
