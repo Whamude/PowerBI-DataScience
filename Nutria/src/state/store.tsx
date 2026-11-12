@@ -8,6 +8,9 @@ import React, {
 } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AppState } from "react-native";
+import { router } from "expo-router";
+import { useActivation } from "../auth/ActivationProvider";
+import { RegistrationSheet } from "../auth/RegistrationSheet";
 import {
   dateKey,
   emptyDay,
@@ -70,6 +73,7 @@ type Store = {
   updateDay: (fn: (d: Day) => Day) => Promise<boolean>;
   today: string;
   legacyAvailable: boolean;
+  requestRegistration: (purchase?: boolean) => void;
   importLegacy: () => Promise<boolean>;
   skipLegacy: () => Promise<boolean>;
 };
@@ -83,6 +87,15 @@ export function StoreProvider({
 }) {
   if (!/^[a-f0-9]{64}$/.test(accountId))
     throw new Error("Conta de ativação inválida.");
+  const {
+    activation,
+    registerGuest,
+    error: registrationError,
+  } = useActivation();
+  const guest = !!activation?.guest;
+  const [registration, setRegistration] = useState(false);
+  const [registrationPurchase, setRegistrationPurchase] = useState(false);
+  const pending = useRef<{ fn?: (d: Data) => Data; purchase?: boolean }>({});
   const KEY = `nutria:account:${accountId}:v2`;
   const CHOICE = `nutria:account:${accountId}:legacy-choice`;
   const [legacyAvailable, setLegacyAvailable] = useState(false);
@@ -98,6 +111,15 @@ export function StoreProvider({
     let active = true;
     async function load() {
       try {
+        if (guest) {
+          const next = { ...initialData(), onboarded: true } as Data;
+          if (active) {
+            current.current = next;
+            setData(next);
+            setReady(true);
+          }
+          return;
+        }
         const raw = await AsyncStorage.getItem(KEY);
         let next: Data;
         if (raw) next = validateData(JSON.parse(raw));
@@ -127,7 +149,7 @@ export function StoreProvider({
     return () => {
       active = false;
     };
-  }, [KEY, CHOICE, accountId]);
+  }, [KEY, CHOICE, accountId, guest]);
   useEffect(() => {
     const refresh = () => {
       const now = dateKey();
@@ -153,7 +175,17 @@ export function StoreProvider({
       try {
         if (!ready) return;
         const next = fn(current.current);
-        await AsyncStorage.setItem(KEY, JSON.stringify(next));
+        if (
+          guest &&
+          (next.days !== current.current.days ||
+            next.weights !== current.current.weights)
+        ) {
+          pending.current = { fn };
+          setRegistrationPurchase(false);
+          setRegistration(true);
+          return;
+        }
+        if (!guest) await AsyncStorage.setItem(KEY, JSON.stringify(next));
         current.current = next;
         setData(next);
         setError("");
@@ -165,6 +197,35 @@ export function StoreProvider({
       }
     });
     await queue.current;
+    return ok;
+  }
+  function requestRegistration(purchase = false) {
+    if (!guest) {
+      if (purchase) router.push("/purchase");
+      return;
+    }
+    pending.current = { purchase };
+    setRegistrationPurchase(purchase);
+    setRegistration(true);
+  }
+  async function completeRegistration(email: string, name: string) {
+    const request = pending.current;
+    const ok = await registerGuest(email, async (id) => {
+      const key = `nutria:account:${id}:v2`;
+      const raw = await AsyncStorage.getItem(key);
+      // Existing email records win over temporary visitor preferences.
+      let next = raw
+        ? (validateData(JSON.parse(raw)) as Data)
+        : current.current;
+      if (!raw) next = { ...next, profile: { ...next.profile, name } };
+      if (request.fn) next = request.fn(next);
+      await AsyncStorage.setItem(key, JSON.stringify(validateData(next)));
+    });
+    if (ok) {
+      pending.current = {};
+      setRegistration(false);
+      if (request.purchase) router.replace("/purchase");
+    }
     return ok;
   }
   async function importLegacy() {
@@ -228,11 +289,24 @@ export function StoreProvider({
         updateDay,
         today,
         legacyAvailable,
+        requestRegistration,
         importLegacy,
         skipLegacy,
       }}
     >
       {children}
+      {registration && (
+        <RegistrationSheet
+          visible={registration}
+          purchase={registrationPurchase}
+          error={registrationError}
+          onClose={() => {
+            pending.current = {};
+            setRegistration(false);
+          }}
+          onRegister={completeRegistration}
+        />
+      )}
     </Context.Provider>
   );
 }

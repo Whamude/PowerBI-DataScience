@@ -11,11 +11,36 @@ export function createTrial(email, now = Date.now()) {
     signedOut: false,
   };
 }
+export function createGuestTrial(now = Date.now()) {
+  return {
+    version: 2,
+    email: null,
+    startedAt: now,
+    lastSeenAt: now,
+    ended: false,
+    signedOut: false,
+  };
+}
+export function bindGuestTrial(saved, email, now = Date.now()) {
+  const result = checkTrial(saved, now);
+  if (saved.version !== 2 || !result.activation)
+    throw new Error(
+      "Seu teste de 7 dias terminou. Ative com seu e-mail e código para continuar; seus registros estão preservados.",
+    );
+  return {
+    ...result.record,
+    version: 1,
+    email: normalizeEmail(email),
+    signedOut: false,
+  };
+}
 export function checkTrial(saved, now = Date.now()) {
   if (
     !saved ||
-    saved.version !== 1 ||
-    normalizeEmail(saved.email) !== saved.email ||
+    !(
+      (saved.version === 1 && normalizeEmail(saved.email) === saved.email) ||
+      (saved.version === 2 && saved.email === null)
+    ) ||
     !Number.isSafeInteger(saved.startedAt) ||
     saved.startedAt < 0 ||
     !Number.isSafeInteger(saved.lastSeenAt) ||
@@ -39,8 +64,10 @@ export function checkTrial(saved, now = Date.now()) {
     activation: ended
       ? null
       : {
-          email: saved.email,
-          accountId: accountId(saved.email),
+          email: saved.email || "",
+          guest: saved.version === 2,
+          accountId:
+            saved.version === 2 ? "0".repeat(64) : accountId(saved.email),
           licenseId: "trial",
           issuedAt: saved.startedAt,
           expiresAt,

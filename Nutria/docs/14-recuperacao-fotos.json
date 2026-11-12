@@ -1,0 +1,53 @@
+{
+  "sourcePdfSha256": "28625f0877cfcf62b08ee5a41aa1fc92759361186daf6c9124c467f5a2de9a2f",
+  "recoveredPhotos": [
+    {
+      "id": "iridium-22",
+      "page": 29,
+      "file": "iridium-22.png",
+      "sha256": "9703e15d8b1ece4abb78d990e8843068419dbe2ce949714dbe410ae1a66ea8b3",
+      "sourceImage": "Im0.jpg",
+      "dimensions": [
+        432,
+        800
+      ]
+    },
+    {
+      "id": "iridium-34",
+      "page": 43,
+      "file": "iridium-34.png",
+      "sha256": "4aeeed2310c5278950100515170cdc4c97657c4109919898a5fb5a4dc4dfe328",
+      "sourceImage": "Im0.jpg",
+      "dimensions": [
+        432,
+        800
+      ]
+    },
+    {
+      "id": "iridium-64",
+      "page": 77,
+      "file": "iridium-64.png",
+      "sha256": "710e45dce3f2cf77748bf60a07d545b4328deb5af01d617d936d80af4e16e7e6",
+      "sourceImage": "Im0.jpg",
+      "dimensions": [
+        432,
+        800
+      ]
+    },
+    {
+      "id": "iridium-74",
+      "page": 89,
+      "file": "iridium-74.png",
+      "sha256": "9e755dc7fdb502a8481ed55d787075bbdbaf1be36314d77851d7ccfaa4d94002",
+      "sourceImage": "Im0.jpg",
+      "dimensions": [
+        432,
+        800
+      ]
+    }
+  ],
+  "unchangedPhotos": 93,
+  "recipeContentChanged": false,
+  "version": "0.7.2",
+  "androidVersionCode": 9
+}

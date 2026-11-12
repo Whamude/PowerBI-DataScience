@@ -47,3 +47,6 @@ Todas as novas telas privadas devem ficar em src/app/(private), sob Stack.Protec
 ## Idiomas
 
 O proprietário autorizou Português e English. Centralize textos da interface e erros em src/i18n/en.mjs e traduções das receitas importadas em src/i18n/recipes.en.json. Use a preferência persistida e os formatadores de src/i18n/core.mjs. Preserve textos livres, nomes próprios, IDs, categorias canônicas, registros por e-mail e o início do teste de 7 dias. Não traduza valores usados como chaves de persistência. Leia docs/10-idiomas.md e execute a auditoria de tradução incluída em npm test.
+
+## Visitante no Android (pedido de 05/11/2026)
+O proprietário alterou o fluxo: instalação nova explora sem cadastro. Pedir nome e e-mail apenas para comprar ou salvar evolução. Manter o teste único de 168 horas por instalação, agora iniciado como visitante e vinculado ao e-mail ao cadastrar, sem reiniciar o prazo. Preservar usuários antigos e seus registros. Cadastro é local e não implica conta remota ou backup na nuvem. Consultar docs/13-visitante-cadastro.md. O checkout iOS está pausado e separado.
