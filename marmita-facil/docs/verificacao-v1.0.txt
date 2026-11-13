@@ -1,0 +1,18 @@
+MARMITA FÁCIL 1.0.0 — VERIFICAÇÃO DA ENTREGA
+
+88 verificações passaram nos testes executáveis incluídos no projeto.
+APK: assinaturas v1/v2/v3 e alinhamento de 4 bytes verificados.
+Estrutura ZIP e presença das classes principais no DEX verificadas.
+Sem permissões de internet, contatos ou armazenamento solicitadas.
+Android mínimo: 6.0 (API 23); alvo de compilação: API 35.
+Não foram executados testes de interface, instalação nem backup via
+seletor de arquivos em emulador ou celular físico.
+
+MarmitaFacil-1.0.apk
+Bytes: 49629
+SHA256: d1bf03a4a451804db6aa9169868431b4ab1a37f3e2031a543b571d87a47cca8b
+
+MarmitaFacil-projeto.zip
+Bytes: 76448
+SHA256: 52fa8bf58784dd2946df2eefb880b4e1a97f48b508ea82d7412800bea821cd35
+

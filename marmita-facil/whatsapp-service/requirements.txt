@@ -1,0 +1,4 @@
+# Used on systems without a system timezone database, including Windows.
+tzdata>=2025.1,<2030
+# Production WSGI server on Linux. The built-in server is for localhost testing only.
+gunicorn>=23,<24; sys_platform != 'win32'

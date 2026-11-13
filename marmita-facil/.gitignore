@@ -1,0 +1,16 @@
+**/build/
+**/.gradle/
+**/__pycache__/
+**/.venv/
+**/signing/
+**/.env
+**/local.properties
+**/credentials.json
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.sqlite*
+*.db
+*.log
+*.pyc

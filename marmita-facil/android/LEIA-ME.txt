@@ -1,0 +1,82 @@
+MARMITA FÁCIL — PROJETO ANDROID 1.1.0
+
+Aplicativo Android nativo, em português, sem bibliotecas de execução externas.
+Dados locais em SQLite. O controle manual funciona sem internet e sem login.
+Integração opcional com WhatsApp Cloud API por serviço HTTPS próprio do negócio.
+Cada instalação mantém seu banco; cada negócio tem seu número e serviço separados.
+A integração real depende de cadastro do número e configuração na Meta e hospedagem.
+
+RECURSOS
+- Clientes: nome, telefone e endereço; edição, arquivamento e reativação.
+- Tipos de marmita: nome, descrição e preço; edição, arquivamento e reativação.
+- Pedidos com vários itens, quantidades, preço unitário, subtotal e total.
+- Dia do pedido e da entrega. Datas de entrega anteriores ao pedido são rejeitadas.
+- Status: A entregar (âmbar), Entregue (verde), Cancelado (vermelho).
+- Busca, filtro de status, filtro por dia de entrega e indicação de atraso.
+- Preços e dados do cliente registrados no pedido, preservados nas mudanças de cadastro.
+- Backup JSON por seletor de arquivos do Android, com validação e restauração transacional.
+- Restauração substitui os dados locais somente após confirmação explícita.
+- Valores em centavos inteiros, sem erros de arredondamento de ponto flutuante.
+- Rascunho de pedido preservado no estado da atividade; rotação mantém os formulários.
+- Aba WhatsApp: testar conexão, publicar cardápio por dia da semana, saudações e pausa.
+- Importação automática em primeiro plano e JobScheduler em segundo plano.
+- Pedido confirmado no WhatsApp é importado com status A entregar.
+- Importação atômica e identificador externo persistente evitam pedidos duplicados.
+- Chave de conexão protegida por Android Keystore; credenciais Meta só no servidor.
+- Editar quantidade/notas preserva o endereço confirmado se o cliente não foi trocado.
+- Banco v2 migra os dados v1 sem exclusão. Backup v2 preserva os IDs de importação.
+
+ANDROID STUDIO
+Abra esta pasta como projeto. Requer JDK 17, SDK Platform 35 e Build Tools 35.0.0.
+O Gradle Wrapper usa Gradle 8.9 e o plugin Android 8.7.3.
+Windows: gradlew.bat assembleRelease
+O APK será gerado em app/build/outputs/apk/release/.
+A configuração do Gradle é fornecida para manutenção; o APK desta entrega foi
+gerado pelo procedimento direto abaixo, usando as ferramentas oficiais do SDK.
+
+COMPILAÇÃO DIRETA, USADA NA ENTREGA
+Requer Python 3, JDK 17 e as ferramentas oficiais do Android SDK.
+python build.py --jdk CAMINHO_JDK --sdk-tools CAMINHO_BUILD_TOOLS_35 --android-jar CAMINHO_ANDROID_35/android.jar --output MarmitaFacil-1.1.apk
+O script compila recursos e Java, converte para DEX com D8, alinha, assina e
+verifica o APK. Nenhuma ferramenta é instalada globalmente.
+
+TESTES EXECUTADOS
+python test.py --jdk CAMINHO_JDK --android-jar CAMINHO_ANDROID_35/android.jar
+O teste cobre valores monetários, quantidades, subtotais, total, datas, status,
+validação de backups, referências, duplicidades, limites, preços históricos,
+serialização do rascunho, disponibilidade semanal, HTTPS e o contrato de pedidos.
+O teste baixa JSON-java apenas
+para executar os testes no computador; essa biblioteca não entra no APK.
+O APK é assinado com a mesma chave de 1.0 e passa por verificação v1/v2/v3 e zipalign.
+test-sync.py executa verificações adicionais de URL, chave e importação de pedidos.
+tests/sql-schema-check.py verifica o esquema e a migração com SQLite real no computador.
+Os testes do serviço estão na pasta whatsapp-service do pacote do projeto.
+Use --fixture CAMINHO/confirmed-order-fixture.json em test.py para validar um pedido
+gerado pelo diálogo real do servidor (com transporte de mensagens simulado).
+Não foram executados testes de interface, instalação ou do seletor de arquivos
+em emulador ou aparelho físico nesta entrega. Não houve envio real pela Meta nem deploy.
+
+LIMITES
+Android 6.0 ou superior. Até 100 itens por pedido, 10.000 unidades por item.
+Preço de R$ 0,01 até R$ 1.000.000,00 por unidade. Total até R$ 10 bilhões.
+Backups de até 16 MB e 50.000 registros por tabela. O app valida esses limites
+ao exportar e importar, evitando gerar um backup que não possa ser restaurado.
+Os cadastros e pedidos são armazenados no espaço privado do aplicativo.
+O backup não é automático e o arquivo JSON não é criptografado.
+Backups v1 continuam aceitos. As chaves de conexão não são exportadas no backup.
+Restaurar um backup remove a conexão do WhatsApp; reconecte o negócio correto depois.
+Com o app aberto, busca de pedidos a cada minuto; em segundo plano, periodicidade
+mínima de 15 minutos sujeita ao Android. Não é entrega instantânea com app fechado.
+Desconectar o APK não desliga o serviço. Publique accepting_orders=false para pausar o bot.
+
+CHAVE DE ASSINATURA — FORA DO REPOSITÓRIO PÚBLICO
+A chave e as credenciais do APK original foram excluídas desta cópia pública.
+O proprietário deve recuperá-las do backup privado para assinar atualizações
+compatíveis. Sem a chave original, gere uma instalação de desenvolvimento.
+Nunca publique signing/ nem seus arquivos de credenciais.
+
+REFERÊNCIAS DAS FERRAMENTAS
+https://developer.android.com/build/building-cmdline
+https://developer.android.com/tools/apksigner
+https://developer.android.com/build/releases/agp-8-7-0-release-notes
+https://learn.microsoft.com/java/openjdk/download

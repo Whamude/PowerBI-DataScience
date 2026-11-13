@@ -1,0 +1,311 @@
+{
+  "date": "2026-11-13",
+  "scope": "public archive without private signing credentials",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 164,
+      "sha256": "d2639230545f7da2a4591880d73208223b76913594c29ccf24d2bb8688e814a2"
+    },
+    {
+      "path": "android/.gitignore",
+      "bytes": 65,
+      "sha256": "2b035239ca01a61f345528abf60d0ba3c3ec6b7b66e00d0203d0b869bcfbc0b6"
+    },
+    {
+      "path": "android/app/build.gradle",
+      "bytes": 1033,
+      "sha256": "4c9cd5e795ac2f4ac61863bfa974f8ac382feab65519449a0978abe874f72291"
+    },
+    {
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "bytes": 1281,
+      "sha256": "ecf7e003fc0ef237559b093ab4687f8e79c0201ff79c46e4f512ee06e9b5c10e"
+    },
+    {
+      "path": "android/app/src/main/java/br/com/marmitafacil/app/MainActivity.java",
+      "bytes": 56470,
+      "sha256": "ce1cb8eb16be3880ba622e2fe93d910e37f4ff507bf1873623539b539c82459a"
+    },
+    {
+      "path": "android/app/src/main/java/br/com/marmitafacil/app/Rules.java",
+      "bytes": 4692,
+      "sha256": "91606505da8b9ddbe5ef17c92ecd2be884384b962a2c977ff64dd513b5605751"
+    },
+    {
+      "path": "android/app/src/main/java/br/com/marmitafacil/app/Store.java",
+      "bytes": 23052,
+      "sha256": "f63cd38b94b856de4eae340e1da9e16033f006185cb8304bd1a08d980d8c2ba5"
+    },
+    {
+      "path": "android/app/src/main/java/br/com/marmitafacil/app/WeeklyMenu.java",
+      "bytes": 4210,
+      "sha256": "efdb1525c8ae8f56eb4c63880580800fb9d558c5a41fd3ab9955da15e8dcbecb"
+    },
+    {
+      "path": "android/app/src/main/java/br/com/marmitafacil/app/WhatsAppSync.java",
+      "bytes": 12359,
+      "sha256": "32dd8f3af9ae9da04235f72df935b966decd786f38a25a8dc79d340799a77786"
+    },
+    {
+      "path": "android/app/src/main/java/br/com/marmitafacil/app/WhatsAppSyncJob.java",
+      "bytes": 1074,
+      "sha256": "f7dd64a6d70558eea4499e5ea4cbbbe7a222e06046447136adc13eff9f771175"
+    },
+    {
+      "path": "android/app/src/main/res/drawable/ic_launcher.xml",
+      "bytes": 638,
+      "sha256": "b08c6b69e0a86830a0105cca69ab194a8e5c192026dc92e0f29d2b8076884937"
+    },
+    {
+      "path": "android/app/src/main/res/values/styles.xml",
+      "bytes": 645,
+      "sha256": "417a0d1248ac969e4ce1faf633c1a08f536f04a951b73348f67f929754ee7380"
+    },
+    {
+      "path": "android/build.gradle",
+      "bytes": 73,
+      "sha256": "c3c0cf04da0fc239f391c774554d97d890018ab6e37e87cc62f6070d0c8c9909"
+    },
+    {
+      "path": "android/build.py",
+      "bytes": 4328,
+      "sha256": "104a1d5eb932a24717f2036d395ec78076ff6d5c15a17ac40fb10639d08a9056"
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 43504,
+      "sha256": "498495120a03b9a6ab5d155f5de3c8f0d986a449153702fb80fc80e134484f17"
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 293,
+      "sha256": "f29128fb21456a435742a6a2c3d1f63f5412d280cf3332ade712cd4d15c35dd7"
+    },
+    {
+      "path": "android/gradle.properties",
+      "bytes": 77,
+      "sha256": "4667473ab79d19d7b6d3f7c341c798a60b413fa3aa08587ce81809a58c797904"
+    },
+    {
+      "path": "android/gradlew",
+      "bytes": 8784,
+      "sha256": "9cbbb4d68ff7fb5211c4d58f598ac9d8664c05fdcd1e5f59b7f2c3ac1ee00af0"
+    },
+    {
+      "path": "android/gradlew.bat",
+      "bytes": 2894,
+      "sha256": "0f3ed8f03b50934cb8c48b15a470d5c20a30a5385825e48b55bcc8ea3d8f8e18"
+    },
+    {
+      "path": "android/LEIA-ME.txt",
+      "bytes": 5497,
+      "sha256": "72ff10f5ee97beced0202cec183a497e31a53755f63fd6a2581ec9befc1dd22b"
+    },
+    {
+      "path": "android/settings.gradle",
+      "bytes": 284,
+      "sha256": "f483522e3c053e57548a7b504e66f4e208552b4dd34b4cf50124552592e0d415"
+    },
+    {
+      "path": "android/test-sync.py",
+      "bytes": 1437,
+      "sha256": "61ac2adad0d09a516f96b6bfa45622b09b19d066ea1fd306e74b75cb46d32728"
+    },
+    {
+      "path": "android/test.py",
+      "bytes": 1691,
+      "sha256": "8140546f0f9af6fe7ef4f7be3b2b164705c0e70b20439b9e08febdd44b85a292"
+    },
+    {
+      "path": "android/tests/RulesTest.java",
+      "bytes": 13829,
+      "sha256": "b691b4e7ab6fb2c72df3284bb2641f2f5c38fb887420472ec46403ac70fc9be4"
+    },
+    {
+      "path": "android/tests/sql-schema-check.py",
+      "bytes": 2509,
+      "sha256": "b7b3e3c50e86e003a48fe48ea97648801a3fa8e505925528beb1ff9ae2a275cd"
+    },
+    {
+      "path": "android/tests/WhatsAppValidationTest.java",
+      "bytes": 6888,
+      "sha256": "fd0e203a4db3a55345ff32d889cc7124931cfd025983bafdf8e6515d8fb8c9a0"
+    },
+    {
+      "path": "docs/ativacao-whatsapp.txt",
+      "bytes": 5424,
+      "sha256": "dc2d34294e305d7bcca24fecf4c61a0066ccf3584d60bcdd930eaac8b88e2c6c"
+    },
+    {
+      "path": "docs/instalacao-v1.0.txt",
+      "bytes": 3077,
+      "sha256": "23fb629c34a26654b88e51f56e1141a0d36ad651f03bfe39fb701d278fb563f1"
+    },
+    {
+      "path": "docs/PROCESSO.md",
+      "bytes": 6115,
+      "sha256": "c683a51c2785c5cba88949d5d06aa0d61b2cf687a0c481f8f9c4b307ff23fc1f"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "bytes": 1665,
+      "sha256": "fd62583c990f115649ab8d934f1721938bea331ec4798313f3c42045bdc0a672"
+    },
+    {
+      "path": "docs/verificacao-v1.0.txt",
+      "bytes": 749,
+      "sha256": "ecbb0e4eb9544bc30ebd50ad823403ecab4501011a7d237faade6736adddd11c"
+    },
+    {
+      "path": "docs/verificacao-v1.1.txt",
+      "bytes": 1176,
+      "sha256": "3d448901da247e38ab3f2fab840e08b316ecd9fd1d8baee6520442af8844753f"
+    },
+    {
+      "path": "historico/v1.0/android/.gitignore",
+      "bytes": 65,
+      "sha256": "2b035239ca01a61f345528abf60d0ba3c3ec6b7b66e00d0203d0b869bcfbc0b6"
+    },
+    {
+      "path": "historico/v1.0/android/app/build.gradle",
+      "bytes": 1033,
+      "sha256": "0776653d09743922c01dfa989ee5a427994da95f4b8940188ce482cac8773fe7"
+    },
+    {
+      "path": "historico/v1.0/android/app/src/main/AndroidManifest.xml",
+      "bytes": 883,
+      "sha256": "2a1ad49f05e15c879dada8382de65538c7133980ae77937da7b35c34e2ef1a17"
+    },
+    {
+      "path": "historico/v1.0/android/app/src/main/java/br/com/marmitafacil/app/MainActivity.java",
+      "bytes": 43902,
+      "sha256": "ca768bb95ac5f787439170e93e7b1d89ccdfdb1d6a2c00d40b50d33f41fad9d4"
+    },
+    {
+      "path": "historico/v1.0/android/app/src/main/java/br/com/marmitafacil/app/Rules.java",
+      "bytes": 4692,
+      "sha256": "91606505da8b9ddbe5ef17c92ecd2be884384b962a2c977ff64dd513b5605751"
+    },
+    {
+      "path": "historico/v1.0/android/app/src/main/java/br/com/marmitafacil/app/Store.java",
+      "bytes": 16245,
+      "sha256": "716cb7313aacc6dee82e6cb6a5aab31044b3c57f2b565857e3b4254f236af5d2"
+    },
+    {
+      "path": "historico/v1.0/android/app/src/main/res/drawable/ic_launcher.xml",
+      "bytes": 638,
+      "sha256": "b08c6b69e0a86830a0105cca69ab194a8e5c192026dc92e0f29d2b8076884937"
+    },
+    {
+      "path": "historico/v1.0/android/app/src/main/res/values/styles.xml",
+      "bytes": 645,
+      "sha256": "417a0d1248ac969e4ce1faf633c1a08f536f04a951b73348f67f929754ee7380"
+    },
+    {
+      "path": "historico/v1.0/android/build.gradle",
+      "bytes": 73,
+      "sha256": "c3c0cf04da0fc239f391c774554d97d890018ab6e37e87cc62f6070d0c8c9909"
+    },
+    {
+      "path": "historico/v1.0/android/build.py",
+      "bytes": 4336,
+      "sha256": "aab6952b43ae47fecdf7b94c8caabbe8f25853d32784b4f8098b4c8c26512f85"
+    },
+    {
+      "path": "historico/v1.0/android/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 43504,
+      "sha256": "498495120a03b9a6ab5d155f5de3c8f0d986a449153702fb80fc80e134484f17"
+    },
+    {
+      "path": "historico/v1.0/android/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 293,
+      "sha256": "f29128fb21456a435742a6a2c3d1f63f5412d280cf3332ade712cd4d15c35dd7"
+    },
+    {
+      "path": "historico/v1.0/android/gradle.properties",
+      "bytes": 77,
+      "sha256": "4667473ab79d19d7b6d3f7c341c798a60b413fa3aa08587ce81809a58c797904"
+    },
+    {
+      "path": "historico/v1.0/android/gradlew",
+      "bytes": 8784,
+      "sha256": "9cbbb4d68ff7fb5211c4d58f598ac9d8664c05fdcd1e5f59b7f2c3ac1ee00af0"
+    },
+    {
+      "path": "historico/v1.0/android/gradlew.bat",
+      "bytes": 2894,
+      "sha256": "0f3ed8f03b50934cb8c48b15a470d5c20a30a5385825e48b55bcc8ea3d8f8e18"
+    },
+    {
+      "path": "historico/v1.0/android/LEIA-ME.txt",
+      "bytes": 3743,
+      "sha256": "f76d2e0f694796a8c0d1f5df65b8abb3c81e69320f921de215cf05fed1e890c8"
+    },
+    {
+      "path": "historico/v1.0/android/settings.gradle",
+      "bytes": 284,
+      "sha256": "f483522e3c053e57548a7b504e66f4e208552b4dd34b4cf50124552592e0d415"
+    },
+    {
+      "path": "historico/v1.0/android/test.py",
+      "bytes": 1278,
+      "sha256": "8ad5464e25f0fee3e874a147f88d3d548ece1290c5db7e7f1ae119238e3f738e"
+    },
+    {
+      "path": "historico/v1.0/android/tests/RulesTest.java",
+      "bytes": 8552,
+      "sha256": "b6503dda3518ace383a37e0e3da146ffa3a8c8b0e42f4b626986b9cccbfb3d6d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4124,
+      "sha256": "8fc3b25f83f93368d5f6216d400e12e32581cb0b7aa41ee064de7c81a0920afa"
+    },
+    {
+      "path": "releases/MarmitaFacil-1.0.apk",
+      "bytes": 49629,
+      "sha256": "d1bf03a4a451804db6aa9169868431b4ab1a37f3e2031a543b571d87a47cca8b"
+    },
+    {
+      "path": "releases/MarmitaFacil-1.1.apk",
+      "bytes": 66013,
+      "sha256": "94e4706f64055bfdfbb297b78db962fff75ad0f8ef20b109599afd74469c8d01"
+    },
+    {
+      "path": "whatsapp-service/.env.example",
+      "bytes": 1203,
+      "sha256": "d4e7b1f82e6efa2f1c3b767bb531e8c26b9a55d3882fb91ae97579b0f2d26dd2"
+    },
+    {
+      "path": "whatsapp-service/.gitignore",
+      "bytes": 47,
+      "sha256": "327f32df34a6601b85cb52d201d2e802f1cb1174f1cbc8a7e7c99c6707d28943"
+    },
+    {
+      "path": "whatsapp-service/confirmed-order-fixture.json",
+      "bytes": 727,
+      "sha256": "6114edaa1288cbc5f77bd5b0a0bf9fbf8af67c3d9ae03f70f20207ee6024baed"
+    },
+    {
+      "path": "whatsapp-service/README.txt",
+      "bytes": 11084,
+      "sha256": "df08a7c8aceb3a3afb0e9a71b88f86ad37f2ab2881894d74350be25b126c544a"
+    },
+    {
+      "path": "whatsapp-service/requirements.txt",
+      "bytes": 222,
+      "sha256": "18690b13b9c172f69e8a6da9e8719ec915f59d15d00f7fd0992408d27c99686b"
+    },
+    {
+      "path": "whatsapp-service/service.py",
+      "bytes": 33480,
+      "sha256": "8ceaf7615468491513ddfafa84cca9c59f17d10538f72e1f923b22ad98f1d098"
+    },
+    {
+      "path": "whatsapp-service/test_service.py",
+      "bytes": 20260,
+      "sha256": "d744708bdcff66d8f7a7ee18b1576017b8d9fe6419955d8f8d5628e7cfcdd69c"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+MARMITA FÁCIL — PROJETO ANDROID 1.0.0
+
+Aplicativo Android nativo, em português, sem bibliotecas de execução externas.
+Dados locais em SQLite. Não usa internet, login, anúncios nem sincronização.
+Cada instalação começa vazia e mantém seu próprio banco de dados.
+
+RECURSOS
+- Clientes: nome, telefone e endereço; edição, arquivamento e reativação.
+- Tipos de marmita: nome, descrição e preço; edição, arquivamento e reativação.
+- Pedidos com vários itens, quantidades, preço unitário, subtotal e total.
+- Dia do pedido e da entrega. Datas de entrega anteriores ao pedido são rejeitadas.
+- Status: A entregar (âmbar), Entregue (verde), Cancelado (vermelho).
+- Busca, filtro de status, filtro por dia de entrega e indicação de atraso.
+- Preços e dados do cliente registrados no pedido, preservados nas mudanças de cadastro.
+- Backup JSON por seletor de arquivos do Android, com validação e restauração transacional.
+- Restauração substitui os dados locais somente após confirmação explícita.
+- Valores em centavos inteiros, sem erros de arredondamento de ponto flutuante.
+- Rascunho de pedido preservado no estado da atividade; rotação mantém os formulários.
+
+ANDROID STUDIO
+Abra esta pasta como projeto. Requer JDK 17, SDK Platform 35 e Build Tools 35.0.0.
+O Gradle Wrapper usa Gradle 8.9 e o plugin Android 8.7.3.
+Windows: gradlew.bat assembleRelease
+O APK será gerado em app/build/outputs/apk/release/.
+A configuração do Gradle é fornecida para manutenção; o APK desta entrega foi
+gerado pelo procedimento direto abaixo, usando as ferramentas oficiais do SDK.
+
+COMPILAÇÃO DIRETA, USADA NA ENTREGA
+Requer Python 3, JDK 17 e as ferramentas oficiais do Android SDK.
+python build.py --jdk CAMINHO_JDK --sdk-tools CAMINHO_BUILD_TOOLS_35 --android-jar CAMINHO_ANDROID_35/android.jar --output MarmitaFacil-1.0.apk
+O script compila recursos e Java, converte para DEX com D8, alinha, assina e
+verifica o APK. Nenhuma ferramenta é instalada globalmente.
+
+TESTES EXECUTADOS
+python test.py --jdk CAMINHO_JDK --android-jar CAMINHO_ANDROID_35/android.jar
+88 verificações passaram: valores monetários, quantidades, subtotais, total,
+datas, status, validação de backups, referências, duplicidades, limites,
+preços históricos e serialização do rascunho. O teste baixa JSON-java apenas
+para executar os testes no computador; essa biblioteca não entra no APK.
+O APK passou na verificação das assinaturas v1, v2 e v3 e no zipalign.
+Não foram executados testes de interface, instalação ou do seletor de arquivos
+em emulador ou aparelho físico nesta entrega.
+
+LIMITES
+Android 6.0 ou superior. Até 100 itens por pedido, 10.000 unidades por item.
+Preço de R$ 0,01 até R$ 1.000.000,00 por unidade. Total até R$ 10 bilhões.
+Backups de até 16 MB e 50.000 registros por tabela. O app valida esses limites
+ao exportar e importar, evitando gerar um backup que não possa ser restaurado.
+Os cadastros e pedidos são armazenados no espaço privado do aplicativo.
+O backup não é automático e o arquivo JSON não é criptografado.
+
+CHAVE DE ASSINATURA — FORA DO REPOSITÓRIO PÚBLICO
+A chave e as credenciais do APK original foram excluídas desta cópia pública.
+O proprietário deve recuperá-las do backup privado para assinar atualizações
+compatíveis. Sem a chave original, gere uma instalação de desenvolvimento.
+Nunca publique signing/ nem seus arquivos de credenciais.
+
+REFERÊNCIAS DAS FERRAMENTAS
+https://developer.android.com/build/building-cmdline
+https://developer.android.com/tools/apksigner
+https://developer.android.com/build/releases/agp-8-7-0-release-notes
+https://learn.microsoft.com/java/openjdk/download

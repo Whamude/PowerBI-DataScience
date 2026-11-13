@@ -1,0 +1,60 @@
+MARMITA FÁCIL — GUIA RÁPIDO
+
+1. Copie o arquivo MarmitaFacil-1.0.apk para o celular Android e abra-o.
+2. Se o Android solicitar, autorize a instalação pela origem usada para abrir
+   o arquivo. Não é necessário desativar o Play Protect.
+3. Conclua a instalação e abra o aplicativo Marmita Fácil.
+
+Requisito: Android 6.0 ou superior. O aplicativo funciona sem internet e sem login.
+O mesmo APK pode ser instalado em vários celulares. Cada um terá seus próprios
+registros; os dados não serão compartilhados automaticamente.
+
+PRIMEIROS CADASTROS
+Na aba Clientes, toque em Cadastrar cliente e preencha nome, telefone e endereço.
+Somente o nome é obrigatório.
+Na aba Cardápio, toque em Cadastrar marmita e informe o nome e o preço de cada tipo.
+Você pode cadastrar quantas opções precisar e arquivar as que deixar de vender.
+
+FAZER UM PEDIDO
+Na aba Pedidos, toque em Novo pedido.
+Selecione o cliente, o dia do pedido e o dia da entrega.
+Adicione uma ou mais marmitas, ajuste as quantidades e confira os preços.
+O aplicativo calcula os subtotais e o total automaticamente.
+Preencha observações se necessário e toque em Salvar pedido.
+Você também pode cadastrar um cliente ou a primeira marmita durante o pedido.
+
+STATUS
+A entregar: âmbar/laranja.
+Entregue: verde.
+Cancelado: vermelho.
+Toque em um pedido para editar, marcar como entregue ou alterar o status.
+Pedidos cancelados continuam no histórico.
+Use os filtros para ver entregas de hoje, de outra data ou de um determinado status.
+
+PREÇOS E HISTÓRICO
+Alterar um preço no Cardápio não muda o valor de pedidos já salvos.
+O valor unitário de um pedido pode ser ajustado manualmente antes de salvar.
+Arquivar um cliente ou marmita preserva os pedidos existentes.
+Para reativar, marque Mostrar também os arquivados, abra o cadastro e toque em Reativar.
+
+BACKUP E TROCA DE CELULAR
+Na aba Backup, toque em Criar backup e escolha onde guardar o arquivo JSON.
+Mantenha uma cópia fora do aplicativo, preferencialmente fora do celular.
+Para trocar de aparelho, instale o mesmo APK, leve o arquivo de backup ao novo
+celular e use Escolher backup para restaurar.
+A restauração substitui os registros atuais do aparelho de destino após confirmação.
+Se quiser manter os dados anteriores, faça um backup deles antes de restaurar outro.
+Se desinstalar o aplicativo ou limpar seus dados, só será possível recuperar
+os registros usando um backup que você tenha salvo.
+
+ARQUIVOS ENTREGUES
+MarmitaFacil-1.0.apk: instalador para compartilhar e usar nos celulares.
+MarmitaFacil-projeto.zip: código-fonte e chave para futuras atualizações.
+Guarde o ZIP do projeto em local seguro. Para instalar ou compartilhar o app,
+utilize somente o arquivo APK.
+
+VERIFICAÇÃO DESTA VERSÃO
+APK compilado e assinado. Cálculos e validação de backups passaram em 88 testes.
+A instalação e a interface ainda não foram testadas em aparelho físico.
+Antes de usar com os registros do seu negócio, faça um pedido de teste e confira
+o cadastro, o total, os status e a criação e restauração de um backup.

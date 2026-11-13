@@ -1,0 +1,93 @@
+MARMITA FÁCIL 1.1 — WHATSAPP
+
+SITUAÇÃO DA ENTREGA
+O APK e o serviço de atendimento foram preparados e testados com mensagens
+simuladas. A integração NÃO está ativa em um número real: ainda falta obter
+o número de vendas, cadastrá-lo na plataforma oficial da Meta e hospedar
+o serviço. Nenhuma mensagem real foi enviada e nenhum serviço pago foi contratado.
+
+CADA NEGÓCIO É SEPARADO
+Cada celular/negócio precisa do próprio número, serviço, banco de dados e chave
+de conexão. Não use a conexão de outro negócio no seu aplicativo.
+O controle manual de clientes, marmitas e pedidos continua funcionando offline.
+O atendimento pelo WhatsApp e o recebimento automático exigem internet.
+
+COMO O CLIENTE FAZ O PEDIDO
+1. O cliente envia uma mensagem ao número de vendas.
+2. Recebe boas-vindas e o cardápio da semana com dias, opções e preços publicados.
+3. Informa a data da entrega, no formato DD/MM/AAAA.
+4. Escolhe as opções e quantidades: por exemplo, 1x2, 3x1.
+5. Informa nome, endereço completo e observações.
+6. Recebe o resumo com valor unitário, subtotais, quantidade, entrega e total.
+7. Responde CONFIRMAR para registrar ou CANCELAR para descartar o rascunho.
+8. O pedido confirmado fica guardado no serviço até o APK recebê-lo.
+9. No APK, aparece identificado como recebido pelo WhatsApp, no status A entregar.
+
+O fluxo é guiado por texto. Áudios, fotos e mensagens em formato livre não são
+interpretados como pedidos. Não há cobrança ou pagamento automático.
+MENU reinicia o atendimento. ATENDENTE pausa o bot e mostra o contato humano
+informado pelo dono do negócio. Esse contato deve ser real e acompanhado.
+
+ATUALIZAR O APK EXISTENTE
+Antes de atualizar, crie um backup pelo Marmita Fácil 1.0.
+Instale MarmitaFacil-1.1.apk por cima do aplicativo existente, sem desinstalar.
+Esta versão usa a mesma assinatura e migra o banco local sem apagar registros.
+O aplicativo precisa de Android 6.0 ou superior.
+A instalação e a interface ainda precisam ser testadas em aparelho físico.
+
+O QUE PREPARAR PARA ATIVAR
+1. Um número de vendas que você possa verificar na Meta.
+2. Cadastro e configuração de WhatsApp Business Platform / Cloud API para esse número.
+3. Um serviço online com HTTPS e armazenamento persistente, separado por negócio.
+4. As credenciais da Meta configuradas no servidor: token, identificador do número,
+   segredo do aplicativo e token de verificação do webhook.
+5. Uma chave própria para o APK se conectar ao serviço. Ela é diferente do token da Meta.
+6. Configurar o webhook público e executar o processo de atendimento do servidor.
+7. Configurar no APK o endereço HTTPS e a chave de conexão do seu negócio.
+8. Publicar o cardápio semanal e fazer um pedido de teste no número real.
+
+O projeto inclui instruções técnicas e um arquivo .env.example para configurar
+o servidor. As mensagens reais ficam desativadas por padrão; a ativação é explícita.
+A hospedagem e o uso da plataforma devem ser contratados/configurados na sua conta.
+Verifique as condições e cobranças vigentes antes de ativar.
+
+PREPARAR O CARDÁPIO NO APK
+Cadastre os tipos e preços na aba Cardápio.
+Na aba WhatsApp, configure e teste a conexão do serviço.
+Toque em Preparar cardápio da semana, informe o nome do negócio e a saudação,
+escolha a semana e marque os dias em que cada marmita estará disponível.
+Revise os preços e toque em Publicar cardápio no WhatsApp.
+Publicar altera o atendimento do serviço; não dispara propaganda aos clientes.
+Para editar o que já está no serviço, use Carregar cardápio publicado.
+Para pausar novos pedidos, desmarque Receber novos pedidos e publique novamente.
+
+RECEBIMENTO DOS PEDIDOS
+Com o APK aberto e conectado, a busca automática ocorre a cada minuto.
+Em segundo plano, o Android agenda buscas com intervalo mínimo de 15 minutos;
+economia de bateria e outras condições do sistema podem adiá-las.
+Use Buscar pedidos agora para uma busca manual.
+Não há promessa de recebimento instantâneo quando o APK está fechado.
+O serviço mantém os pedidos confirmados enquanto o celular está offline.
+O APK grava primeiro e só depois confirma ao servidor que recebeu, protegendo
+contra duplicação em novas tentativas de conexão.
+Alterar preços ou cadastros não modifica os dados já confirmados em pedidos.
+Alterar status no APK não envia automaticamente outra mensagem ao cliente.
+
+BACKUP E DESCONEXÃO
+Continue criando backups dos registros locais. A chave da conexão não entra
+no arquivo: ela é protegida no aparelho pelo Android Keystore.
+Restaurar um backup substitui os dados locais e remove a conexão deste aparelho,
+para que você reconecte somente o serviço do negócio correspondente.
+Desconectar o APK não desliga o atendimento no servidor. Para pausar o bot,
+publique o cardápio com o recebimento desativado antes de desconectar.
+Guarde também backups do banco do servidor, conforme as instruções do projeto.
+
+ARQUIVOS
+MarmitaFacil-1.1.apk: instalador atualizado.
+MarmitaFacil-1.1-projeto.zip: projeto Android, serviço e testes.
+O ZIP contém a chave privada que permite atualizar o APK. Guarde-o em local seguro.
+Compartilhe somente o APK com os usuários do aplicativo.
+
+DOCUMENTAÇÃO OFICIAL
+https://developers.facebook.com/documentation/business-messaging/whatsapp/overview/
+https://developers.facebook.com/documentation/business-messaging/whatsapp/get-started/

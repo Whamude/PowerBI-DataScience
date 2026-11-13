@@ -1,0 +1,25 @@
+MARMITA FÁCIL 1.1.0 — VERIFICAÇÃO
+
+APK compilado, alinhado e assinado (esquemas v1/v2/v3).
+Assinatura corresponde à versão 1.0: atualização preserva identidade do app.
+SHA256 do certificado: f93d0cdba5057954be235a4003bb5e56a36019a61c5174d5af47977e985f517e
+Versão 1.1.0, código 2, Android mínimo 6.0 (API 23).
+129 verificações de regras, cardápio, backup e contrato Android/servidor passaram.
+52 verificações adicionais do protocolo/importação passaram.
+Migração e restrições testadas no SQLite real do computador.
+34 testes de servidor passaram, incluindo HTTP local e Meta simulada.
+Pedidos de teste fictícios; nenhuma mensagem real enviada.
+
+AINDA NÃO ATIVADO EM WHATSAPP REAL.
+Requer número, cadastro/credenciais Meta, HTTPS, servidor e worker.
+Não testado em aparelho físico nem emulador. Agendamento Android e acesso
+ao seletor de arquivos/Keystore precisam de validação no aparelho final.
+
+MarmitaFacil-1.1.apk
+Bytes: 66013
+SHA256: 94e4706f64055bfdfbb297b78db962fff75ad0f8ef20b109599afd74469c8d01
+
+MarmitaFacil-1.1-projeto.zip
+Bytes: 120010
+SHA256: 551758d0f869630ad4e1131889d66e59b47a0590db20b1067f1a2974d2c886f1
+
