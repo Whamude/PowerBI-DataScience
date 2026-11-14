@@ -44,3 +44,8 @@ yarn-error.*
 *.issuer.json
 .activation-private/
 server/data/
+
+# Backend secrets (only examples are tracked)
+server/.env
+server/.env.*
+!server/.env.example

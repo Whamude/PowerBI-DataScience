@@ -1,0 +1,9 @@
+{
+  "name": "nutria-activation-server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": { "start": "node --env-file-if-exists=.env index.mjs", "test": "node --test test/*.test.mjs" },
+  "dependencies": { "stripe": "^23.0.0", "nodemailer": "^7.0.0" }
+}

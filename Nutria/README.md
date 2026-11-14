@@ -8,6 +8,10 @@ A chave pública de produção `9def3ab908ff7344` já está configurada. A vers�
 
 O controle do teste é local: SecureStore no Android/iOS e armazenamento local no navegador. Reinstalar/apagar os dados no Android ou limpar o armazenamento do navegador pode permitir novo teste; não existe controle de elegibilidade por servidor. Veja [a documentação](docs/08-teste-experimental.md).
 
+## Automação de ativação por pagamento (em preparação)
+
+O backend em [server/](server/README.md) valida confirmações Stripe e prepara códigos individuais mensais com fila persistente de e-mail. Implementado/testado localmente, ainda sem hospedagem, webhook público ou envio real. Somente modo de teste; não altera o APK nem habilita renovação silenciosa. Consulte o README do servidor para os próximos passos e limites.
+
 ## Funcionalidades preservadas da versão 0.3
 
 Aplicativo Android/iOS em Expo SDK 58. Esta é uma entrega integrada em evolução, não um produto final com todos os serviços da referência.
