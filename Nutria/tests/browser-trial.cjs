@@ -8,7 +8,8 @@ const assert = require("node:assert/strict");
   const secret = Uint8Array.from({ length: 32 }, (_, i) => i + 1);
   const pub = lib.toBase64Url(ed25519.getPublicKey(secret));
   const browser = await chromium.launch({
-    executablePath: "/usr/bin/chromium",
+    executablePath:
+      process.env.NUTRIA_CHROMIUM_EXECUTABLE || "/usr/bin/chromium",
     args: ["--no-sandbox"],
   });
   try {
@@ -34,16 +35,16 @@ const assert = require("node:assert/strict");
       { id, data },
     );
     await page
-      .getByRole("button", { name: "Começar ou retomar teste de 4 dias" })
+      .getByRole("button", { name: "Começar ou retomar teste de 7 dias" })
       .click();
     await page.getByRole("alert").waitFor();
     await page.getByLabel("E-mail de ativação").fill(email);
     await page
-      .getByRole("button", { name: "Começar ou retomar teste de 4 dias" })
+      .getByRole("button", { name: "Começar ou retomar teste de 7 dias" })
       .click();
     await page.getByRole("tab", { name: /Perfil/ }).click();
     await page
-      .getByText("Teste experimental de 4 dias", { exact: true })
+      .getByText("Teste experimental de 7 dias", { exact: true })
       .waitFor();
     const original = await page.evaluate(() =>
       JSON.parse(localStorage.getItem("nutria.trial.v1")),
@@ -54,17 +55,17 @@ const assert = require("node:assert/strict");
     await page.reload({ waitUntil: "networkidle" });
     await page.getByLabel("E-mail de ativação").fill("outra@example.com");
     await page
-      .getByRole("button", { name: "Começar ou retomar teste de 4 dias" })
+      .getByRole("button", { name: "Começar ou retomar teste de 7 dias" })
       .click();
     await page.getByText(/já está associado a outro e-mail/).waitFor();
     await page.getByLabel("E-mail de ativação").fill(email);
     await page
-      .getByRole("button", { name: "Começar ou retomar teste de 4 dias" })
+      .getByRole("button", { name: "Começar ou retomar teste de 7 dias" })
       .click();
     await page.reload({ waitUntil: "networkidle" });
     await page.getByRole("tab", { name: /Perfil/ }).click();
     await page
-      .getByText("Teste experimental de 4 dias", { exact: true })
+      .getByText("Teste experimental de 7 dias", { exact: true })
       .waitFor();
     assert.equal(
       await page.evaluate(
@@ -75,6 +76,25 @@ const assert = require("node:assert/strict");
     console.log(
       "PASS private link, email validation, start, sign-out, reload, same deadline and email isolation",
     );
+    // An ongoing record from the four-day release keeps its original start.
+    const continued = {
+      ...createTrial(email, Date.now() - 5 * 86400000),
+      lastSeenAt: Date.now(),
+    };
+    await page.evaluate(
+      (saved) => localStorage.setItem("nutria.trial.v1", JSON.stringify(saved)),
+      continued,
+    );
+    await page.reload({ waitUntil: "networkidle" });
+    await page.getByRole("tab", { name: /Perfil/ }).click();
+    await page.getByText("Teste experimental de 7 dias", { exact: true }).waitFor();
+    assert.equal(
+      await page.evaluate(
+        () => JSON.parse(localStorage.getItem("nutria.trial.v1")).startedAt,
+      ),
+      continued.startedAt,
+    );
+    console.log("PASS fifth day remains accessible with original start and records");
     // Seed a near-expiry trial and exercise the real provider timer with browser time.
     const now = Date.now();
     const saved = {
@@ -90,7 +110,7 @@ const assert = require("node:assert/strict");
     await page.getByRole("tab", { name: /Perfil/ }).waitFor();
     await page.clock.fastForward(90000);
     await page.getByLabel("E-mail de ativação").waitFor();
-    await page.getByText(/Seu teste de 4 dias terminou/).waitFor();
+    await page.getByText(/Seu teste de 7 dias terminou/).waitFor();
     assert.equal(
       await page.evaluate(
         () => JSON.parse(localStorage.getItem("nutria.trial.v1")).ended,
@@ -99,9 +119,9 @@ const assert = require("node:assert/strict");
     );
     await page.getByLabel("E-mail de ativação").fill(email);
     await page
-      .getByRole("button", { name: "Começar ou retomar teste de 4 dias" })
+      .getByRole("button", { name: "Começar ou retomar teste de 7 dias" })
       .click();
-    await page.getByText(/Seu teste de 4 dias terminou/).waitFor();
+    await page.getByText(/Seu teste de 7 dias terminou/).waitFor();
     const payload = JSON.stringify({
       v: 1,
       app: "app.nutria.mobile",

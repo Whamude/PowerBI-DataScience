@@ -85,7 +85,7 @@ export function ActivationProvider({ children }: { children: ReactNode }) {
               setActivation(result.activation);
             if (live && !result.activation)
               setError(
-                "Seu teste de 4 dias terminou. Ative com seu e-mail e código para continuar; seus registros estão preservados.",
+                "Seu teste de 7 dias terminou. Ative com seu e-mail e código para continuar; seus registros estão preservados.",
               );
           }
         }
@@ -114,7 +114,7 @@ export function ActivationProvider({ children }: { children: ReactNode }) {
           if (live && !result.activation) {
             setActivation(null);
             setError(
-              "Seu teste de 4 dias terminou. Ative com seu e-mail e código para continuar; seus registros estão preservados.",
+              "Seu teste de 7 dias terminou. Ative com seu e-mail e código para continuar; seus registros estão preservados.",
             );
           }
         } else if (
